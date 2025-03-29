@@ -56,7 +56,7 @@ components:
           description: type of product
         number:
           type: string
-          description: numeration of the products
+          description: numeration of  products
         productType:
           type: string
           description: type of product
