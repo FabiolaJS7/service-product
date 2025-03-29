@@ -1,0 +1,63 @@
+openapi: "3.0.1"
+info:
+  title: Customer service API
+  description: API to managment products of bank
+  version: 1.0.0
+servers:
+  - url: http://localhost:8383
+    description: local server
+paths:
+  /api/products:
+    post:
+      summary: Create new product of bank.
+      operationId: createProduct
+      requestBody:
+        description: Details to create new product of bank.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProductRequest"
+      responses:
+        '200':
+          description: Success create
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProductResponse"
+components:
+  schemas:
+    ProductRequest:
+      type: object
+      properties:
+        id:
+          type: string
+          description: unique ID
+        customerId:
+          type: string
+          description: Customer Id
+        family:
+          type: string
+          description: type of product
+        productType:
+          type: string
+          description: type of product
+    ProductResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: unique ID
+        customerId:
+          type: string
+          description: Customer Id
+        family:
+          type: string
+          description: type of product
+        number:
+          type: string
+          description: numeration of the products
+        productType:
+          type: string
+          description: type of product
+
