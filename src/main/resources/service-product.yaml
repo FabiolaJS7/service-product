@@ -36,12 +36,13 @@ components:
         customerId:
           type: string
           description: Customer Id
-        family:
-          type: string
-          description: type of product
         productType:
           type: string
           description: type of product
+        userBank:
+          type: string
+          description: username of bank who is managmenting this product
+
     ProductResponse:
       type: object
       properties:
@@ -51,13 +52,114 @@ components:
         customerId:
           type: string
           description: Customer Id
-        family:
-          type: string
-          description: type of product
-        number:
-          type: string
-          description: numeration of  products
         productType:
           type: string
           description: type of product
+        numberProduct:
+          type: string
+          description: numeration of  products
+        freeComission:
+          type: boolean
+          description: indicate if this product have comission or not
+        comission:
+          type: string
+          description: indicate comission amount fer movement
+        activeProducts:
+          type: array
+          description: List of active products associated with this product
+          items:
+            $ref: "#/components/schemas/ActiveProductBean"
+        passiveProducts:
+          type: array
+          description: List of passive products associated with this product
+          items:
+            $ref: "#/components/schemas/PassiveProductBean"
 
+
+
+    ActiveProductBean:
+      type: object
+      properties:
+        id:
+          type:  string
+          description: active product's id
+        accountNumber:
+          type: string
+        status:
+          type: string
+        hasCreditCard:
+          type: boolean
+        creditLimit:
+          type: number
+          format: double
+        creditLimitEnabled:
+          type: number
+          format: double
+        creditLimitUsed:
+          type: number
+          format: double
+        productType:
+          type: string
+        createdDate:
+          type: string
+          format: date-time
+        holders:
+          type: array
+          description: List of holders associated with this product
+          items:
+            $ref: '#/components/schemas/PersonalInformationAddBean'
+        authorizedSignatories:
+          type: array
+          description: List of signatories authorized associated with this product
+          items:
+            $ref: '#/components/schemas/PersonalInformationAddBean'
+
+    PassiveProductBean:
+      type: object
+      properties:
+        id:
+          type:  string
+          description: active product's id
+        accountNumber:
+          type: string
+        status:
+          type: string
+        commissionMovement:
+          type: number
+          format: double
+        isFreeCommission:
+          type: boolean
+        maxMovementPerMonth:
+          type: integer
+          format: int64
+        productType:
+          type: string
+        createdDate:
+          type: string
+          format: date-time
+        holders:
+          type: array
+          description: List of holders associated with this product
+          items:
+            $ref: '#/components/schemas/PersonalInformationAddBean'
+        authorizedSignatories:
+          type: array
+          description: List of signatories authorized associated with this product
+          items:
+            $ref: '#/components/schemas/PersonalInformationAddBean'
+
+    PersonalInformationAddBean:
+      type: object
+      properties:
+        name:
+          type: string
+        lastName:
+          type: string
+        identification:
+          type: string
+        typeIdentification:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string

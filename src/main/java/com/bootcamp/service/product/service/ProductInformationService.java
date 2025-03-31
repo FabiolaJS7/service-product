@@ -5,5 +5,4 @@ import reactor.core.publisher.Mono;
 
 public interface ProductInformationService {
 
-    Mono<ProductInformation> create(String id);
 }
