@@ -7,19 +7,19 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collation = "products")
-public class Product {
+public class ProductInformation {
 
     @Id
     private String id;
     private String customerId;
-    private String family;
-    private String number;
-    private String productType;
-
-
+    private List<ActiveProduct> activeProduct;
+    private List<PassiveProduct> passiveProduct;
+    private AuditData auditData;
 }
