@@ -6,8 +6,8 @@ import com.bootcamp.service.product.constants.TypeMovementConstants;
 
 public class CurrentAccount extends PassiveProduct {
     @Override
-    public double commissionMovement() {
-        return 10;
+    public String getProductType() {
+        return ProductTypeConstants.CURRENT_ACCOUNT;
     }
 
     @Override
@@ -16,12 +16,12 @@ public class CurrentAccount extends PassiveProduct {
     }
 
     @Override
-    public String maxMovementPerMonth() {
+    public String getMaxMovementPerMonth() {
         return TypeMovementConstants.FREE_MOVEMENT;
     }
 
     @Override
-    public String productType() {
-        return ProductTypeConstants.CURRENT_ACCOUNT;
+    public double getCommissionMovement() {
+        return 10.00;
     }
 }

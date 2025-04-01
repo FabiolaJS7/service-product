@@ -24,7 +24,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ProductResponse"
+                type: string
 components:
   schemas:
     ProductRequest:
@@ -36,12 +36,24 @@ components:
         customerId:
           type: string
           description: Customer Id
+        customerType:
+          type: string
         productType:
           type: string
           description: type of product
         userBank:
           type: string
           description: username of bank who is managmenting this product
+        holders:
+          type: array
+          description: List of holders
+          items:
+            $ref: '#/components/schemas/PersonalInformationAddBean'
+        authorizedSignatories:
+          type: array
+          description: List of signatures auth
+          items:
+            $ref: '#/components/schemas/PersonalInformationAddBean'
 
     ProductResponse:
       type: object

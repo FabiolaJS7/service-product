@@ -6,8 +6,8 @@ import com.bootcamp.service.product.constants.TypeMovementConstants;
 public class FixedAccount extends PassiveProduct {
 
     @Override
-    public double commissionMovement() {
-        return 0;
+    public String getProductType() {
+        return ProductTypeConstants.FIXED_ACCOUNT;
     }
 
     @Override
@@ -16,12 +16,12 @@ public class FixedAccount extends PassiveProduct {
     }
 
     @Override
-    public String maxMovementPerMonth() {
+    public String getMaxMovementPerMonth() {
         return TypeMovementConstants.LIMIT_MAX_PER_MONTH_FIXED;
     }
 
     @Override
-    public String productType() {
-        return ProductTypeConstants.FIXED_ACCOUNT;
+    public double getCommissionMovement() {
+        return 0.00;
     }
 }

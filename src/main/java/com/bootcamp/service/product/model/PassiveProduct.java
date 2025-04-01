@@ -1,10 +1,12 @@
 package com.bootcamp.service.product.model;
 
+import com.bootcamp.service.product.constants.StatusProductConstants;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -15,14 +17,19 @@ public abstract class PassiveProduct {
 
     private String id;
     private String accountNumber;
-    private String status;
-    private List<PersonalInformationAdd> holders;
-    private List<PersonalInformationAdd> authorizedSignatories;
+    private String status = StatusProductConstants.ENABLED;
+    private List<PersonalInformationAdd> holders = new ArrayList<>();
+    private List<PersonalInformationAdd> authorizedSignatories = new ArrayList<>();
     private AuditData auditData;
 
-    public abstract double commissionMovement();
-    public abstract boolean isFreeCommission();
-    public abstract String maxMovementPerMonth();
-    public abstract String productType();
+    private String productType;
+    private double commissionMovement;
+    private boolean isFreeCommission;
+    private String maxMovementPerMonth;
+
+
+
+    
+
 
 }

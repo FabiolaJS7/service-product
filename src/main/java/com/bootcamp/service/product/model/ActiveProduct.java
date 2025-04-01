@@ -1,5 +1,6 @@
 package com.bootcamp.service.product.model;
 
+import com.bootcamp.service.product.constants.StatusProductConstants;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,11 +17,11 @@ public class ActiveProduct {
     private String id;
     private String accountNumber;
     private boolean hasCreditCard;
-    private Double creditLimit;
-    private Double creditLimitEnabled;
-    private Double creditLimitUsed;
+    private double creditLimit = 3000.00;
+    private double creditLimitUsed = 0.0;
+    private double creditLimitEnabled = creditLimit- creditLimitUsed;
     private String productType;
-    private String status;
+    private String status = StatusProductConstants.ENABLED;
     private List<PersonalInformationAdd> holders;
     private List<PersonalInformationAdd> authorizedSignatories;
     private AuditData auditData;
