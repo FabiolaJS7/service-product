@@ -128,6 +128,7 @@ components:
 
 
 
+
     ActiveProductBean:
       type: object
       properties:
@@ -257,3 +258,13 @@ components:
           type: string
         family:
           type: string
+        holders:
+          type: array
+          description: List of holders associated with this product
+          items:
+            $ref: '#/components/schemas/PersonalInformationAddBean'
+        authorizedSignatories:
+          type: array
+          description: List of signatories authorized associated with this product
+          items:
+            $ref: '#/components/schemas/PersonalInformationAddBean'

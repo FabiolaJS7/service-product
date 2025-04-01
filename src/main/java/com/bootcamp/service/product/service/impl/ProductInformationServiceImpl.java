@@ -11,6 +11,7 @@ import com.bootcamp.service.product.util.AuditDataUtil;
 import com.bootcamp.service.product.util.JsonTransferUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -90,4 +91,50 @@ public class ProductInformationServiceImpl implements ProductInformationService 
                 .doOnComplete(() -> log.info("Completed fetching and mapping all customers"))
                 .doOnError(e -> log.error("Error occurred while getting customers: {}", e.getMessage(), e));
     }
+
+    @Override
+    public Mono<Boolean> updateProduct(String productId, Mono<UpdateProductRequest> updateProductRequestMono) {
+        return productInformationRepository.findById(productId)
+                .doOnNext(productInformation -> log.info("Product found: {}", JsonTransferUtil.objectToJson(productInformation)))
+                .flatMap(productInformation ->
+                    updateProductRequestMono
+                            .flatMap(updateProductRequest -> {
+                                productInformation.getActiveProduct().forEach(product -> {
+                                    if (product.getAccountNumber().equalsIgnoreCase(updateProductRequest.getAccountNumber())) {
+                                        product.setStatus(updateProductRequest.getAction());
+
+                                    }
+                                });
+
+                                productInformation.getPassiveProduct().forEach(product -> {
+                                    if (product.getAccountNumber().equalsIgnoreCase(updateProductRequest.getAccountNumber())) {
+                                        product.setStatus(updateProductRequest.getAction());
+                                    }
+                                });
+
+                                return productInformationRepository.save(productInformation);
+                            })
+                )
+                .hasElement()
+                .doOnNext(updated -> {
+                    if (updated) {
+                        log.info("Product with ID {} was successfully updated", productId);
+                    } else {
+                        log.warn("Product with ID {} was not found", productId);
+                    }
+                })
+                .doOnError(e -> log.error("Error occurred while updating product with ID {}: {}", productId, e.getMessage(), e))
+                .switchIfEmpty(Mono.error(new RuntimeException("Product not found")));
+    }
+
+    @Override
+    public Mono<Boolean> deleteProduct(String productId) {
+        return productInformationRepository.findById(productId)
+                .doOnNext(product -> log.info("Product found with ID {}", productId))
+                .flatMap(productFounded -> productInformationRepository.delete(productFounded)
+                        .then(Mono.just(true)))
+                .switchIfEmpty(Mono.just(false)) // Devuelve false si no se encuentra el producto
+                .doOnError(e -> log.error("Error occurred while deleting product with ID {}: {}", productId, e.getMessage(), e));
+    }
+
 }

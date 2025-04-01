@@ -1,8 +1,6 @@
 package com.bootcamp.service.product.mapper;
 
-import com.bootcamp.service.product.model.ProductBean;
-import com.bootcamp.service.product.model.ProductInformation;
-import com.bootcamp.service.product.model.ProductResponse;
+import com.bootcamp.service.product.model.*;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -23,6 +21,8 @@ public class ProductInformationMapper {
             productBean.setProductType(activeProduct.getProductType());
             productBean.setStatus(activeProduct.getStatus());
             productBean.setFamily("ACTIVE PRODUCT");
+            productBean.setHolders(getPersonalInformationAddBean(activeProduct.getHolders()));
+            productBean.setAuthorizedSignatories(getPersonalInformationAddBean(activeProduct.getAuthorizedSignatories()) );
             productBeanList.add(productBean);
         });
 
@@ -32,10 +32,29 @@ public class ProductInformationMapper {
             productBean.setProductType(passiveProduct.getProductType());
             productBean.setStatus(passiveProduct.getStatus());
             productBean.setFamily("PASSIVE PRODUCT");
+            productBean.setHolders(getPersonalInformationAddBean(passiveProduct.getHolders()));
+            productBean.setAuthorizedSignatories(getPersonalInformationAddBean(passiveProduct.getAuthorizedSignatories()) );
             productBeanList.add(productBean);
         });
 
         productResponse.setProducts(productBeanList);
         return productResponse;
+    }
+
+    private List<PersonalInformationAddBean> getPersonalInformationAddBean(List<PersonalInformationAdd> holders) {
+        List<PersonalInformationAddBean> addAsHolder = new ArrayList<>();
+        holders.forEach(holder -> {
+            PersonalInformationAddBean personalInformationAddBean = new PersonalInformationAddBean();
+            personalInformationAddBean.setName(holder.getName());
+            personalInformationAddBean.setLastName(holder.getLastName());
+            personalInformationAddBean.setIdentification(holder.getIdentification());
+            personalInformationAddBean.setTypeIdentification(holder.getTypeIdentification());
+            personalInformationAddBean.setEmail(holder.getEmail());
+            personalInformationAddBean.setPhone(holder.getPhone());
+            addAsHolder.add(personalInformationAddBean);
+        });
+
+        return addAsHolder;
+
     }
 }
