@@ -1,0 +1,143 @@
+[{
+  "_id": {
+    "$oid": "67ec1b1a7e07dc68b24a8aea"
+  },
+  "customerId": "67ec1a41fabf6d0f4ada9865",
+  "customerType": "P",
+  "activeProduct": [
+    {
+      "hasCreditCard": false,
+      "creditLimit": 3000,
+      "creditLimitUsed": 0,
+      "creditLimitEnabled": 3000,
+      "accountNumber": "97deab02-d610-41f6-8f7e-b514c6310eb5",
+      "productType": "CP",
+      "status": "ENABLED",
+      "holders": [
+        {
+          "name": "Carlos ",
+          "lastName": "Mendoza",
+          "email": "mail@gmail.com",
+          "phone": "949785985"
+        }
+      ],
+      "authorizedSignatories": [
+        {
+          "name": "Maria",
+          "lastName": "Mendoza Guiterrez",
+          "email": "mail@gmail.com",
+          "phone": "949859856"
+        }
+      ],
+      "auditData": {
+        "createdAt": {
+          "$date": "2025-04-01T16:58:02.461Z"
+        },
+        "updatedAt": {
+          "$date": "2025-04-01T16:58:02.461Z"
+        },
+        "createdBy": "admin@bank.com"
+      }
+    }
+  ],
+  "passiveProduct": [
+    {
+      "commissionMovement": 0,
+      "isFreeCommission": true,
+      "maxMovementPerMonth": "15",
+      "accountNumber": "9695a904-5ede-4609-909a-37301ce9eefb",
+      "productType": "SA",
+      "status": "ENABLED",
+      "holders": [
+        {
+          "name": "Carlos ",
+          "lastName": "Mendoza",
+          "email": "mail@gmail.com",
+          "phone": "949785985"
+        }
+      ],
+      "authorizedSignatories": [
+        {
+          "name": "Maria",
+          "lastName": "Mendoza Guiterrez",
+          "email": "mail@gmail.com",
+          "phone": "949859856"
+        }
+      ],
+      "auditData": {
+        "createdAt": {
+          "$date": "2025-04-01T16:59:09.388Z"
+        },
+        "updatedAt": {
+          "$date": "2025-04-01T16:59:09.388Z"
+        },
+        "createdBy": "admin@bank.com"
+      },
+      "_class": "com.bootcamp.service.product.model.SavingAccount"
+    }
+  ],
+  "auditData": {
+    "createdAt": {
+      "$date": "2025-04-01T16:59:09.388Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-01T16:59:09.388Z"
+    },
+    "createdBy": "admin@bank.com"
+  },
+  "_class": "com.bootcamp.service.product.model.ProductInformation"
+},
+{
+  "_id": {
+    "$oid": "67ec1bcc7e07dc68b24a8aeb"
+  },
+  "customerId": "67ec1a63fabf6d0f4ada9866",
+  "customerType": "B",
+  "activeProduct": [
+    {
+      "hasCreditCard": false,
+      "creditLimit": 3000,
+      "creditLimitUsed": 0,
+      "creditLimitEnabled": 3000,
+      "accountNumber": "8c81dbe2-aa25-459e-aa5a-66caac4a8b2b",
+      "productType": "CB",
+      "status": "ENABLED",
+      "holders": [
+        {
+          "name": "Maria ",
+          "lastName": "Altamirano",
+          "email": "mail@gmail.com",
+          "phone": "949785985"
+        }
+      ],
+      "authorizedSignatories": [
+        {
+          "name": "Pedro",
+          "lastName": "Altamirano",
+          "email": "mail@gmail.com",
+          "phone": "949859856"
+        }
+      ],
+      "auditData": {
+        "createdAt": {
+          "$date": "2025-04-01T17:01:00.734Z"
+        },
+        "updatedAt": {
+          "$date": "2025-04-01T17:01:00.734Z"
+        },
+        "createdBy": "admin@bank.com"
+      }
+    }
+  ],
+  "passiveProduct": [],
+  "auditData": {
+    "createdAt": {
+      "$date": "2025-04-01T17:01:00.734Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-01T17:01:00.734Z"
+    },
+    "createdBy": "admin@bank.com"
+  },
+  "_class": "com.bootcamp.service.product.model.ProductInformation"
+}]
