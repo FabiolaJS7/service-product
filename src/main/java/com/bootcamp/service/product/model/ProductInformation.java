@@ -14,12 +14,13 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collation = "products")
+@Document(collection = "products")
 public class ProductInformation {
 
     @Id
     private String id;
     private String customerId;
+    private String customerType;
     private List<ActiveProduct> activeProduct = new ArrayList<>();
     private List<PassiveProduct> passiveProduct = new ArrayList<>();
     private AuditData auditData;

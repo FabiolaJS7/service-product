@@ -1,71 +1,82 @@
 package com.bootcamp.service.product.service.impl;
 
+import com.bootcamp.service.product.constants.ClientTypeConstants;
 import com.bootcamp.service.product.constants.ProductTypeConstants;
 import com.bootcamp.service.product.model.*;
 import com.bootcamp.service.product.repository.ProductInformationRepository;
 import com.bootcamp.service.product.service.ProductInformationService;
+import com.bootcamp.service.product.service.ProductManager;
 import com.bootcamp.service.product.util.AuditDataUtil;
+import com.bootcamp.service.product.util.JsonTransferUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
-import java.util.UUID;
+import java.util.HashMap;
 
 @Service
 @AllArgsConstructor
 @Slf4j
 public class ProductInformationServiceImpl implements ProductInformationService {
 
-    private final AuditDataUtil auditDataUtil;
     ProductInformationRepository productInformationRepository;
+    ProductManager productManager;
 
     @Override
     public Mono<String> createProductInformation(Mono<ProductRequest> productRequest) {
-        return productRequest.flatMap(prq -> {
-            ProductInformation productInformation = new ProductInformation();
-            productInformation.setCustomerId(prq.getCustomerId());
+        return productRequest.flatMap(request -> {
 
-            switch (prq.getProductType()) {
-                case ProductTypeConstants.SAVING_ACCOUNT:
-                    SavingAccount savingAccount = new SavingAccount();
-                    savingAccount.setAccountNumber(UUID.randomUUID().toString());
-                    productInformation.getPassiveProduct().add(savingAccount);
-                    break;
-                case ProductTypeConstants.CURRENT_ACCOUNT:
-                    CurrentAccount currentAccount = new CurrentAccount();
-                    currentAccount.setAccountNumber(UUID.randomUUID().toString());
-                    productInformation.getPassiveProduct().add(currentAccount);
-                    break;
-                case ProductTypeConstants.FIXED_ACCOUNT:
-                    FixedAccount fixedAccount = new FixedAccount();
-                    fixedAccount.setAccountNumber(UUID.randomUUID().toString());
-                    productInformation.getPassiveProduct().add(fixedAccount);
-                    break;
-                case ProductTypeConstants.CREDIT_PERSONAL:
-                    ActiveProduct activeProduct = new ActiveProduct();
-                    activeProduct.setAccountNumber(UUID.randomUUID().toString());
-                    activeProduct.setProductType(ProductTypeConstants.CREDIT_PERSONAL);
-                    productInformation.getActiveProduct().add(activeProduct);
-                    break;
-                case ProductTypeConstants.CREDIT_BUSINESS:
-                    ActiveProduct activeProduct1 = new ActiveProduct();
-                    activeProduct1.setAccountNumber(UUID.randomUUID().toString());
-                    activeProduct1.setProductType(ProductTypeConstants.CREDIT_BUSINESS);
-                    productInformation.getActiveProduct().add(activeProduct1);
-                    break;
-                default:
-                    ActiveProduct activeProduct2 = new ActiveProduct();
-                    activeProduct2.setAccountNumber(UUID.randomUUID().toString());
-                    activeProduct2.setProductType(ProductTypeConstants.CREDIT_CARD);
-                    productInformation.getActiveProduct().add(activeProduct2);
-                    break;
+            // Building HashMap with main details
+            HashMap<String, String> mainDetails = new HashMap<>();
+            mainDetails.put("CUSTOMER_TYPE", request.getCustomerType());
+            mainDetails.put("PRODUCT_TYPE", request.getProductType());
+            mainDetails.put("FAMILY", ProductTypeConstants.PASSIVE_PRODUCTS.contains(request.getProductType()) ? "PASSIVE" : "ACTIVE");
+            log.info("Main Details : {}", mainDetails);
+
+            // Search productInformationBy CustomerId
+            System.out.println("asdasd");
+            return productInformationRepository.findProductInformationByCustomerId(request.getCustomerId())
+                    .defaultIfEmpty(new ProductInformation())
+                    .flatMap(productInformation -> {
+
+                        if (!enabledToCreateProduct(productInformation, mainDetails)) {
+                            log.warn("Product creation not enabled for customerId: {}", request.getCustomerId());
+                            return Mono.error(new IllegalStateException("Product creation not enabled"));
+                        }
+
+                        // creating new product
+                        productManager.createNewProduct(request, productInformation);
+                        productInformation.setCustomerType(request.getCustomerType());
+                        productInformation.setAuditData(AuditDataUtil.create(request.getUserBank()));
+
+                        return productInformationRepository.save(productInformation);
+                    })
+                    .doOnNext(prod -> log.info("Product information processed: {}", JsonTransferUtil.objectToJson(prod)))
+                    .map(ProductInformation::getId)
+                    .doOnError(e -> log.error("Error creating product: {}", e.getMessage(), e));
+        });
+
+    }
+
+    private boolean enabledToCreateProduct(ProductInformation productInformation,
+                                           HashMap<String, String> mainDetails) {
+        boolean enabled = true;
+
+        if (mainDetails.get("CUSTOMER_TYPE").equalsIgnoreCase(ClientTypeConstants.PERSONAL)) {
+            assert productInformation != null;
+            boolean exists = productInformation.getActiveProduct()
+                    .stream()
+                    .anyMatch(activeProduct -> mainDetails.get("PRODUCT_TYPE")
+                            .equalsIgnoreCase(ProductTypeConstants.CREDIT_PERSONAL) && activeProduct.getProductType()
+                            .equals(ProductTypeConstants.CREDIT_PERSONAL));
+            if (exists) {
+                enabled = false;
             }
-            auditDataUtil.create(prq.getUserBank());
-            return productInformationRepository.save(productInformation);
 
-        }).map(ProductInformation::getId);
+        }
 
+        return enabled;
     }
 
     @Override

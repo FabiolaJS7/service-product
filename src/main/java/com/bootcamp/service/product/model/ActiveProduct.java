@@ -12,19 +12,11 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ActiveProduct {
+public class ActiveProduct extends Product {
 
-    private String id;
-    private String accountNumber;
     private boolean hasCreditCard;
     private double creditLimit = 3000.00;
     private double creditLimitUsed = 0.0;
     private double creditLimitEnabled = creditLimit- creditLimitUsed;
-    private String productType;
-    private String status = StatusProductConstants.ENABLED;
-    private List<PersonalInformationAdd> holders;
-    private List<PersonalInformationAdd> authorizedSignatories;
-    private AuditData auditData;
-
 
 }
