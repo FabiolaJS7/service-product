@@ -8,6 +8,18 @@ servers:
     description: local server
 paths:
   /api/products:
+    get:
+      summary: Getting products.
+      operationId: findAll
+      responses:
+        '200':
+          description: Success find all products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ProductResponse"
     post:
       summary: Create new product of bank.
       operationId: createProduct
@@ -25,6 +37,50 @@ paths:
             application/json:
               schema:
                 type: string
+  /api/products/{productId}:
+    put:
+      summary: Updated product
+      operationId: udpate
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Details to updated product.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateProductRequest"
+      responses:
+        '200':
+          description: Success updated
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          description: Product not found to updated
+
+    delete:
+      summary: delete product
+      operationId: delete
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful deleted
+        '404':
+          description: Product not found to delete
+
+
+
 components:
   schemas:
     ProductRequest:
@@ -174,4 +230,35 @@ components:
         email:
           type: string
         phone:
+          type: string
+
+    UpdateProductRequest:
+      type: object
+      properties:
+        id:
+          type:  string
+        accountNumber:
+          type: string
+        action:
+          type: string
+        productType:
+          type: string
+        holders:
+          type: array
+          description: List of holders associated with this product
+          items:
+            $ref: '#/components/schemas/PersonalInformationAddBean'
+        authorizedSignatories:
+          type: array
+          description: List of signatories authorized associated with this product
+          items:
+            $ref: '#/components/schemas/PersonalInformationAddBean'
+    DeleteProductRequest:
+      type: object
+      properties:
+        id:
+          type:  string
+        accountNumber:
+          type: string
+        action:
           type: string
