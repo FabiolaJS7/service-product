@@ -2,6 +2,7 @@ package com.bootcamp.service.product.service.impl;
 
 import com.bootcamp.service.product.constants.ClientTypeConstants;
 import com.bootcamp.service.product.constants.ProductTypeConstants;
+import com.bootcamp.service.product.mapper.ProductInformationMapper;
 import com.bootcamp.service.product.model.*;
 import com.bootcamp.service.product.repository.ProductInformationRepository;
 import com.bootcamp.service.product.service.ProductInformationService;
@@ -11,6 +12,7 @@ import com.bootcamp.service.product.util.JsonTransferUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.HashMap;
@@ -22,6 +24,7 @@ public class ProductInformationServiceImpl implements ProductInformationService 
 
     ProductInformationRepository productInformationRepository;
     ProductManager productManager;
+    ProductInformationMapper productInformationMapper;
 
     @Override
     public Mono<String> createProductInformation(Mono<ProductRequest> productRequest) {
@@ -80,7 +83,11 @@ public class ProductInformationServiceImpl implements ProductInformationService 
     }
 
     @Override
-    public Mono<ProductInformation> getProductInformation(String productId) {
-        return productInformationRepository.findById(productId);
+    public Flux<ProductResponse> getProducts() {
+        return productInformationRepository.findAll()
+                .doOnSubscribe(subscription -> log.info("Getting all products from the database"))
+                .map(productInformation -> productInformationMapper.getProductResponseOfProductInformation(productInformation))
+                .doOnComplete(() -> log.info("Completed fetching and mapping all customers"))
+                .doOnError(e -> log.error("Error occurred while getting customers: {}", e.getMessage(), e));
     }
 }

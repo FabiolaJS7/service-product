@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Component
@@ -25,6 +26,12 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
         return productInformationService.createProductInformation(productRequest)
                 .map(ResponseEntity::ok)
                 .onErrorResume(e -> Mono.just(ResponseEntity.status(404).build()));
+    }
+
+    @Override
+    public Mono<ResponseEntity<Flux<ProductResponse>>> findAll(ServerWebExchange exchange) {
+        log.info("-> Find All Products");
+        return Mono.just(ResponseEntity.ok(productInformationService.getProducts()));
     }
 
 

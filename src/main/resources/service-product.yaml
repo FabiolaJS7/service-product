@@ -120,28 +120,11 @@ components:
         customerId:
           type: string
           description: Customer Id
-        productType:
-          type: string
-          description: type of product
-        numberProduct:
-          type: string
-          description: numeration of  products
-        freeComission:
-          type: boolean
-          description: indicate if this product have comission or not
-        comission:
-          type: string
-          description: indicate comission amount fer movement
-        activeProducts:
+        Products:
           type: array
-          description: List of active products associated with this product
+          description: List of products associated with this product
           items:
-            $ref: "#/components/schemas/ActiveProductBean"
-        passiveProducts:
-          type: array
-          description: List of passive products associated with this product
-          items:
-            $ref: "#/components/schemas/PassiveProductBean"
+            $ref: "#/components/schemas/ProductBean"
 
 
 
@@ -261,4 +244,16 @@ components:
         accountNumber:
           type: string
         action:
+          type: string
+
+    ProductBean:
+      type: object
+      properties:
+        accountNumber:
+          type: string
+        productType:
+          type: string
+        status:
+          type: string
+        family:
           type: string
