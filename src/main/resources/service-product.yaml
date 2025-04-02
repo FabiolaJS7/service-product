@@ -38,6 +38,24 @@ paths:
               schema:
                 type: string
   /api/products/{productId}:
+    get:
+      summary: Updated product
+      operationId: getProduct
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProductResponse"
+        '404':
+          description: Product not found
     put:
       summary: Updated product
       operationId: udpate
@@ -78,8 +96,99 @@ paths:
           description: Successful deleted
         '404':
           description: Product not found to delete
+  /api/products/{productId}/holders:
+    get:
+      summary: Gettting holders by productId
+      operationId: getHolderByProductId
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/AdditionalPersonBean"
+        '404':
+          description: Product not found
+    put:
+      summary: Update holders by productId
+      operationId: updateHolderByProductId
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Details to updated product.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AdditionalPersonBean"
+      responses:
+        '200':
+          description: Success updated
+          content:
+            application/json:
+              schema:
+                type: boolean
+        '404':
+          description: Product not found to updated
 
-
+  /api/products/{productId}/auths:
+    get:
+      summary: Gettting holders by productId
+      operationId: getSignaturesAuthByProductId
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/AdditionalPersonBean"
+        '404':
+          description: Product not found
+    put:
+      summary: Update holders by productId
+      operationId: updateSignaturesAuthByProductId
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Details to updated product.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AdditionalPersonBean"
+      responses:
+        '200':
+          description: Success updated
+          content:
+            application/json:
+              schema:
+                type: boolean
+        '404':
+          description: Product not found to updated
 
 components:
   schemas:
@@ -100,45 +209,40 @@ components:
         userBank:
           type: string
           description: username of bank who is managmenting this product
-        holders:
-          type: array
-          description: List of holders
-          items:
-            $ref: '#/components/schemas/PersonalInformationAddBean'
-        authorizedSignatories:
-          type: array
-          description: List of signatures auth
-          items:
-            $ref: '#/components/schemas/PersonalInformationAddBean'
-
     ProductResponse:
       type: object
       properties:
         id:
           type: string
           description: unique ID
-        customerId:
-          type: string
-          description: Customer Id
-        Products:
-          type: array
-          description: List of products associated with this product
-          items:
-            $ref: "#/components/schemas/ProductBean"
-
-
-
-
-    ActiveProductBean:
-      type: object
-      properties:
-        id:
-          type:  string
-          description: active product's id
-        accountNumber:
+        productType:
           type: string
         status:
           type: string
+        family:
+          type: string
+        createdDate:
+          type: string
+          format: date-time
+        customer:
+          $ref: "#/components/schemas/CustomerBean"
+        activeProduct:
+          $ref: "#/components/schemas/ActiveProductBean"
+        passiveProduct:
+          $ref: "#/components/schemas/PassiveProductBean"
+        holders:
+          type: array
+          description: List of holders associated with this product
+          items:
+            $ref: '#/components/schemas/AdditionalPersonBean'
+        authorizedSignatories:
+          type: array
+          description: List of signatories authorized associated with this product
+          items:
+            $ref: '#/components/schemas/AdditionalPersonBean'
+    ActiveProductBean:
+      type: object
+      properties:
         hasCreditCard:
           type: boolean
         creditLimit:
@@ -150,71 +254,35 @@ components:
         creditLimitUsed:
           type: number
           format: double
-        productType:
-          type: string
         createdDate:
           type: string
           format: date-time
-        holders:
-          type: array
-          description: List of holders associated with this product
-          items:
-            $ref: '#/components/schemas/PersonalInformationAddBean'
-        authorizedSignatories:
-          type: array
-          description: List of signatories authorized associated with this product
-          items:
-            $ref: '#/components/schemas/PersonalInformationAddBean'
+
 
     PassiveProductBean:
       type: object
       properties:
-        id:
-          type:  string
-          description: active product's id
-        accountNumber:
-          type: string
-        status:
-          type: string
-        commissionMovement:
-          type: number
-          format: double
         isFreeCommission:
           type: boolean
-        maxMovementPerMonth:
-          type: integer
-          format: int64
-        productType:
+        amountOfOpen:
+          type: number
+          format: double
+        accountNumber:
           type: string
-        createdDate:
-          type: string
-          format: date-time
-        holders:
-          type: array
-          description: List of holders associated with this product
-          items:
-            $ref: '#/components/schemas/PersonalInformationAddBean'
-        authorizedSignatories:
-          type: array
-          description: List of signatories authorized associated with this product
-          items:
-            $ref: '#/components/schemas/PersonalInformationAddBean'
+        inforToTransaction:
+          $ref: "#/components/schemas/InfoTransactionBean"
 
-    PersonalInformationAddBean:
+    AdditionalPersonBean:
       type: object
       properties:
-        name:
-          type: string
-        lastName:
-          type: string
-        identification:
-          type: string
-        typeIdentification:
+        fullName:
           type: string
         email:
           type: string
         phone:
           type: string
+        identification:
+          $ref: "#/components/schemas/IdentificationBean"
 
     UpdateProductRequest:
       type: object
@@ -231,12 +299,12 @@ components:
           type: array
           description: List of holders associated with this product
           items:
-            $ref: '#/components/schemas/PersonalInformationAddBean'
+            $ref: '#/components/schemas/AdditionalPersonBean'
         authorizedSignatories:
           type: array
           description: List of signatories authorized associated with this product
           items:
-            $ref: '#/components/schemas/PersonalInformationAddBean'
+            $ref: '#/components/schemas/AdditionalPersonBean'
     DeleteProductRequest:
       type: object
       properties:
@@ -262,9 +330,37 @@ components:
           type: array
           description: List of holders associated with this product
           items:
-            $ref: '#/components/schemas/PersonalInformationAddBean'
+            $ref: '#/components/schemas/AdditionalPersonBean'
         authorizedSignatories:
           type: array
           description: List of signatories authorized associated with this product
           items:
-            $ref: '#/components/schemas/PersonalInformationAddBean'
+            $ref: '#/components/schemas/AdditionalPersonBean'
+
+    CustomerBean:
+      type: object
+      properties:
+        customerId:
+          type: string
+        customerType:
+          type: string
+    IdentificationBean:
+      type: object
+      properties:
+        typeIdentification:
+          type: string
+        numberIdentification:
+          type: string
+    InfoTransactionBean:
+      type: object
+      properties:
+        commission:
+          type: number
+          format: double
+        maxPerMonth:
+          type: string
+        transactionDone:
+          type: number
+          format: int64
+        enabledToMovement:
+          type: boolean
