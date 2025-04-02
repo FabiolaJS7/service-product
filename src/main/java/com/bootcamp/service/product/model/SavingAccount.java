@@ -9,11 +9,21 @@ import lombok.Setter;
 @Setter
 public class SavingAccount extends PassiveProduct {
 
-   public SavingAccount() {
-        this.setProductType(ProductTypeConstants.SAVING_ACCOUNT); // Establece el productType como "SA"
-        this.setFreeCommission(true);
-        this.setMaxMovementPerMonth(TypeMovementConstants.LIMIT_MAX_PER_MONTH_SAVING);
-        this.setCommissionMovement(0.00);
+
+    @Override
+    public String getProductType() {
+        return ProductTypeConstants.SAVING_ACCOUNT; //When create an instance of this clase, productType is filled
     }
 
+    @Override
+    public boolean isFreeCommission() {
+        return true;
+    }
+
+    @Override
+    public void setInfoTransaction(InfoTransaction infoTransaction) {
+        infoTransaction.setCommission(TypeMovementConstants.ZERO_COMMISSION_PER_MOVEMENT);
+        infoTransaction.setMaxPerMonth(TypeMovementConstants.LIMIT_MAX_PER_MONTH_SAVING);
+        super.setInfoTransaction(infoTransaction);
+    }
 }

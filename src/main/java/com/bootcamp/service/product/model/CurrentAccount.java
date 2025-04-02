@@ -2,12 +2,16 @@ package com.bootcamp.service.product.model;
 
 import com.bootcamp.service.product.constants.ProductTypeConstants;
 import com.bootcamp.service.product.constants.TypeMovementConstants;
+import lombok.Getter;
+import lombok.Setter;
 
-
+@Getter
+@Setter
 public class CurrentAccount extends PassiveProduct {
+
     @Override
     public String getProductType() {
-        return ProductTypeConstants.CURRENT_ACCOUNT;
+        return ProductTypeConstants.CURRENT_ACCOUNT; //When create an instance of this clase, productType is filled
     }
 
     @Override
@@ -16,12 +20,10 @@ public class CurrentAccount extends PassiveProduct {
     }
 
     @Override
-    public String getMaxMovementPerMonth() {
-        return TypeMovementConstants.FREE_MOVEMENT;
+    public void setInfoTransaction(InfoTransaction infoTransaction) {
+        infoTransaction.setCommission(TypeMovementConstants.COMMISSION_PER_MOVEMENT);
+        infoTransaction.setMaxPerMonth(TypeMovementConstants.FREE_MOVEMENT);
+        super.setInfoTransaction(infoTransaction);
     }
 
-    @Override
-    public double getCommissionMovement() {
-        return 10.00;
-    }
 }
