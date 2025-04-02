@@ -99,18 +99,7 @@ public class ProductInformationServiceImpl implements ProductInformationService 
                 .flatMap(productInformation ->
                     updateProductRequestMono
                             .flatMap(updateProductRequest -> {
-                                productInformation.getActiveProduct().forEach(product -> {
-                                    if (product.getAccountNumber().equalsIgnoreCase(updateProductRequest.getAccountNumber())) {
-                                        product.setStatus(updateProductRequest.getAction());
 
-                                    }
-                                });
-
-                                productInformation.getPassiveProduct().forEach(product -> {
-                                    if (product.getAccountNumber().equalsIgnoreCase(updateProductRequest.getAccountNumber())) {
-                                        product.setStatus(updateProductRequest.getAction());
-                                    }
-                                });
 
                                 return productInformationRepository.save(productInformation);
                             })

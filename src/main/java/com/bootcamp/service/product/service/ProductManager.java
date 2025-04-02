@@ -5,7 +5,6 @@ import com.bootcamp.service.product.model.*;
 import com.bootcamp.service.product.util.AuditDataUtil;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
 import java.util.UUID;
 
 @Component
@@ -64,24 +63,24 @@ public class ProductManager {
         product.getHolders().addAll(prq.getHolders()
                 .stream()
                 .map(holder -> {
-                    PersonalInformationAdd personalInformationAdd = new PersonalInformationAdd();
-                    personalInformationAdd.setName(holder.getName());
-                    personalInformationAdd.setEmail(holder.getEmail());
-                    personalInformationAdd.setLastName(holder.getLastName());
-                    personalInformationAdd.setPhone(holder.getPhone());
-                    return personalInformationAdd;
+                    AdditionalPerson additionalPerson = new AdditionalPerson();
+                    additionalPerson.setFullName(holder.getName());
+                    additionalPerson.setEmail(holder.getEmail());
+                    additionalPerson.setLastName(holder.getLastName());
+                    additionalPerson.setPhone(holder.getPhone());
+                    return additionalPerson;
                 })
                 .toList());
 
         product.getAuthorizedSignatories().addAll(prq.getAuthorizedSignatories()
                 .stream()
                 .map(signatureAuth -> {
-                    PersonalInformationAdd personalInformationAdd = new PersonalInformationAdd();
-                    personalInformationAdd.setName(signatureAuth.getName());
-                    personalInformationAdd.setEmail(signatureAuth.getEmail());
-                    personalInformationAdd.setLastName(signatureAuth.getLastName());
-                    personalInformationAdd.setPhone(signatureAuth.getPhone());
-                    return personalInformationAdd;
+                    AdditionalPerson additionalPerson = new AdditionalPerson();
+                    additionalPerson.setFullName(signatureAuth.getName());
+                    additionalPerson.setEmail(signatureAuth.getEmail());
+                    additionalPerson.setLastName(signatureAuth.getLastName());
+                    additionalPerson.setPhone(signatureAuth.getPhone());
+                    return additionalPerson;
                 })
                 .toList());
 

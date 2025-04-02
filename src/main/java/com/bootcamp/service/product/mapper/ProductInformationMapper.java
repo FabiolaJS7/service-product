@@ -17,7 +17,6 @@ public class ProductInformationMapper {
         List<ProductBean> productBeanList = new ArrayList<>();
         productInformation.getActiveProduct().forEach(activeProduct -> {
             ProductBean productBean = new ProductBean();
-            productBean.setAccountNumber(activeProduct.getAccountNumber());
             productBean.setProductType(activeProduct.getProductType());
             productBean.setStatus(activeProduct.getStatus());
             productBean.setFamily("ACTIVE PRODUCT");
@@ -28,7 +27,6 @@ public class ProductInformationMapper {
 
         productInformation.getPassiveProduct().forEach(passiveProduct -> {
             ProductBean productBean = new ProductBean();
-            productBean.setAccountNumber(passiveProduct.getAccountNumber());
             productBean.setProductType(passiveProduct.getProductType());
             productBean.setStatus(passiveProduct.getStatus());
             productBean.setFamily("PASSIVE PRODUCT");
@@ -41,12 +39,11 @@ public class ProductInformationMapper {
         return productResponse;
     }
 
-    private List<PersonalInformationAddBean> getPersonalInformationAddBean(List<PersonalInformationAdd> holders) {
+    private List<PersonalInformationAddBean> getPersonalInformationAddBean(List<AdditionalPerson> holders) {
         List<PersonalInformationAddBean> addAsHolder = new ArrayList<>();
         holders.forEach(holder -> {
             PersonalInformationAddBean personalInformationAddBean = new PersonalInformationAddBean();
-            personalInformationAddBean.setName(holder.getName());
-            personalInformationAddBean.setLastName(holder.getLastName());
+            personalInformationAddBean.setName(holder.getFullName());
             personalInformationAddBean.setIdentification(holder.getIdentification());
             personalInformationAddBean.setTypeIdentification(holder.getTypeIdentification());
             personalInformationAddBean.setEmail(holder.getEmail());

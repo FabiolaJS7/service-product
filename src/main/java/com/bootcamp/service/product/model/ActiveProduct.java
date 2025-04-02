@@ -17,6 +17,11 @@ public class ActiveProduct extends Product {
     private boolean hasCreditCard;
     private double creditLimit = 3000.00;
     private double creditLimitUsed = 0.0;
-    private double creditLimitEnabled = creditLimit- creditLimitUsed;
+    private CreditCard creditCard;
+
+    public double getCreditLimitEnabled() {
+        return creditLimit - creditLimitUsed;
+    }
+
 
 }

@@ -12,9 +12,13 @@ import lombok.Setter;
 @NoArgsConstructor
 public abstract class PassiveProduct extends Product {
 
-    private double commissionMovement;
     private boolean isFreeCommission;
-    private String maxMovementPerMonth;
+    private double amountOfOpen;
+    private String accountNumber;
+    private InfoTransaction infoTransaction;
+    private Balance balance;
+
+
 
 
 

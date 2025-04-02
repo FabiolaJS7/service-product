@@ -9,13 +9,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PersonalInformationAdd {
+public class AdditionalPerson {
 
-    private String name;
-    private String lastName;
-    private String identification;
-    private String typeIdentification;
+    private String fullName;
     private String email;
     private String phone;
+    private Identification identification;
+    private AuditData auditData;
 
 }
