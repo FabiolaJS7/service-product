@@ -21,7 +21,7 @@ public class CurrentAccount extends PassiveProduct {
 
     @Override
     public void setInfoTransaction(InfoTransaction infoTransaction) {
-        infoTransaction.setCommission(TypeMovementConstants.COMMISSION_PER_MOVEMENT);
+        infoTransaction.setCommission(TypeMovementConstants.AMOUNT_COMMISSION_PER_MOVEMENT);
         infoTransaction.setMaxPerMonth(TypeMovementConstants.FREE_MOVEMENT);
         super.setInfoTransaction(infoTransaction);
     }
