@@ -311,7 +311,6 @@ components:
         maxPerMonth:
           type: string
         transactionDone:
-          type: number
-          format: int64
+          type: string
         enabledToMovement:
           type: boolean

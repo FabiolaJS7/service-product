@@ -28,8 +28,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Mono<String> createProduct(Mono<ProductRequest> productRequest) {
-        return productRequest.flatMap(prq -> productRepository.save(productTransfer.getProductOfProductRequest(prq)))
-                .doOnNext(product -> log.info(JsonTransferUtil.objectToJson(product)))
+        return productRequest.flatMap(prq -> {
+                    log.info("Product creating {}", JsonTransferUtil.objectToJson(prq));
+                    return productRepository.save(productTransfer.getProductOfProductRequest(prq));
+                })
+                .doOnNext(product -> log.info("Product saved {}", JsonTransferUtil.objectToJson(product)))
                 .map(Product::getId)
                 .doOnError(e -> log.error("Error creating product: {}", e.getMessage(), e));
 

@@ -1,11 +1,15 @@
 package com.bootcamp.service.product.service;
 
 import com.bootcamp.service.product.model.*;
+import com.bootcamp.service.product.repository.ProductRepository;
 import com.bootcamp.service.product.util.AuditDataUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.ResponseEntity;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
@@ -22,11 +26,30 @@ class ProductServiceTest {
     @Autowired
     ProductService productService;
 
+    @Mock
+    ProductRepository productRepository;
+
     @Test
-    void testCreateProductInformation() {
+    void shouldCreateProduct_whenProductRequestIsActive() {
 
         //Arrange
         ProductRequest productRequest = this.getProductRequestActive();
+
+        //Act
+        Mono<String> productId = productService.createProduct(Mono.just(productRequest));
+
+        // Assert
+        StepVerifier.create(productId)
+                .expectNextMatches(s -> !s.isEmpty())
+                .verifyComplete();
+
+    }
+
+    @Test
+    void shouldCreateProduct_whenProductRequestIsPassive() {
+
+        //Arrange
+        ProductRequest productRequest = this.getProductRequestPassive();
 
         //Act
         Mono<String> productId = productService.createProduct(Mono.just(productRequest));
@@ -68,6 +91,56 @@ class ProductServiceTest {
 
         productRequest.setAuthorizedSignatories(additionalPersonBeans);
         productRequest.setUserBank("mo.garcia");
+        return productRequest;
+    }
+
+    public ProductRequest getProductRequestPassive() {
+
+        ProductRequest productRequest = new ProductRequest();
+        productRequest.setProductType("SA");
+        productRequest.setFamilyProduct("PASSIVE");
+
+        CustomerBean customer = new CustomerBean();
+        customer.setCustomerId("45676566");
+        customer.setCustomerType("DNI");
+        productRequest.setCustomer(customer);
+
+        PassiveProductBean passiveProductBean = new PassiveProductBean();
+        passiveProductBean.setIsFreeCommission(true);
+        passiveProductBean.setAmountOfOpen(100.00);
+        passiveProductBean.setAccountNumber("XXXXXXXX");
+
+        InfoTransactionBean infoTransactionBean = new InfoTransactionBean();
+        infoTransactionBean.setCommission(15.00);
+        infoTransactionBean.setMaxPerMonth("10");
+        infoTransactionBean.setTransactionDone("0");
+        infoTransactionBean.setEnabledToMovement(true);
+        passiveProductBean.setInforToTransaction(infoTransactionBean);
+        productRequest.setPassiveProduct(passiveProductBean);
+
+        List<AdditionalPersonBean> additionalPersonBeans = new ArrayList<>();
+        AdditionalPersonBean additionalPersonBean = new AdditionalPersonBean();
+        additionalPersonBean.setFullName("John Doe");
+        additionalPersonBean.setEmail("john.doe@gmail.com");
+        additionalPersonBean.setPhone("123456789");
+        IdentificationBean identificationBean = new IdentificationBean();
+        identificationBean.setNumberIdentification("2123232");
+        identificationBean.setTypeIdentification("DNI");
+        additionalPersonBean.setIdentification(identificationBean);
+        additionalPersonBeans.add(additionalPersonBean);
+        productRequest.setHolders(additionalPersonBeans);
+
+        productRequest.setAuthorizedSignatories(additionalPersonBeans);
+        productRequest.setUserBank("mo.garcia");
+        return productRequest;
+    }
+
+    public ProductRequest getProductRequestIncomplete() {
+
+        ProductRequest productRequest = new ProductRequest();
+        productRequest.setProductType("SA");
+        productRequest.setFamilyProduct("ACTIVE");
+
         return productRequest;
     }
 }
