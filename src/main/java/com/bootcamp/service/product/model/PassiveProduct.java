@@ -10,8 +10,9 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public abstract class PassiveProduct extends Product {
+public class PassiveProduct {
 
+    private String productType;
     private boolean isFreeCommission;
     private double amountOfOpen;
     private String accountNumber;

@@ -12,8 +12,9 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ActiveProduct extends Product {
+public class ActiveProduct {
 
+    private String productType;
     private boolean hasCreditCard;
     private double creditLimit = 3000.00;
     private double creditLimitUsed = 0.0;

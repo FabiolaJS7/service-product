@@ -4,7 +4,7 @@ import com.bootcamp.service.product.api.ApiApiDelegate;
 import com.bootcamp.service.product.model.ProductRequest;
 import com.bootcamp.service.product.model.ProductResponse;
 import com.bootcamp.service.product.model.UpdateProductRequest;
-import com.bootcamp.service.product.service.ProductInformationService;
+import com.bootcamp.service.product.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,18 +18,18 @@ import reactor.core.publisher.Mono;
 public class ServiceProductDelegateImpl implements ApiApiDelegate {
 
     @Autowired
-    ProductInformationService productInformationService;
+    ProductService productService;
 
     @Override
     public Mono<ResponseEntity<String>> createProduct(Mono<ProductRequest> productRequest,
-                                                       ServerWebExchange exchange) {
+                                                      ServerWebExchange exchange) {
         log.info("-> Create Product");
-        return productInformationService.createProductInformation(productRequest)
+        return productService.createProductInformation(productRequest)
                 .map(ResponseEntity::ok)
                 .onErrorResume(e -> Mono.just(ResponseEntity.status(404).build()));
     }
 
-    @Override
+   /*** @Override
     public Mono<ResponseEntity<Flux<ProductResponse>>> findAll(ServerWebExchange exchange) {
         log.info("-> Find All Products");
         return Mono.just(ResponseEntity.ok(productInformationService.getProducts()));
@@ -38,8 +38,8 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
 
     @Override
     public Mono<ResponseEntity<String>> udpate(String productId,
-                                                Mono<UpdateProductRequest> updateProductRequest,
-                                                ServerWebExchange exchange) {
+                                               Mono<UpdateProductRequest> updateProductRequest,
+                                               ServerWebExchange exchange) {
         log.info("-> Udpate Product");
         return productInformationService.updateProduct(productId, updateProductRequest)
                 .flatMap(aBoolean -> {
@@ -70,7 +70,7 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
                 });
     }
 
-
+***/
 
 
 }

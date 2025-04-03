@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,13 +15,14 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Document(collection = "products")
 public class Product {
 
     @Id
     private String id;
-    private String productType;
     private String status = StatusProductConstants.ENABLED;
     private Customer customer;
+    private DetailsProduct detailsProduct;
     private List<AdditionalPerson> holders = new ArrayList<>();
     private List<AdditionalPerson> authorizedSignatories = new ArrayList<>();
     private AuditData auditData;

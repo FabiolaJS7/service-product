@@ -9,21 +9,10 @@ import lombok.Setter;
 @Setter
 public class CurrentAccount extends PassiveProduct {
 
-    @Override
-    public String getProductType() {
-        return ProductTypeConstants.CURRENT_ACCOUNT; //When create an instance of this clase, productType is filled
+    public CurrentAccount() {
+        this.setProductType(ProductTypeConstants.CURRENT_ACCOUNT); // Inicializa el atributo productType
+        this.setFreeCommission(false);
     }
 
-    @Override
-    public boolean isFreeCommission() {
-        return false;
-    }
-
-    @Override
-    public void setInfoTransaction(InfoTransaction infoTransaction) {
-        infoTransaction.setCommission(TypeMovementConstants.AMOUNT_COMMISSION_PER_MOVEMENT);
-        infoTransaction.setMaxPerMonth(TypeMovementConstants.FREE_MOVEMENT);
-        super.setInfoTransaction(infoTransaction);
-    }
 
 }

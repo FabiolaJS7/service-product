@@ -6,9 +6,11 @@ import com.bootcamp.service.product.model.PassiveProduct;
 import com.bootcamp.service.product.model.ProductInformation;
 import com.bootcamp.service.product.model.ProductRequest;
 import com.bootcamp.service.product.model.SavingAccount;
+import com.bootcamp.service.product.util.JsonTransferUtil;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import springfox.documentation.spring.web.json.Json;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,13 +32,19 @@ class ServiceProductInformationApplicationTests {
 				savingAccount.setAccountNumber("12345");
 				List<PassiveProduct> listPassiveProduct = new ArrayList<>();
 				listPassiveProduct.add(savingAccount);
-				productInformation.setPassiveProduct(listPassiveProduct);
 				System.out.println("probemos");
 				break;
 			default:
 				System.out.println("asdas");
 				break;
 		}
+	}
+
+	@Test
+	void shouldCreatePassiveAccount() {
+		SavingAccount savingAccount = new SavingAccount();
+
+		System.out.println(JsonTransferUtil.objectToJson(savingAccount));
 	}
 
 
