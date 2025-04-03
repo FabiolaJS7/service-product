@@ -1,0 +1,268 @@
+[{
+  "id": "67ee35d8056fb46ad98338e9",
+  "status": "ENABLED",
+  "customer": {
+    "customerId": "45676566",
+    "customerType": "DNI"
+  },
+  "detailsProduct": {
+    "familyProduct": "ACTIVE",
+    "activeProduct": {
+      "productType": "SA",
+      "hasCreditCard": true,
+      "creditLimit": 30000,
+      "creditLimitUsed": 0,
+      "creditCard": {
+        "number": "XXXX-XXXX-XXXXXX",
+        "expirationDate": "2025-04-03T07:16:39.238Z",
+
+        "auditData": {
+          "createdAt": "2025-04-03T07:16:39.238Z",
+
+          "updatedAt": "2025-04-03T07:16:39.238Z",
+
+          "createdBy": "admin"
+        }
+      }
+    }
+  },
+  "holders": [
+    {
+      "fullName": "John Doe",
+      "email": "john.doe@gmail.com",
+      "phone": "123456789",
+      "identification": {
+        "typeIdentification": "DNI",
+        "numberIdentification": "2123232"
+      }
+    }
+  ],
+  "authorizedSignatories": [
+    {
+      "fullName": "John Doe",
+      "email": "john.doe@gmail.com",
+      "phone": "123456789",
+      "identification": {
+        "typeIdentification": "DNI",
+        "numberIdentification": "2123232"
+      }
+    }
+  ],
+  "auditData": {
+    "createdAt": "2025-04-03T07:16:40.087Z",
+    "updatedAt": "2025-04-03T07:16:40.087Z",
+    "createdBy": "mo.garcia"
+  },
+  "_class": "com.bootcamp.service.product.model.Product"
+},
+  {
+    "id": "67ee3d42d0921d048136a897",
+    "status": "ENABLED",
+    "customer": {
+      "customerId": "45676566",
+      "customerType": "DNI"
+    },
+    "detailsProduct": {
+      "familyProduct": "ACTIVE",
+      "activeProduct": {
+        "productType": "SA",
+        "hasCreditCard": true,
+        "creditLimit": 30000,
+        "creditLimitUsed": 0,
+        "creditCard": {
+          "number": "XXXX-XXXX-XXXXXX",
+          "expirationDate": "2025-04-03T07:48:18.015Z",
+
+          "auditData": {
+            "createdAt": "2025-04-03T07:48:18.015Z",
+            "updatedAt": "2025-04-03T07:48:18.015Z",
+            "createdBy": "admin"
+          }
+        }
+      }
+    },
+    "holders": [
+      {
+        "fullName": "John Doe",
+        "email": "john.doe@gmail.com",
+        "phone": "123456789",
+        "identification": {
+          "typeIdentification": "DNI",
+          "numberIdentification": "2123232"
+        }
+      }
+    ],
+    "authorizedSignatories": [
+      {
+        "fullName": "John Doe",
+        "email": "john.doe@gmail.com",
+        "phone": "123456789",
+        "identification": {
+          "typeIdentification": "DNI",
+          "numberIdentification": "2123232"
+        }
+      }
+    ],
+    "auditData": {
+      "createdAt": "2025-04-03T07:48:18.020Z",
+      "updatedAt": "2025-04-03T07:48:18.020Z",
+      "createdBy": "mo.garcia"
+    },
+    "_class": "com.bootcamp.service.product.model.Product"
+  },
+  {
+    "id": "67ee3f92aed02616ca400cec",
+    "status": "ENABLED",
+    "customer": {
+      "customerId": "45676566",
+      "customerType": "DNI"
+    },
+    "detailsProduct": {
+      "familyProduct": "PASSIVE",
+      "passiveProduct": {
+        "productType": "SA",
+        "isFreeCommission": true,
+        "amountOfOpen": 100,
+        "accountNumber": "XXXXXXXX",
+        "balance": {
+          "totalAmount": 100
+        },
+        "commission": 15,
+        "maxMovementPerMonth": "10",
+        "transactionDone": 0,
+        "enabledToMovement": true
+      }
+    },
+    "holders": [
+      {
+        "fullName": "John Doe",
+        "email": "john.doe@gmail.com",
+        "phone": "123456789",
+        "identification": {
+          "typeIdentification": "DNI",
+          "numberIdentification": "2123232"
+        }
+      }
+    ],
+    "authorizedSignatories": [
+      {
+        "fullName": "John Doe",
+        "email": "john.doe@gmail.com",
+        "phone": "123456789",
+        "identification": {
+          "typeIdentification": "DNI",
+          "numberIdentification": "2123232"
+        }
+      }
+    ],
+    "auditData": {
+      "createdAt": "2025-04-03T07:58:09.978Z",
+      "updatedAt": "2025-04-03T07:58:09.978Z",
+      "createdBy": "mo.garcia"
+    },
+    "_class": "com.bootcamp.service.product.model.Product"
+  },
+  {
+    "id": "67ee40b91699ac0aad1b0e06",
+    "status": "ENABLED",
+    "customer": {
+      "customerId": "45676566",
+      "customerType": "DNI"
+    },
+    "detailsProduct": {
+      "familyProduct": "PASSIVE",
+      "passiveProduct": {
+        "productType": "SA",
+        "isFreeCommission": true,
+        "amountOfOpen": 100,
+        "accountNumber": "XXXXXXXX",
+        "balance": {
+          "totalAmount": 100
+        },
+        "commission": 15,
+        "maxMovementPerMonth": "10",
+        "transactionDone": 0,
+        "enabledToMovement": true
+      }
+    },
+    "holders": [
+      {
+        "fullName": "John Doe",
+        "email": "john.doe@gmail.com",
+        "phone": "123456789",
+        "identification": {
+          "typeIdentification": "DNI",
+          "numberIdentification": "2123232"
+        }
+      }
+    ],
+    "authorizedSignatories": [
+      {
+        "fullName": "John Doe",
+        "email": "john.doe@gmail.com",
+        "phone": "123456789",
+        "identification": {
+          "typeIdentification": "DNI",
+          "numberIdentification": "2123232"
+        }
+      }
+    ],
+    "auditData": {
+      "createdAt": "2025-04-03T08:03:05.010Z",
+      "updatedAt": "2025-04-03T08:03:05.010Z",
+      "createdBy": "mo.garcia"
+    },
+    "_class": "com.bootcamp.service.product.model.Product"
+  },
+  {
+    "id": "67ee40d6bcda9b43257d15d5",
+    "status": "ENABLED",
+    "customer": {
+      "customerId": "45676566",
+      "customerType": "DNI"
+    },
+    "detailsProduct": {
+      "familyProduct": "PASSIVE",
+      "passiveProduct": {
+        "productType": "SA",
+        "isFreeCommission": true,
+        "amountOfOpen": 100,
+        "accountNumber": "XXXXXXXX",
+        "balance": {
+          "totalAmount": 100
+        },
+        "commission": 15,
+        "maxMovementPerMonth": "10",
+        "transactionDone": 0,
+        "enabledToMovement": true
+      }
+    },
+    "holders": [
+      {
+        "fullName": "John Doe",
+        "email": "john.doe@gmail.com",
+        "phone": "123456789",
+        "identification": {
+          "typeIdentification": "DNI",
+          "numberIdentification": "2123232"
+        }
+      }
+    ],
+    "authorizedSignatories": [
+      {
+        "fullName": "John Doe",
+        "email": "john.doe@gmail.com",
+        "phone": "123456789",
+        "identification": {
+          "typeIdentification": "DNI",
+          "numberIdentification": "2123232"
+        }
+      }
+    ],
+    "auditData": {
+      "createdAt": "2025-04-03T08:03:34.753Z",
+      "updatedAt": "2025-04-03T08:03:34.753Z",
+      "createdBy": "mo.garcia"
+    },
+    "_class": "com.bootcamp.service.product.model.Product"
+  }]

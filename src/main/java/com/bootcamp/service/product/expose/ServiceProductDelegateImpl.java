@@ -28,12 +28,13 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
                 .onErrorResume(e -> Mono.just(ResponseEntity.status(404).build()));
     }
 
-   /*** @Override
+    @Override
     public Mono<ResponseEntity<Flux<ProductResponse>>> findAll(ServerWebExchange exchange) {
         log.info("-> Find All Products");
-        return Mono.just(ResponseEntity.ok(productInformationService.getProducts()));
+        return Mono.just(ResponseEntity.ok(productService.findAllProducts()));
     }
 
+   /*** @Override
 
     @Override
     public Mono<ResponseEntity<String>> udpate(String productId,

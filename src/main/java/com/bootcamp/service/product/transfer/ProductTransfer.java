@@ -40,6 +40,74 @@ public class ProductTransfer {
         return product;
     }
 
+    public ProductResponse getProductResponseOfProduct(Product product) {
+        if (product == null) {
+            throw new IllegalArgumentException("Product cannot be null");
+        }
+        ProductResponse productResponse = new ProductResponse();
+        productResponse.setId(product.getId());
+        productResponse.setFamily(product.getDetailsProduct().getFamilyProduct());
+
+        CustomerBean customerBean = new CustomerBean();
+        customerBean.setCustomerId(product.getCustomer().getCustomerId());
+        customerBean.setCustomerType(product.getCustomer().getCustomerType());
+        productResponse.setCustomer(customerBean);
+
+        DetailsProduct detailsProduct = product.getDetailsProduct();
+
+        if (productResponse.getFamily().equals("ACTIVE")) {
+            ActiveProduct activeProduct = detailsProduct.getActiveProduct();
+
+            ActiveProductBean activeProductBean = new ActiveProductBean();
+            activeProductBean.setHasCreditCard(activeProduct.isHasCreditCard());
+            activeProductBean.setCreditLimit(activeProduct.getCreditLimit());
+            activeProductBean.setCreditLimitUsed(activeProduct.getCreditLimitUsed());
+            productResponse.setActiveProduct(activeProductBean);
+        } else {
+            PassiveProduct passiveProduct = detailsProduct.getPassiveProduct();
+
+            PassiveProductBean passiveProductBean = new PassiveProductBean();
+            passiveProductBean.isFreeCommission(passiveProduct.isFreeCommission());
+            passiveProductBean.setAmountOfOpen(passiveProduct.getAmountOfOpen());
+            passiveProductBean.setAccountNumber(passiveProduct.getAccountNumber());
+
+            InfoTransactionBean infoTransactionBean = new InfoTransactionBean();
+            infoTransactionBean.setCommission(passiveProduct.getCommission());
+            infoTransactionBean.setMaxPerMonth(passiveProduct.getMaxMovementPerMonth());
+            infoTransactionBean.setTransactionDone(String.valueOf(passiveProduct.getTransactionDone()));
+            infoTransactionBean.setEnabledToMovement(passiveProduct.isEnabledToMovement());
+            passiveProductBean.setInforToTransaction(infoTransactionBean);
+
+            productResponse.setPassiveProduct(passiveProductBean);
+        }
+
+        productResponse.setHolders(product.getHolders().stream().map(additionalPerson -> {
+            AdditionalPersonBean additionalPersonBean = new AdditionalPersonBean();
+            additionalPersonBean.setFullName(additionalPerson.getFullName());
+            additionalPersonBean.setPhone(additionalPerson.getPhone());
+            additionalPersonBean.setEmail(additionalPerson.getEmail());
+            IdentificationBean identificationBean = new IdentificationBean();
+            identificationBean.setTypeIdentification(additionalPerson.getIdentification().getTypeIdentification());
+            identificationBean.setNumberIdentification(additionalPerson.getIdentification().getNumberIdentification());
+            additionalPersonBean.setIdentification(identificationBean);
+            return additionalPersonBean;
+        }).toList());
+
+        productResponse.setAuthorizedSignatories(product.getAuthorizedSignatories().stream().map(additionalPerson -> {
+            AdditionalPersonBean additionalPersonBean = new AdditionalPersonBean();
+            additionalPersonBean.setFullName(additionalPerson.getFullName());
+            additionalPersonBean.setPhone(additionalPerson.getPhone());
+            additionalPersonBean.setEmail(additionalPerson.getEmail());
+            IdentificationBean identificationBean = new IdentificationBean();
+            identificationBean.setTypeIdentification(additionalPerson.getIdentification().getTypeIdentification());
+            identificationBean.setNumberIdentification(additionalPerson.getIdentification().getNumberIdentification());
+            additionalPersonBean.setIdentification(identificationBean);
+            return additionalPersonBean;
+        }).toList());
+
+        return productResponse;
+    }
+
     private List<AdditionalPerson> getAdditionalPerson(@Valid List<AdditionalPersonBean> additionalPersons) {
         return additionalPersons
                 .stream()
@@ -97,4 +165,6 @@ public class ProductTransfer {
         customer.setCustomerId(customerBean.getCustomerId());
         return customer;
     }
+
+
 }

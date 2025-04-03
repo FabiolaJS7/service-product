@@ -1,6 +1,7 @@
 package com.bootcamp.service.product.service.impl;
 
 
+import com.bootcamp.service.product.model.ProductResponse;
 import com.bootcamp.service.product.transfer.ProductTransfer;
 import com.bootcamp.service.product.model.Product;
 import com.bootcamp.service.product.model.ProductRequest;
@@ -12,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 
@@ -21,8 +23,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Autowired
     ProductRepository productRepository;
-    @Autowired
-    BusinessManager businessManager;
     @Autowired
     ProductTransfer productTransfer;
 
@@ -36,5 +36,14 @@ public class ProductServiceImpl implements ProductService {
                 .map(Product::getId)
                 .doOnError(e -> log.error("Error creating product: {}", e.getMessage(), e));
 
+    }
+
+    @Override
+    public Flux<ProductResponse> findAllProducts() {
+        return productRepository.findAll()
+                .doOnSubscribe(subscription -> log.info("Products found"))
+                .map(product -> productTransfer.getProductResponseOfProduct(product))
+                .doOnComplete(() -> log.info("Products found"))
+                .doOnError(e -> log.error("Error fetching products: {}", e.getMessage(), e));
     }
 }
