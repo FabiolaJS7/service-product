@@ -20,9 +20,4 @@ public class ActiveProduct {
     private double creditLimitUsed = 0.0;
     private CreditCard creditCard;
 
-    public double getCreditLimitEnabled() {
-        return creditLimit - creditLimitUsed;
-    }
-
-
 }

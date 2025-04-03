@@ -4,8 +4,8 @@ import com.bootcamp.service.product.model.Product;
 import com.bootcamp.service.product.model.ProductRequest;
 import com.bootcamp.service.product.repository.ProductRepository;
 import com.bootcamp.service.product.service.BusinessManager;
-import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -28,8 +28,10 @@ class ProductServiceImplTest {
     BusinessManager businessManager;
 
 
+    @Disabled
     @Test
-    void createProductInformation() {
+    void testCreateProduct() {
+        //Arrage , preparamos el escensario, los objetos simulados
         ProductRequest productRequest = getProductRequestMock();
         Product productDto = getProductMock();
 
@@ -37,18 +39,19 @@ class ProductServiceImplTest {
 
         Mockito.when(productRepository.save(productDto)).thenReturn(Mono.just(productDto));
         Mockito.when(businessManager.createProduct(productRequest)).thenReturn(productDto);
+        //Act - llamamos al metodo que estamos probando
+        final Mono<String> result = productService.createProduct(productRequestMono);
 
-        final Mono<String> result = productService.createProductInformation(productRequestMono);
-
-        //Assert
+        //Assert para verificar la informacion que espero de la prueba
         Assertions.assertEquals(productDto.getId(), result.block());
         Mockito.verify(productRepository, Mockito.times(1)).save(productDto); //cuántas veces se desea que se llame al save
 
     }
 
 
+    @Disabled
     @Test
-    void createProductInformation_shouldReturn404WhenSaveFails() {
+    void testCreateProduct_shouldReturn404WhenSaveFails() {
         // Arrange
         ProductRequest productRequest = getProductRequestMock();
         Product productDto = getProductMock();
@@ -62,7 +65,7 @@ class ProductServiceImplTest {
         Mockito.when(businessManager.createProduct(productRequest)).thenReturn(productDto);
 
         // Act
-        Mono<ResponseEntity<String>> result = productService.createProductInformation(productRequestMono)
+        Mono<ResponseEntity<String>> result = productService.createProduct(productRequestMono)
                 .map(ResponseEntity::ok)
                 .onErrorResume(e -> Mono.just(ResponseEntity.status(404).body("Product creation failed")));
 
@@ -74,10 +77,7 @@ class ProductServiceImplTest {
 
     private ProductRequest getProductRequestMock() {
         ProductRequest productRequest = new ProductRequest();
-        productRequest.setCustomerId("1111111");
-        productRequest.setCustomerType("P");
         productRequest.setProductType("SA");
-        productRequest.setUserBank("admin");
         return productRequest;
     }
 

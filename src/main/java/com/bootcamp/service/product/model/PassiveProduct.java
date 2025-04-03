@@ -16,8 +16,11 @@ public class PassiveProduct {
     private boolean isFreeCommission;
     private double amountOfOpen;
     private String accountNumber;
-    private InfoTransaction infoTransaction;
     private Balance balance;
+    private double commission;
+    private String maxMovementPerMonth;
+    private int transactionDone = 0;
+    private boolean enabledToMovement = true;
 
 
 

@@ -12,6 +12,8 @@ public class CurrentAccount extends PassiveProduct {
     public CurrentAccount() {
         this.setProductType(ProductTypeConstants.CURRENT_ACCOUNT); // Inicializa el atributo productType
         this.setFreeCommission(false);
+        this.setCommission(TypeMovementConstants.AMOUNT_COMMISSION_PER_MOVEMENT);
+        this.setMaxMovementPerMonth(TypeMovementConstants.FREE_MOVEMENT);
     }
 
 

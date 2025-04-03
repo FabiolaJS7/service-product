@@ -11,8 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class DetailsProduct {
 
-
-    private String family;
+    private String familyProduct;
     private PassiveProduct passiveProduct;
     private ActiveProduct activeProduct;
 }

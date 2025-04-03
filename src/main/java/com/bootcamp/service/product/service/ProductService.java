@@ -5,7 +5,7 @@ import reactor.core.publisher.Mono;
 
 public interface ProductService {
 
-    Mono<String> createProductInformation(Mono<ProductRequest> productRequest);
+    Mono<String> createProduct(Mono<ProductRequest> productRequest);
 
 
 }

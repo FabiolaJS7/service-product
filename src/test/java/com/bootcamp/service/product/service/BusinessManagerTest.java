@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class BusinessManagerTest {
@@ -18,10 +17,7 @@ class BusinessManagerTest {
     @Test
     void createProduct() {
         ProductRequest productRequest = new ProductRequest();
-        productRequest.setCustomerId("11111111");
-        productRequest.setCustomerType("P");
         productRequest.setProductType("SA");
-        productRequest.setUserBank("admin");
         Product product = businessManager.createProduct(productRequest);
         System.out.println(JsonTransferUtil.objectToJson(product));
     }

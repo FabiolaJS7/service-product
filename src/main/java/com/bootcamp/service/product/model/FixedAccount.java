@@ -12,6 +12,8 @@ public class FixedAccount extends PassiveProduct {
     public FixedAccount() {
         this.setProductType(ProductTypeConstants.FIXED_ACCOUNT); // Inicializa el atributo productType
         this.setFreeCommission(true);
+        this.setCommission(TypeMovementConstants.ZERO_COMMISSION_PER_MOVEMENT);
+        this.setMaxMovementPerMonth(TypeMovementConstants.LIMIT_MAX_PER_MONTH_FIXED);
     }
 
 

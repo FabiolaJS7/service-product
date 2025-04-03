@@ -18,12 +18,10 @@ public class BusinessManagerImpl implements BusinessManager {
         DetailsProduct detailsProduct = new DetailsProduct();
 
         Customer customer = new Customer();
-        customer.setCustomerId(prq.getCustomerId());
-        customer.setCustomerType(prq.getCustomerType());
 
         //Identificar a qué familia pertenece ProductType : ACTIVE o PASSIVE
         if (ProductTypeConstants.PASSIVE_PRODUCTS.contains(prq.getProductType())) {
-            detailsProduct.setFamily("PASSIVE");
+            detailsProduct.setFamilyProduct("PASSIVE");
             switch (prq.getProductType()) {
                 case ProductTypeConstants.SAVING_ACCOUNT:
                     SavingAccount savingAccount = new SavingAccount();
@@ -46,14 +44,13 @@ public class BusinessManagerImpl implements BusinessManager {
 
 
         } else if (ProductTypeConstants.ACTIVE_PRODUCTS.contains(prq.getProductType())) {
-            detailsProduct.setFamily("ACTIVE");
+            detailsProduct.setFamilyProduct("ACTIVE");
             ActiveProduct activeProduct = new ActiveProduct();
             activeProduct.setProductType(prq.getProductType());
             detailsProduct.setActiveProduct(activeProduct);
 
         }
         product.setDetailsProduct(detailsProduct);
-        product.setAuditData(AuditDataUtil.create(prq.getUserBank()));
         product.setCustomer(customer);
         return product;
     }

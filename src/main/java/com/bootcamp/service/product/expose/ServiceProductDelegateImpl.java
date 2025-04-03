@@ -3,7 +3,6 @@ package com.bootcamp.service.product.expose;
 import com.bootcamp.service.product.api.ApiApiDelegate;
 import com.bootcamp.service.product.model.ProductRequest;
 import com.bootcamp.service.product.model.ProductResponse;
-import com.bootcamp.service.product.model.UpdateProductRequest;
 import com.bootcamp.service.product.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +23,7 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
     public Mono<ResponseEntity<String>> createProduct(Mono<ProductRequest> productRequest,
                                                       ServerWebExchange exchange) {
         log.info("-> Create Product");
-        return productService.createProductInformation(productRequest)
+        return productService.createProduct(productRequest)
                 .map(ResponseEntity::ok)
                 .onErrorResume(e -> Mono.just(ResponseEntity.status(404).build()));
     }
