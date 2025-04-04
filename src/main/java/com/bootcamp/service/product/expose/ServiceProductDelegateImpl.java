@@ -3,6 +3,7 @@ package com.bootcamp.service.product.expose;
 import com.bootcamp.service.product.api.ApiApiDelegate;
 import com.bootcamp.service.product.model.ProductRequest;
 import com.bootcamp.service.product.model.ProductResponse;
+import com.bootcamp.service.product.model.ProductUpdateRQ;
 import com.bootcamp.service.product.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,15 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
     public Mono<ResponseEntity<Flux<ProductResponse>>> findAll(ServerWebExchange exchange) {
         log.info("-> Find All Products");
         return Mono.just(ResponseEntity.ok(productService.findAllProducts()));
+    }
+
+    @Override
+    public Mono<ResponseEntity<ProductResponse>> udpate(String productId, Mono<ProductUpdateRQ> productUpdateRQ,
+                                                        ServerWebExchange exchange) {
+
+        return productService.updateProduct(productId, productUpdateRQ)
+                .map(ResponseEntity::ok)
+                .onErrorResume(e -> Mono.just(ResponseEntity.status(404).build()));
     }
 
    /*** @Override

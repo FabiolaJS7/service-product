@@ -1,0 +1,61 @@
+{
+  "actionToUpdate": "CHANGE_HOLDERS",
+  "status": "string",
+  "activeProduct": {
+    "hasCreditCard": false,
+    "creditLimit": 55555,
+    "creditLimitEnabled": 33333,
+    "creditLimitUsed":  10000
+  },
+  "passiveProduct": {
+    "isFreeCommission": true,
+    "amountOfOpen": 100,
+    "accountNumber": "XXXXXXX",
+    "inforToTransaction": {
+      "commission": 10,
+      "maxPerMonth": "20",
+      "transactionDone": "10",
+      "enabledToMovement": false
+    }
+  },
+  "holders": [
+    {
+      "fullName": "ANA TEST GARCIA",
+      "email": "monicaupdate@gmail.com",
+      "phone": "7777777",
+      "identification": {
+        "typeIdentification": "DNI",
+        "numberIdentification": "1216554654"
+      }
+    },
+    {
+      "fullName": "BALENCIA TEST GARCIA DOS",
+      "email": "monicaupdate@gmail.com2",
+      "phone": "77777772",
+      "identification": {
+        "typeIdentification": "DNI",
+        "numberIdentification": "1216554654222"
+      }
+    }
+  ],
+  "authorizedSignatories": [
+    {
+      "fullName": "CARLOS MENDOZA",
+      "email": "mail@update.com",
+      "phone": "77777",
+      "identification": {
+        "typeIdentification": "RUC",
+        "numberIdentification": "1232132321"
+      }
+    },
+    {
+      "fullName": "DANIEL MENDOZA",
+      "email": "mail@update.com",
+      "phone": "77777",
+      "identification": {
+        "typeIdentification": "RUC",
+        "numberIdentification": "1232132321"
+      }
+    }
+  ]
+}

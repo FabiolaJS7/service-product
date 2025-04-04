@@ -71,14 +71,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ProductRequest'
+              $ref: '#/components/schemas/ProductUpdateRQ'
       responses:
         '200':
           description: Success updated
           content:
             application/json:
               schema:
-                type: string
+                $ref: '#/components/schemas/ProductResponse'
         '404':
           description: Product not found to updated
 
@@ -314,3 +314,26 @@ components:
           type: string
         enabledToMovement:
           type: boolean
+
+    ProductUpdateRQ:
+      type: object
+      properties:
+        actionToUpdate:
+          type: string
+
+        status:
+          type: string
+        activeProduct:
+          $ref: "#/components/schemas/ActiveProductBean"
+        passiveProduct:
+          $ref: "#/components/schemas/PassiveProductBean"
+        holders:
+          type: array
+          description: List of holders associated with this product
+          items:
+            $ref: '#/components/schemas/AdditionalPersonBean'
+        authorizedSignatories:
+          type: array
+          description: List of signatories authorized associated with this product
+          items:
+            $ref: '#/components/schemas/AdditionalPersonBean'

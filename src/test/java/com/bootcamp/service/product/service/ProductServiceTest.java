@@ -3,6 +3,7 @@ package com.bootcamp.service.product.service;
 import com.bootcamp.service.product.model.*;
 import com.bootcamp.service.product.repository.ProductRepository;
 import com.bootcamp.service.product.util.AuditDataUtil;
+import com.bootcamp.service.product.util.JsonTransferUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -15,6 +16,7 @@ import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -57,6 +59,23 @@ class ProductServiceTest {
         // Assert
         StepVerifier.create(productId)
                 .expectNextMatches(s -> !s.isEmpty())
+                .verifyComplete();
+
+    }
+
+    @Test
+    void testGettingProductResponses_whenProductWasUpdated_shouldReturn200() {
+
+        //Arr - Mockeando un objeto ProductUpdateRQ para probar actualizar product
+        ProductUpdateRQ productUpdateRQ = JsonTransferUtil.getObjectFromJSONFile(ProductUpdateRQ.class, "ProductUpdateRQ.json");
+        String productId = "67ef0d653035541c685a3605";
+
+        //Act
+        Mono<ProductResponse> result = productService.updateProduct(productId, Mono.just(productUpdateRQ));
+
+        // Assert
+        StepVerifier.create(result)
+                .expectNextMatches( productResponse -> productResponse.getId().equals(productId))
                 .verifyComplete();
 
     }
