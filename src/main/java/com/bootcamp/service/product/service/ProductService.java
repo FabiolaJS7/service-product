@@ -11,6 +11,7 @@ public interface ProductService {
     Mono<String> createProduct(Mono<ProductRequest> productRequest);
     Flux<ProductResponse> findAllProducts();
     Mono<ProductResponse> updateProduct(String productId, Mono<ProductUpdateRQ> productUpdateRQ);
+    Mono<Void> deleteProduct(String productId);
 
 
 }

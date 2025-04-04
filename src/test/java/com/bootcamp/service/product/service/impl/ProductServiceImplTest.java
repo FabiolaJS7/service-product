@@ -2,7 +2,6 @@ package com.bootcamp.service.product.service.impl;
 
 import com.bootcamp.service.product.model.*;
 import com.bootcamp.service.product.repository.ProductRepository;
-import com.bootcamp.service.product.service.BusinessManager;
 import com.bootcamp.service.product.transfer.ProductTransfer;
 import com.bootcamp.service.product.util.JsonTransferUtil;
 import org.junit.jupiter.api.Assertions;
@@ -18,10 +17,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @ExtendWith(MockitoExtension.class)
 class ProductServiceImplTest {
@@ -31,9 +28,6 @@ class ProductServiceImplTest {
 
     @Mock
     ProductRepository productRepository;
-
-    @Mock
-    BusinessManager businessManager;
     
     @Mock
     ProductTransfer productTransfer;
@@ -49,7 +43,6 @@ class ProductServiceImplTest {
         Mono<ProductRequest> productRequestMono = Mono.just(productRequest);
 
         Mockito.when(productRepository.save(productDto)).thenReturn(Mono.just(productDto));
-        Mockito.when(businessManager.createProduct(productRequest)).thenReturn(productDto);
         //Act - llamamos al metodo que estamos probando
         final Mono<String> result = productService.createProduct(productRequestMono);
 
@@ -72,8 +65,6 @@ class ProductServiceImplTest {
         // Simula que el repositorio lanza un error al intentar guardar
         Mockito.when(productRepository.save(Mockito.any(Product.class)))
                 .thenReturn(Mono.error(new RuntimeException("Save failed")));
-
-        Mockito.when(businessManager.createProduct(productRequest)).thenReturn(productDto);
 
         // Act
         Mono<ResponseEntity<String>> result = productService.createProduct(productRequestMono)

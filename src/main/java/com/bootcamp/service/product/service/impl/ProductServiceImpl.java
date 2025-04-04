@@ -1,20 +1,16 @@
 package com.bootcamp.service.product.service.impl;
 
 
-import com.bootcamp.service.product.constants.ActionUpdateConstants;
 import com.bootcamp.service.product.constants.CasesUpdateConstants;
 import com.bootcamp.service.product.model.*;
 import com.bootcamp.service.product.transfer.ProductTransfer;
 import com.bootcamp.service.product.repository.ProductRepository;
-import com.bootcamp.service.product.service.BusinessManager;
 import com.bootcamp.service.product.service.ProductService;
 import com.bootcamp.service.product.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -54,7 +50,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Mono<ProductResponse> updateProduct(String productId, Mono<ProductUpdateRQ> productUpdateRQ) {
         return productRepository.findById(productId)
-                .doOnNext(product -> log.info("Product found {}", JsonTransferUtil.objectToJson(product)))
+                .doOnNext(product -> log.info("Product found to update {}", JsonTransferUtil.objectToJson(product)))
                 .flatMap(product ->
                         productUpdateRQ.flatMap(proToUpdate -> {
                             //Actualizará atributos del product dependiendo de lo que indique proToUpdate.getActionToUpdate()
@@ -126,6 +122,15 @@ public class ProductServiceImpl implements ProductService {
                 .doOnNext(product -> log.info("Product updated {}", JsonTransferUtil.objectToJson(product)))
                 .switchIfEmpty(Mono.just(new ProductResponse()))
                 .doOnError(e -> log.error("Error updating product: {}", e.getMessage(), e));
+    }
+
+    @Override
+    public Mono<Void> deleteProduct(String productId) {
+        return productRepository.findById(productId)
+                .doOnNext(product -> log.info("Product found to delete {}", JsonTransferUtil.objectToJson(product)))
+                .flatMap(product -> productRepository.delete(product))
+                .doOnSuccess(product -> log.info("Product {} deleted", productId))
+                .doOnError(e -> log.error("Error occurred while deleting product with ID {}: {}", productId, e.getMessage(), e));
     }
 
 

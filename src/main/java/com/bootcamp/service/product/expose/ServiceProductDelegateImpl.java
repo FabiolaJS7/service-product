@@ -44,43 +44,12 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
                 .onErrorResume(e -> Mono.just(ResponseEntity.status(404).build()));
     }
 
-   /*** @Override
-
-    @Override
-    public Mono<ResponseEntity<String>> udpate(String productId,
-                                               Mono<UpdateProductRequest> updateProductRequest,
-                                               ServerWebExchange exchange) {
-        log.info("-> Udpate Product");
-        return productInformationService.updateProduct(productId, updateProductRequest)
-                .flatMap(aBoolean -> {
-                    if (!aBoolean) {
-                        log.warn("Product with ID {} not found", productId);
-                        return Mono.just(ResponseEntity.status(404).body("false"));
-
-                    }
-                    return Mono.just(ResponseEntity.ok("true"));
-                })
-                .onErrorResume(e -> {
-                    log.error("Error occurred while updating product with ID {}: {}", productId, e.getMessage(), e);
-                    return Mono.just(ResponseEntity.status(500).body("false"));
-                });
-
-    }
-
     @Override
     public Mono<ResponseEntity<Void>> delete(String productId, ServerWebExchange exchange) {
         log.info("-> Delete Product");
-        return productInformationService.deleteProduct(productId)
-                .flatMap(deleted -> {
-                    if (deleted) {
-                        return Mono.just(ResponseEntity.ok().build());
-                    } else {
-                        return Mono.just(ResponseEntity.status(404).build());
-                    }
-                });
+        return productService.deleteProduct(productId)
+                .map(ResponseEntity::ok)
+                .onErrorResume(e -> Mono.just(ResponseEntity.status(404).build()));
     }
-
-***/
-
 
 }

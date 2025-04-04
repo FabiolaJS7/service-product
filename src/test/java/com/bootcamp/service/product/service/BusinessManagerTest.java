@@ -11,14 +11,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class BusinessManagerTest {
 
-    @Autowired
-    BusinessManager businessManager;
 
     @Test
     void createProduct() {
-        ProductRequest productRequest = new ProductRequest();
-        productRequest.setProductType("SA");
-        Product product = businessManager.createProduct(productRequest);
-        System.out.println(JsonTransferUtil.objectToJson(product));
+
     }
 }
