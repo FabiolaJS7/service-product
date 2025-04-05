@@ -262,6 +262,8 @@ components:
         creditLimitUsed:
           type: number
           format: double
+        creditCard:
+          $ref: '#/components/schemas/CreditCardBean'
 
     PassiveProductBean:
       type: object
@@ -320,7 +322,6 @@ components:
       properties:
         actionToUpdate:
           type: string
-
         status:
           type: string
         activeProduct:
@@ -337,3 +338,13 @@ components:
           description: List of signatories authorized associated with this product
           items:
             $ref: '#/components/schemas/AdditionalPersonBean'
+    CreditCardBean:
+      type: object
+      properties:
+        number:
+          type: string
+          description: number of credit card
+        expirationDate:
+          type: string
+          format: date
+          description: expiration date of credit card

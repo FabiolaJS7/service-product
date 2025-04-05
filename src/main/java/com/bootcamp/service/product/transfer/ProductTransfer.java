@@ -132,10 +132,11 @@ public class ProductTransfer {
         activeProduct.setHasCreditCard(true);
 
         if (activeProduct.isHasCreditCard()) {
+            CreditCardBean creditCardBean = prq.getActiveProduct().getCreditCard();
             CreditCard creditCard = new CreditCard();
-            creditCard.setNumber("XXXX-XXXX-XXXXXX");
-            creditCard.setExpirationDate(new Date());
-            creditCard.setAuditData(AuditDataUtil.create("admin"));
+            creditCard.setNumber(creditCardBean.getNumber());
+            creditCard.setExpirationDate(creditCardBean.getExpirationDate());
+            creditCard.setAuditData(AuditDataUtil.create(null));
             activeProduct.setCreditCard(creditCard);
         }
 

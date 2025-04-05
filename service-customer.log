@@ -88,3 +88,792 @@
 2025-04-05 03:55:40-227 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application SERVICE-PRODUCT with eureka with status DOWN 
 2025-04-05 03:55:40-228 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1743843340228, current=DOWN, previous=UP] 
 2025-04-05 03:55:40-229 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-05 12:41:34-991 [main] INFO  c.b.s.p.ServiceProductApplication - Starting ServiceProductApplication using Java 17.0.12 with PID 10780 (C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product\target\classes started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product) 
+2025-04-05 12:41:34-993 [main] INFO  c.b.s.p.ServiceProductApplication - The following 1 profile is active: "local" 
+2025-04-05 12:41:35-040 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-05 12:41:35-040 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[default], label=null, version=1323b7e645cfe64ac9c036b69daccbbf1cff53f3, state= 
+2025-04-05 12:41:35-041 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-05 12:41:35-041 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[local], label=null, version=1323b7e645cfe64ac9c036b69daccbbf1cff53f3, state= 
+2025-04-05 12:41:36-140 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-05 12:41:36-293 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 146 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-05 12:41:36-459 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=0a9575a6-ea3d-3d51-9a7d-ee6091558353 
+2025-04-05 12:41:37-269 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@4ef8090b, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@6d31f14], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@404009df, com.mongodb.Jep395RecordCodecProvider@75e4fe3c, com.mongodb.KotlinCodecProvider@7bda01da]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@65ef9a0a], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-05 12:41:37-444 [cluster-ClusterId{value='67f16b51dd17550f4474ec83', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=70074500, minRoundTripTimeNanos=0} 
+2025-04-05 12:41:38-709 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-05 12:41:39-215 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-05 12:41:39-327 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-05 12:41:39-498 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-05 12:41:39-548 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-05 12:41:39-560 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 12:41:39-581 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-05 12:41:39-582 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-05 12:41:39-582 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-05 12:41:39-582 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-05 12:41:39-582 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-05 12:41:39-582 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-05 12:41:39-582 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-05 12:41:39-941 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-05 12:41:39-946 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-05 12:41:39-950 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-05 12:41:39-952 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1743874899952 with initial instances count: 2 
+2025-04-05 12:41:39-956 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SERVICE-PRODUCT with eureka with status UP 
+2025-04-05 12:41:39-957 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1743874899957, current=UP, previous=STARTING] 
+2025-04-05 12:41:39-960 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-05 12:41:40-006 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-05 12:41:40-023 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8383 (http) 
+2025-04-05 12:41:40-025 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8383 
+2025-04-05 12:41:40-496 [main] INFO  c.b.s.p.ServiceProductApplication - Started ServiceProductApplication in 7.959 seconds (process running for 9.132) 
+2025-04-05 12:46:27-076 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 12:46:27-104 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"productType":"SA","familyProduct":"PASSIVE","userBank":"admin","customer":{"customerId":"67f00c6fd214c769e74425a7","customerType":"P"},"passiveProduct":{"isFreeCommission":false,"amountOfOpen":10.0,"accountNumber":"4654654-65465-654-65465","inforToTransaction":{"commission":10.0,"maxPerMonth":"15","transactionDone":"20","enabledToMovement":true}},"holders":[{"fullName":"Test Person","email":"test@test.com","phone":"123456789"}],"authorizedSignatories":[{"fullName":"Test Person","email":"test@test.com","phone":"123456789"}]} 
+2025-04-05 12:46:27-105 [reactor-http-nio-2] ERROR c.b.s.p.s.impl.ProductServiceImpl - Error creating product: Cannot invoke "com.bootcamp.service.product.model.IdentificationBean.getTypeIdentification()" because the return value of "com.bootcamp.service.product.model.AdditionalPersonBean.getIdentification()" is null 
+java.lang.NullPointerException: Cannot invoke "com.bootcamp.service.product.model.IdentificationBean.getTypeIdentification()" because the return value of "com.bootcamp.service.product.model.AdditionalPersonBean.getIdentification()" is null
+	at com.bootcamp.service.product.transfer.ProductTransfer.lambda$getAdditionalPerson$2(ProductTransfer.java:121)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Assembly trace from producer [reactor.core.publisher.MonoFlatMap] :
+	reactor.core.publisher.Mono.flatMap(Mono.java:3179)
+	com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:31)
+Error has been observed at the following site(s):
+	*___Mono.flatMap ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:31)
+	|_ Mono.doOnNext ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:35)
+	|_      Mono.map ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:36)
+Original Stack Trace:
+		at com.bootcamp.service.product.transfer.ProductTransfer.lambda$getAdditionalPerson$2(ProductTransfer.java:121)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		at com.bootcamp.service.product.transfer.ProductTransfer.getAdditionalPerson(ProductTransfer.java:126)
+		at com.bootcamp.service.product.transfer.ProductTransfer.getProductOfProductRequest(ProductTransfer.java:37)
+		at com.bootcamp.service.product.service.impl.ProductServiceImpl.lambda$createProduct$0(ProductServiceImpl.java:33)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132)
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onNext(FluxPeekFuseable.java:210)
+		at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:158)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299)
+		at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337)
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097)
+		at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onComplete(FluxMapFuseable.java:152)
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onComplete(FluxPeekFuseable.java:277)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144)
+		at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:413)
+		at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:455)
+		at reactor.netty.http.server.HttpServerOperations.handleLastHttpContent(HttpServerOperations.java:889)
+		at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:798)
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:321)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+2025-04-05 12:46:39-595 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 12:51:11-356 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application SERVICE-PRODUCT with eureka with status DOWN 
+2025-04-05 12:51:11-357 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1743875471357, current=DOWN, previous=UP] 
+2025-04-05 12:51:11-358 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-05 12:51:11-361 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete 
+2025-04-05 12:51:11-363 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-05 12:51:11-364 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete 
+2025-04-05 12:51:18-957 [main] INFO  c.b.s.p.ServiceProductApplication - Starting ServiceProductApplication using Java 17.0.12 with PID 22820 (C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product\target\classes started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product) 
+2025-04-05 12:51:18-963 [main] INFO  c.b.s.p.ServiceProductApplication - The following 1 profile is active: "local" 
+2025-04-05 12:51:19-022 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-05 12:51:19-022 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[default], label=null, version=1323b7e645cfe64ac9c036b69daccbbf1cff53f3, state= 
+2025-04-05 12:51:19-022 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-05 12:51:19-022 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[local], label=null, version=1323b7e645cfe64ac9c036b69daccbbf1cff53f3, state= 
+2025-04-05 12:51:20-042 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-05 12:51:20-188 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 138 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-05 12:51:20-364 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=0a9575a6-ea3d-3d51-9a7d-ee6091558353 
+2025-04-05 12:51:21-158 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@18cbc3c2, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@1b25d695], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@4ef8090b, com.mongodb.Jep395RecordCodecProvider@6d31f14, com.mongodb.KotlinCodecProvider@404009df]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@75e4fe3c], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-05 12:51:21-319 [cluster-ClusterId{value='67f16d991f99cd46f57deb40', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=49735600, minRoundTripTimeNanos=0} 
+2025-04-05 12:51:22-621 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-05 12:51:23-099 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-05 12:51:23-143 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-05 12:51:23-239 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-05 12:51:23-268 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-05 12:51:23-275 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 12:51:23-288 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-05 12:51:23-289 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-05 12:51:23-289 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-05 12:51:23-289 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-05 12:51:23-289 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-05 12:51:23-289 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-05 12:51:23-289 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-05 12:51:23-618 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-05 12:51:23-620 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-05 12:51:23-623 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-05 12:51:23-625 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1743875483625 with initial instances count: 2 
+2025-04-05 12:51:23-630 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SERVICE-PRODUCT with eureka with status UP 
+2025-04-05 12:51:23-631 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1743875483631, current=UP, previous=STARTING] 
+2025-04-05 12:51:23-651 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-05 12:51:23-695 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-05 12:51:23-701 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8383 (http) 
+2025-04-05 12:51:23-702 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8383 
+2025-04-05 12:51:24-037 [main] INFO  c.b.s.p.ServiceProductApplication - Started ServiceProductApplication in 8.63 seconds (process running for 9.968) 
+2025-04-05 12:53:48-241 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 12:53:48-277 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"productType":"SA","familyProduct":"PASSIVE","userBank":"admin","customer":{"customerId":"67f00c6fd214c769e74425a7","customerType":"P"},"passiveProduct":{"isFreeCommission":false,"amountOfOpen":10.0,"accountNumber":"4654654-65465-654-65465","inforToTransaction":{"commission":10.0,"maxPerMonth":"15","transactionDone":"20","enabledToMovement":true}},"holders":[{"fullName":"Test Person","email":"test@test.com","phone":"123456789","identification":{"typeIdentification":"DNI","numberIdentification":"654654"}}],"authorizedSignatories":[{"fullName":"Test Person","email":"test@test.com","phone":"123456789","identification":{"typeIdentification":"DNI","numberIdentification":"654654"}}]} 
+2025-04-05 12:53:53-827 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product saved {"id":"67f16e311f99cd46f57deb41","status":"ENABLED","customer":{"customerId":"67f00c6fd214c769e74425a7","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"SA","amountOfOpen":10.0,"accountNumber":"4654654-65465-654-65465","balance":{"totalAmount":10.0},"commission":10.0,"maxMovementPerMonth":"15","transactionDone":0,"enabledToMovement":true,"freeCommission":false}},"holders":[{"fullName":"Test Person","email":"test@test.com","phone":"123456789","identification":{"typeIdentification":"DNI","numberIdentification":"654654"}}],"authorizedSignatories":[{"fullName":"Test Person","email":"test@test.com","phone":"123456789","identification":{"typeIdentification":"DNI","numberIdentification":"654654"}}],"auditData":{"createdAt":1743875633663,"updatedAt":1743875633663,"createdBy":"admin"}} 
+2025-04-05 12:56:23-307 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 13:01:23-311 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 13:06:23-312 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 13:09:55-874 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Find All Products 
+2025-04-05 13:09:55-897 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Products searching 
+2025-04-05 13:09:55-992 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Products found 
+2025-04-05 13:11:23-318 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 13:11:34-433 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Find All Products 
+2025-04-05 13:11:34-434 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Products searching 
+2025-04-05 13:11:34-449 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Products found 
+2025-04-05 13:15:41-135 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 13:15:41-139 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"productType":"SA","familyProduct":"PASSIVE","userBank":"admin","customer":{"customerId":"67f00c6fd214c769e74425a7","customerType":"P"},"passiveProduct":{"isFreeCommission":false,"amountOfOpen":10.0,"accountNumber":"4654654-65465-654-65465","inforToTransaction":{"commission":10.0,"maxPerMonth":"15","transactionDone":"20","enabledToMovement":true}}} 
+2025-04-05 13:15:41-154 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product saved {"id":"67f1734d1f99cd46f57deb42","status":"ENABLED","customer":{"customerId":"67f00c6fd214c769e74425a7","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"SA","amountOfOpen":10.0,"accountNumber":"4654654-65465-654-65465","balance":{"totalAmount":10.0},"commission":10.0,"maxMovementPerMonth":"15","transactionDone":0,"enabledToMovement":true,"freeCommission":false}},"auditData":{"createdAt":1743876941139,"updatedAt":1743876941139,"createdBy":"admin"}} 
+2025-04-05 13:16:23-322 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 13:21:23-327 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 13:26:23-333 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 13:31:23-335 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 13:36:23-344 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 13:39:03-395 [reactor-http-nio-6] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Find All Products 
+2025-04-05 13:39:03-397 [reactor-http-nio-6] INFO  c.b.s.p.s.impl.ProductServiceImpl - Products searching 
+2025-04-05 13:39:03-413 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Products found 
+2025-04-05 13:40:37-125 [reactor-http-nio-7] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Find All Products 
+2025-04-05 13:40:37-127 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Products searching 
+2025-04-05 13:40:37-137 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Products found 
+2025-04-05 13:41:23-358 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 13:42:27-624 [reactor-http-nio-8] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Find All Products 
+2025-04-05 13:42:27-627 [reactor-http-nio-8] INFO  c.b.s.p.s.impl.ProductServiceImpl - Products searching 
+2025-04-05 13:42:27-640 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Products found 
+2025-04-05 13:46:23-367 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 13:46:42-730 [reactor-http-nio-1] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 13:46:42-733 [reactor-http-nio-1] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"passiveProduct":{"inforToTransaction":{"commission":0.0,"maxPerMonth":"15","transactionDone":"0","enabledToMovement":true}}} 
+2025-04-05 13:46:42-734 [reactor-http-nio-1] ERROR c.b.s.p.s.impl.ProductServiceImpl - Error creating product: Cannot invoke "com.bootcamp.service.product.model.CustomerBean.getCustomerType()" because "customerBean" is null 
+java.lang.NullPointerException: Cannot invoke "com.bootcamp.service.product.model.CustomerBean.getCustomerType()" because "customerBean" is null
+	at com.bootcamp.service.product.transfer.ProductTransfer.getCustomerOfCustomerBean(ProductTransfer.java:164)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Assembly trace from producer [reactor.core.publisher.MonoFlatMap] :
+	reactor.core.publisher.Mono.flatMap(Mono.java:3179)
+	com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:31)
+Error has been observed at the following site(s):
+	*___Mono.flatMap ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:31)
+	|_ Mono.doOnNext ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:35)
+	|_      Mono.map ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:36)
+Original Stack Trace:
+		at com.bootcamp.service.product.transfer.ProductTransfer.getCustomerOfCustomerBean(ProductTransfer.java:164)
+		at com.bootcamp.service.product.transfer.ProductTransfer.getProductOfProductRequest(ProductTransfer.java:18)
+		at com.bootcamp.service.product.service.impl.ProductServiceImpl.lambda$createProduct$0(ProductServiceImpl.java:33)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132)
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onNext(FluxPeekFuseable.java:210)
+		at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:158)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299)
+		at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337)
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097)
+		at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onComplete(FluxMapFuseable.java:152)
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onComplete(FluxPeekFuseable.java:277)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144)
+		at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:413)
+		at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:455)
+		at reactor.netty.http.server.HttpServerOperations.handleLastHttpContent(HttpServerOperations.java:889)
+		at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:798)
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:321)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+2025-04-05 13:48:41-297 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 13:48:41-300 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"passiveProduct":{"inforToTransaction":{"commission":0.0,"maxPerMonth":"15","transactionDone":"0","enabledToMovement":true}}} 
+2025-04-05 13:48:41-301 [reactor-http-nio-2] ERROR c.b.s.p.s.impl.ProductServiceImpl - Error creating product: Cannot invoke "java.lang.Boolean.booleanValue()" because the return value of "com.bootcamp.service.product.model.PassiveProductBean.getIsFreeCommission()" is null 
+java.lang.NullPointerException: Cannot invoke "java.lang.Boolean.booleanValue()" because the return value of "com.bootcamp.service.product.model.PassiveProductBean.getIsFreeCommission()" is null
+	at com.bootcamp.service.product.transfer.ProductTransfer.getPassiveProduct(ProductTransfer.java:149)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Assembly trace from producer [reactor.core.publisher.MonoFlatMap] :
+	reactor.core.publisher.Mono.flatMap(Mono.java:3179)
+	com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:31)
+Error has been observed at the following site(s):
+	*___Mono.flatMap ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:31)
+	|_ Mono.doOnNext ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:35)
+	|_      Mono.map ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:36)
+Original Stack Trace:
+		at com.bootcamp.service.product.transfer.ProductTransfer.getPassiveProduct(ProductTransfer.java:149)
+		at com.bootcamp.service.product.transfer.ProductTransfer.getProductOfProductRequest(ProductTransfer.java:32)
+		at com.bootcamp.service.product.service.impl.ProductServiceImpl.lambda$createProduct$0(ProductServiceImpl.java:33)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132)
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onNext(FluxPeekFuseable.java:210)
+		at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:158)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299)
+		at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337)
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097)
+		at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onComplete(FluxMapFuseable.java:152)
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onComplete(FluxPeekFuseable.java:277)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144)
+		at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:413)
+		at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:455)
+		at reactor.netty.http.server.HttpServerOperations.handleLastHttpContent(HttpServerOperations.java:889)
+		at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:798)
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:321)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+2025-04-05 13:51:23-374 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 13:52:28-307 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 13:52:28-312 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"passiveProduct":{"inforToTransaction":{"commission":0.0,"maxPerMonth":"15","transactionDone":"0","enabledToMovement":true}}} 
+2025-04-05 13:52:28-313 [reactor-http-nio-3] ERROR c.b.s.p.s.impl.ProductServiceImpl - Error creating product: Cannot invoke "java.lang.Boolean.booleanValue()" because the return value of "com.bootcamp.service.product.model.PassiveProductBean.getIsFreeCommission()" is null 
+java.lang.NullPointerException: Cannot invoke "java.lang.Boolean.booleanValue()" because the return value of "com.bootcamp.service.product.model.PassiveProductBean.getIsFreeCommission()" is null
+	at com.bootcamp.service.product.transfer.ProductTransfer.getPassiveProduct(ProductTransfer.java:149)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Assembly trace from producer [reactor.core.publisher.MonoFlatMap] :
+	reactor.core.publisher.Mono.flatMap(Mono.java:3179)
+	com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:31)
+Error has been observed at the following site(s):
+	*___Mono.flatMap ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:31)
+	|_ Mono.doOnNext ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:35)
+	|_      Mono.map ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:36)
+Original Stack Trace:
+		at com.bootcamp.service.product.transfer.ProductTransfer.getPassiveProduct(ProductTransfer.java:149)
+		at com.bootcamp.service.product.transfer.ProductTransfer.getProductOfProductRequest(ProductTransfer.java:32)
+		at com.bootcamp.service.product.service.impl.ProductServiceImpl.lambda$createProduct$0(ProductServiceImpl.java:33)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132)
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onNext(FluxPeekFuseable.java:210)
+		at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:158)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299)
+		at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337)
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097)
+		at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onComplete(FluxMapFuseable.java:152)
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onComplete(FluxPeekFuseable.java:277)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144)
+		at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:413)
+		at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:455)
+		at reactor.netty.http.server.HttpServerOperations.handleLastHttpContent(HttpServerOperations.java:889)
+		at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:798)
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:321)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+2025-04-05 13:54:09-795 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 13:54:09-801 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"passiveProduct":{"inforToTransaction":{"commission":0.0,"maxPerMonth":"15","transactionDone":"0","enabledToMovement":true}}} 
+2025-04-05 13:54:09-802 [reactor-http-nio-4] ERROR c.b.s.p.s.impl.ProductServiceImpl - Error creating product: Cannot invoke "java.lang.Boolean.booleanValue()" because the return value of "com.bootcamp.service.product.model.PassiveProductBean.getIsFreeCommission()" is null 
+java.lang.NullPointerException: Cannot invoke "java.lang.Boolean.booleanValue()" because the return value of "com.bootcamp.service.product.model.PassiveProductBean.getIsFreeCommission()" is null
+	at com.bootcamp.service.product.transfer.ProductTransfer.getPassiveProduct(ProductTransfer.java:149)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Assembly trace from producer [reactor.core.publisher.MonoFlatMap] :
+	reactor.core.publisher.Mono.flatMap(Mono.java:3179)
+	com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:31)
+Error has been observed at the following site(s):
+	*___Mono.flatMap ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:31)
+	|_ Mono.doOnNext ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:35)
+	|_      Mono.map ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:36)
+Original Stack Trace:
+		at com.bootcamp.service.product.transfer.ProductTransfer.getPassiveProduct(ProductTransfer.java:149)
+		at com.bootcamp.service.product.transfer.ProductTransfer.getProductOfProductRequest(ProductTransfer.java:32)
+		at com.bootcamp.service.product.service.impl.ProductServiceImpl.lambda$createProduct$0(ProductServiceImpl.java:33)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132)
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onNext(FluxPeekFuseable.java:210)
+		at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:158)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299)
+		at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337)
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097)
+		at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onComplete(FluxMapFuseable.java:152)
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onComplete(FluxPeekFuseable.java:277)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144)
+		at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:413)
+		at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:455)
+		at reactor.netty.http.server.HttpServerOperations.handleLastHttpContent(HttpServerOperations.java:889)
+		at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:798)
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:321)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+2025-04-05 13:56:23-400 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 13:57:20-915 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 13:57:20-920 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"passiveProduct":{"isFreeCommission":true,"inforToTransaction":{"commission":0.0,"maxPerMonth":"15","transactionDone":"0","enabledToMovement":true}}} 
+2025-04-05 13:57:20-922 [reactor-http-nio-5] ERROR c.b.s.p.s.impl.ProductServiceImpl - Error creating product: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "com.bootcamp.service.product.model.PassiveProductBean.getAmountOfOpen()" is null 
+java.lang.NullPointerException: Cannot invoke "java.lang.Double.doubleValue()" because the return value of "com.bootcamp.service.product.model.PassiveProductBean.getAmountOfOpen()" is null
+	at com.bootcamp.service.product.transfer.ProductTransfer.getPassiveProduct(ProductTransfer.java:150)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Assembly trace from producer [reactor.core.publisher.MonoFlatMap] :
+	reactor.core.publisher.Mono.flatMap(Mono.java:3179)
+	com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:31)
+Error has been observed at the following site(s):
+	*___Mono.flatMap ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:31)
+	|_ Mono.doOnNext ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:35)
+	|_      Mono.map ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:36)
+Original Stack Trace:
+		at com.bootcamp.service.product.transfer.ProductTransfer.getPassiveProduct(ProductTransfer.java:150)
+		at com.bootcamp.service.product.transfer.ProductTransfer.getProductOfProductRequest(ProductTransfer.java:32)
+		at com.bootcamp.service.product.service.impl.ProductServiceImpl.lambda$createProduct$0(ProductServiceImpl.java:33)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132)
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onNext(FluxPeekFuseable.java:210)
+		at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:158)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299)
+		at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337)
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097)
+		at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onComplete(FluxMapFuseable.java:152)
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onComplete(FluxPeekFuseable.java:277)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144)
+		at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:413)
+		at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:455)
+		at reactor.netty.http.server.HttpServerOperations.handleLastHttpContent(HttpServerOperations.java:889)
+		at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:798)
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:321)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+2025-04-05 14:01:23-405 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 14:02:56-614 [reactor-http-nio-6] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 14:02:56-622 [reactor-http-nio-6] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"passiveProduct":{"isFreeCommission":true,"amountOfOpen":0.0,"accountNumber":"QQQQQQQQQ","inforToTransaction":{"commission":0.0,"maxPerMonth":"15","transactionDone":"0","enabledToMovement":true}}} 
+2025-04-05 14:02:56-634 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product saved {"id":"67f17e601f99cd46f57deb43","status":"ENABLED","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"amountOfOpen":0.0,"accountNumber":"QQQQQQQQQ","balance":{"totalAmount":0.0},"commission":0.0,"maxMovementPerMonth":"15","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1743879776622,"updatedAt":1743879776622}} 
+2025-04-05 14:06:23-411 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 14:11:23-420 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 14:16:23-427 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 14:16:49-249 [reactor-http-nio-7] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 14:16:49-252 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"passiveProduct":{"isFreeCommission":true,"amountOfOpen":0.0,"accountNumber":"AAAAAAAA","inforToTransaction":{"commission":0.0,"maxPerMonth":"15","transactionDone":"0","enabledToMovement":true}}} 
+2025-04-05 14:16:49-260 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product saved {"id":"67f181a11f99cd46f57deb44","status":"ENABLED","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"amountOfOpen":0.0,"accountNumber":"AAAAAAAA","balance":{"totalAmount":0.0},"commission":0.0,"maxMovementPerMonth":"15","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1743880609253,"updatedAt":1743880609253}} 
+2025-04-05 14:20:00-552 [reactor-http-nio-8] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 14:20:00-562 [reactor-http-nio-8] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"passiveProduct":{"isFreeCommission":true,"amountOfOpen":0.0,"accountNumber":"AAAAAAAA","inforToTransaction":{"commission":10.0,"maxPerMonth":"FREE","transactionDone":"0","enabledToMovement":true}}} 
+2025-04-05 14:20:00-569 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product saved {"id":"67f182601f99cd46f57deb45","status":"ENABLED","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"amountOfOpen":0.0,"accountNumber":"AAAAAAAA","balance":{"totalAmount":0.0},"commission":10.0,"maxMovementPerMonth":"FREE","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1743880800562,"updatedAt":1743880800562}} 
+2025-04-05 14:21:23-432 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 14:26:23-444 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 14:31:11-564 [reactor-http-nio-1] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 14:31:11-570 [reactor-http-nio-1] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"productType":"CA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"passiveProduct":{"isFreeCommission":true,"amountOfOpen":0.0,"accountNumber":"CA0014991118345","inforToTransaction":{"commission":10.0,"maxPerMonth":"FREE","transactionDone":"0","enabledToMovement":true}}} 
+2025-04-05 14:31:11-582 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product saved {"id":"67f184ff1f99cd46f57deb46","status":"ENABLED","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"CA","amountOfOpen":0.0,"accountNumber":"CA0014991118345","balance":{"totalAmount":0.0},"commission":10.0,"maxMovementPerMonth":"FREE","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1743881471570,"updatedAt":1743881471570}} 
+2025-04-05 14:31:23-453 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 14:35:41-245 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 14:35:41-251 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"productType":"FA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"passiveProduct":{"isFreeCommission":true,"amountOfOpen":0.0,"accountNumber":"FA0021392367843","inforToTransaction":{"commission":0.0,"maxPerMonth":"1","transactionDone":"0","enabledToMovement":true}}} 
+2025-04-05 14:35:41-263 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product saved {"id":"67f1860d1f99cd46f57deb47","status":"ENABLED","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"FA","amountOfOpen":0.0,"accountNumber":"FA0021392367843","balance":{"totalAmount":0.0},"commission":0.0,"maxMovementPerMonth":"1","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1743881741251,"updatedAt":1743881741251}} 
+2025-04-05 14:36:23-462 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 14:41:23-464 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 14:46:23-479 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 14:51:23-502 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 14:56:23-511 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 15:01:23-533 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 15:06:23-544 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 15:10:48-577 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 15:10:48-582 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"productType":"FA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"passiveProduct":{"isFreeCommission":true,"amountOfOpen":0.0,"accountNumber":"FA002-4922351005","inforToTransaction":{"commission":0.0,"maxPerMonth":"1","transactionDone":"0","enabledToMovement":true}}} 
+2025-04-05 15:10:48-593 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product saved {"id":"67f18e481f99cd46f57deb48","status":"ENABLED","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"FA","amountOfOpen":0.0,"accountNumber":"FA002-4922351005","balance":{"totalAmount":0.0},"commission":0.0,"maxMovementPerMonth":"1","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1743883848582,"updatedAt":1743883848582}} 
+2025-04-05 15:11:23-567 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 15:16:23-582 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 15:19:51-961 [main] INFO  c.b.s.p.ServiceProductApplication - Starting ServiceProductApplication using Java 17.0.12 with PID 13892 (C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product\target\classes started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product) 
+2025-04-05 15:19:51-963 [main] INFO  c.b.s.p.ServiceProductApplication - The following 1 profile is active: "local" 
+2025-04-05 15:19:51-994 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-05 15:19:51-994 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[default], label=null, version=1323b7e645cfe64ac9c036b69daccbbf1cff53f3, state= 
+2025-04-05 15:19:51-994 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-05 15:19:51-994 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[local], label=null, version=1323b7e645cfe64ac9c036b69daccbbf1cff53f3, state= 
+2025-04-05 15:19:53-023 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-05 15:19:53-197 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 152 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-05 15:19:53-368 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=0a9575a6-ea3d-3d51-9a7d-ee6091558353 
+2025-04-05 15:19:54-165 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@18cbc3c2, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@1b25d695], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@4ef8090b, com.mongodb.Jep395RecordCodecProvider@6d31f14, com.mongodb.KotlinCodecProvider@404009df]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@75e4fe3c], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-05 15:19:54-306 [cluster-ClusterId{value='67f1906a4d2fa809206d48fb', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=46521100, minRoundTripTimeNanos=0} 
+2025-04-05 15:19:55-495 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-05 15:19:55-987 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-05 15:19:56-032 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-05 15:19:56-123 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-05 15:19:56-153 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-05 15:19:56-158 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 15:19:56-168 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-05 15:19:56-169 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-05 15:19:56-169 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-05 15:19:56-169 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-05 15:19:56-169 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-05 15:19:56-169 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-05 15:19:56-169 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-05 15:19:56-473 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-05 15:19:56-476 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-05 15:19:56-478 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-05 15:19:56-480 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1743884396480 with initial instances count: 2 
+2025-04-05 15:19:56-483 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SERVICE-PRODUCT with eureka with status UP 
+2025-04-05 15:19:56-483 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1743884396483, current=UP, previous=STARTING] 
+2025-04-05 15:19:56-485 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-05 15:19:56-526 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-05 15:19:56-545 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8383 (http) 
+2025-04-05 15:19:56-547 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8383 
+2025-04-05 15:19:56-954 [main] INFO  c.b.s.p.ServiceProductApplication - Started ServiceProductApplication in 7.486 seconds (process running for 8.735) 
+2025-04-05 15:21:03-551 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 15:21:03-590 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"productType":"C9","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"activeProduct":{"hasCreditCard":false,"creditLimit":33000.0,"creditLimitUsed":0.0}} 
+2025-04-05 15:21:03-742 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product saved {"id":"67f190af4d2fa809206d48fc","status":"ENABLED","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"C9","hasCreditCard":true,"creditLimit":33000.0,"creditLimitUsed":0.0,"creditCard":{"number":"XXXX-XXXX-XXXXXX","expirationDate":1743884463590,"auditData":{"createdAt":1743884463590,"updatedAt":1743884463590,"createdBy":"admin"}}}},"auditData":{"createdAt":1743884463591,"updatedAt":1743884463591}} 
+2025-04-05 15:23:17-800 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 15:23:17-804 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"productType":"CA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"activeProduct":{"hasCreditCard":false,"creditLimit":33000.0,"creditLimitUsed":0.0}} 
+2025-04-05 15:23:17-816 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product saved {"id":"67f191354d2fa809206d48fd","status":"ENABLED","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CA","hasCreditCard":true,"creditLimit":33000.0,"creditLimitUsed":0.0,"creditCard":{"number":"XXXX-XXXX-XXXXXX","expirationDate":1743884597804,"auditData":{"createdAt":1743884597804,"updatedAt":1743884597804,"createdBy":"admin"}}}},"auditData":{"createdAt":1743884597804,"updatedAt":1743884597804}} 
+2025-04-05 15:24:56-172 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 15:29:56-182 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 15:32:29-230 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application SERVICE-PRODUCT with eureka with status DOWN 
+2025-04-05 15:32:29-231 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1743885149231, current=DOWN, previous=UP] 
+2025-04-05 15:32:29-231 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-05 15:32:29-235 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete 
+2025-04-05 15:32:29-238 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete 
+2025-04-05 15:32:29-251 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-05 15:38:02-940 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.bootcamp.service.product.service.BusinessManagerTest]: BusinessManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2025-04-05 15:38:03-127 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.bootcamp.service.product.ServiceProductApplication for test class com.bootcamp.service.product.service.BusinessManagerTest 
+2025-04-05 15:38:06-427 [main] INFO  c.b.s.p.service.BusinessManagerTest - Starting BusinessManagerTest using Java 17.0.12 with PID 15976 (started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product) 
+2025-04-05 15:38:06-428 [main] INFO  c.b.s.p.service.BusinessManagerTest - The following 1 profile is active: "local" 
+2025-04-05 15:38:06-468 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-05 15:38:06-469 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[default], label=null, version=1323b7e645cfe64ac9c036b69daccbbf1cff53f3, state= 
+2025-04-05 15:38:06-469 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-05 15:38:06-469 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[local], label=null, version=1323b7e645cfe64ac9c036b69daccbbf1cff53f3, state= 
+2025-04-05 15:38:07-608 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-05 15:38:07-836 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 220 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-05 15:38:08-049 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=38231001-da2f-37a8-9a2d-8e2fa0ccf691 
+2025-04-05 15:38:08-974 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@2090d3d1, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@172194b9], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@774d286, com.mongodb.Jep395RecordCodecProvider@31311d54, com.mongodb.KotlinCodecProvider@17994ef8]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@c0684ee], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-05 15:38:09-160 [cluster-ClusterId{value='67f194b09e1610042caf5815', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=84344000, minRoundTripTimeNanos=0} 
+2025-04-05 15:38:10-724 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-05 15:38:11-268 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-05 15:38:11-353 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-05 15:38:11-431 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-05 15:38:11-476 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-05 15:38:11-484 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 15:38:11-500 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-05 15:38:11-501 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-05 15:38:11-501 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-05 15:38:11-501 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-05 15:38:11-501 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-05 15:38:11-501 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-05 15:38:11-501 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-05 15:38:11-904 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-05 15:38:11-907 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-05 15:38:11-911 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-05 15:38:11-914 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1743885491914 with initial instances count: 2 
+2025-04-05 15:38:11-919 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SERVICE-PRODUCT with eureka with status UP 
+2025-04-05 15:38:11-920 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1743885491920, current=UP, previous=STARTING] 
+2025-04-05 15:38:11-923 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-05 15:38:11-938 [main] INFO  c.b.s.p.service.BusinessManagerTest - Started BusinessManagerTest in 8.42 seconds (process running for 12.569) 
+2025-04-05 15:38:12-008 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-05 15:38:12-803 [main] INFO  c.b.s.p.s.impl.ProductServiceImpl - Products searching 
+2025-04-05 15:38:12-816 [main] INFO  c.b.s.p.s.impl.ProductServiceImpl - Products found 
+2025-04-05 15:38:12-845 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.bootcamp.service.product.service.ProductServiceTest]: ProductServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2025-04-05 15:38:12-857 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.bootcamp.service.product.ServiceProductApplication for test class com.bootcamp.service.product.service.ProductServiceTest 
+2025-04-05 15:38:12-913 [main] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"productType":"SA","familyProduct":"ACTIVE","userBank":"mo.garcia","customer":{"customerId":"45676566","customerType":"DNI"},"activeProduct":{"hasCreditCard":true,"creditLimit":30000.0},"holders":[{"fullName":"John Doe","email":"john.doe@gmail.com","phone":"123456789","identification":{"typeIdentification":"DNI","numberIdentification":"2123232"}}],"authorizedSignatories":[{"fullName":"John Doe","email":"john.doe@gmail.com","phone":"123456789","identification":{"typeIdentification":"DNI","numberIdentification":"2123232"}}]} 
+2025-04-05 15:38:13-378 [nioEventLoopGroup-2-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product saved {"id":"67f194b59e1610042caf5816","status":"ENABLED","customer":{"customerId":"45676566","customerType":"DNI"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"SA","hasCreditCard":true,"creditLimit":30000.0,"creditLimitUsed":0.0,"creditCard":{"number":"XXXX-XXXX-XXXXXX","expirationDate":1743885492914,"auditData":{"createdAt":1743885492914,"updatedAt":1743885492914,"createdBy":"admin"}}}},"holders":[{"fullName":"John Doe","email":"john.doe@gmail.com","phone":"123456789","identification":{"typeIdentification":"DNI","numberIdentification":"2123232"}}],"authorizedSignatories":[{"fullName":"John Doe","email":"john.doe@gmail.com","phone":"123456789","identification":{"typeIdentification":"DNI","numberIdentification":"2123232"}}],"auditData":{"createdAt":1743885492915,"updatedAt":1743885492915,"createdBy":"mo.garcia"}} 
+2025-04-05 15:38:13-570 [nioEventLoopGroup-2-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to update {"id":"67ef0d653035541c685a3605","status":"ENABLED","customer":{"customerId":"45676566","customerType":"DNI"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"SA","amountOfOpen":100.0,"accountNumber":"XXXXXXXX","balance":{"totalAmount":100.0},"commission":10.0,"maxMovementPerMonth":"20","transactionDone":10,"enabledToMovement":false,"freeCommission":true}},"holders":[{"fullName":"ANA TEST GARCIA","email":"monicaupdate@gmail.com","phone":"7777777","identification":{"typeIdentification":"DNI","numberIdentification":"1216554654"}},{"fullName":"BALENCIA TEST GARCIA DOS","email":"monicaupdate@gmail.com2","phone":"77777772","identification":{"typeIdentification":"DNI","numberIdentification":"1216554654222"}}],"authorizedSignatories":[{"fullName":"John Doe","email":"john.doe@gmail.com","phone":"123456789","identification":{"typeIdentification":"DNI","numberIdentification":"2123232"}}],"auditData":{"createdAt":1743719781907,"updatedAt":1743719781907,"createdBy":"mo.garcia"}} 
+2025-04-05 15:38:13-617 [nioEventLoopGroup-2-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product updated {"id":"67ef0d653035541c685a3605","family":"PASSIVE","customer":{"customerId":"45676566","customerType":"DNI"},"passiveProduct":{"isFreeCommission":true,"amountOfOpen":100.0,"accountNumber":"XXXXXXXX","inforToTransaction":{"commission":10.0,"maxPerMonth":"20","transactionDone":"10","enabledToMovement":false}},"holders":[{"fullName":"ANA TEST GARCIA","email":"monicaupdate@gmail.com","phone":"7777777","identification":{"typeIdentification":"DNI","numberIdentification":"1216554654"}},{"fullName":"BALENCIA TEST GARCIA DOS","email":"monicaupdate@gmail.com2","phone":"77777772","identification":{"typeIdentification":"DNI","numberIdentification":"1216554654222"}}],"authorizedSignatories":[{"fullName":"John Doe","email":"john.doe@gmail.com","phone":"123456789","identification":{"typeIdentification":"DNI","numberIdentification":"2123232"}}]} 
+2025-04-05 15:38:13-643 [main] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"productType":"SA","familyProduct":"PASSIVE","userBank":"mo.garcia","customer":{"customerId":"45676566","customerType":"DNI"},"passiveProduct":{"isFreeCommission":true,"amountOfOpen":100.0,"accountNumber":"XXXXXXXX","inforToTransaction":{"commission":15.0,"maxPerMonth":"10","transactionDone":"0","enabledToMovement":true}},"holders":[{"fullName":"John Doe","email":"john.doe@gmail.com","phone":"123456789","identification":{"typeIdentification":"DNI","numberIdentification":"2123232"}}],"authorizedSignatories":[{"fullName":"John Doe","email":"john.doe@gmail.com","phone":"123456789","identification":{"typeIdentification":"DNI","numberIdentification":"2123232"}}]} 
+2025-04-05 15:38:13-670 [nioEventLoopGroup-2-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product saved {"id":"67f194b59e1610042caf5817","status":"ENABLED","customer":{"customerId":"45676566","customerType":"DNI"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"SA","amountOfOpen":100.0,"accountNumber":"XXXXXXXX","balance":{"totalAmount":100.0},"commission":15.0,"maxMovementPerMonth":"10","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"holders":[{"fullName":"John Doe","email":"john.doe@gmail.com","phone":"123456789","identification":{"typeIdentification":"DNI","numberIdentification":"2123232"}}],"authorizedSignatories":[{"fullName":"John Doe","email":"john.doe@gmail.com","phone":"123456789","identification":{"typeIdentification":"DNI","numberIdentification":"2123232"}}],"auditData":{"createdAt":1743885493643,"updatedAt":1743885493643,"createdBy":"mo.garcia"}} 
+2025-04-05 15:38:13-693 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.bootcamp.service.product.ServiceProductInformationApplicationTests]: ServiceProductInformationApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2025-04-05 15:38:13-724 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.bootcamp.service.product.ServiceProductApplication for test class com.bootcamp.service.product.ServiceProductInformationApplicationTests 
+2025-04-05 15:38:13-775 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.bootcamp.service.product.transfer.ProductTransferTest]: ProductTransferTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2025-04-05 15:38:13-805 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.bootcamp.service.product.ServiceProductApplication for test class com.bootcamp.service.product.transfer.ProductTransferTest 
+2025-04-05 15:38:13-893 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application SERVICE-PRODUCT with eureka with status DOWN 
+2025-04-05 15:38:13-894 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1743885493894, current=DOWN, previous=UP] 
+2025-04-05 15:38:13-896 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-05 15:38:13-904 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-05 15:38:16-474 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ... 
+2025-04-05 15:38:19-488 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ... 
+2025-04-05 15:38:19-509 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - deregister  status: 200 
+2025-04-05 15:38:19-509 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient 
+2025-04-05 15:41:16-295 [main] INFO  c.b.s.p.ServiceProductApplication - Starting ServiceProductApplication using Java 17.0.12 with PID 12424 (C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product\target\classes started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product) 
+2025-04-05 15:41:16-299 [main] INFO  c.b.s.p.ServiceProductApplication - The following 1 profile is active: "local" 
+2025-04-05 15:41:16-344 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-05 15:41:16-345 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[default], label=null, version=1323b7e645cfe64ac9c036b69daccbbf1cff53f3, state= 
+2025-04-05 15:41:16-345 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-05 15:41:16-345 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[local], label=null, version=1323b7e645cfe64ac9c036b69daccbbf1cff53f3, state= 
+2025-04-05 15:41:17-300 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-05 15:41:17-489 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 182 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-05 15:41:17-658 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=0a9575a6-ea3d-3d51-9a7d-ee6091558353 
+2025-04-05 15:41:18-439 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@18cbc3c2, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@1b25d695], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@4ef8090b, com.mongodb.Jep395RecordCodecProvider@6d31f14, com.mongodb.KotlinCodecProvider@404009df]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@75e4fe3c], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-05 15:41:18-595 [cluster-ClusterId{value='67f1956e84ac7219985f544f', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=54829400, minRoundTripTimeNanos=0} 
+2025-04-05 15:41:19-718 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-05 15:41:20-201 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-05 15:41:20-249 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-05 15:41:20-349 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-05 15:41:20-379 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-05 15:41:20-388 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 15:41:20-402 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-05 15:41:20-403 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-05 15:41:20-403 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-05 15:41:20-403 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-05 15:41:20-403 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-05 15:41:20-403 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-05 15:41:20-403 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-05 15:41:20-721 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-05 15:41:20-725 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-05 15:41:20-729 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-05 15:41:20-732 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1743885680731 with initial instances count: 2 
+2025-04-05 15:41:20-735 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SERVICE-PRODUCT with eureka with status UP 
+2025-04-05 15:41:20-736 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1743885680736, current=UP, previous=STARTING] 
+2025-04-05 15:41:20-738 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-05 15:41:20-805 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-05 15:41:20-829 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8383 (http) 
+2025-04-05 15:41:20-832 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8383 
+2025-04-05 15:41:21-140 [main] INFO  c.b.s.p.ServiceProductApplication - Started ServiceProductApplication in 8.585 seconds (process running for 9.81) 
+2025-04-05 15:46:20-408 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 15:51:20-423 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 15:56:20-428 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 16:01:20-443 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 16:02:39-201 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 16:02:39-246 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"productType":"CA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"activeProduct":{"hasCreditCard":true,"creditLimit":33000.0,"creditLimitUsed":0.0}} 
+2025-04-05 16:02:39-248 [reactor-http-nio-2] ERROR c.b.s.p.s.impl.ProductServiceImpl - Error creating product: Cannot invoke "com.bootcamp.service.product.model.CreditCardBean.getNumber()" because "creditCardBean" is null 
+java.lang.NullPointerException: Cannot invoke "com.bootcamp.service.product.model.CreditCardBean.getNumber()" because "creditCardBean" is null
+	at com.bootcamp.service.product.transfer.ProductTransfer.getActiveProduct(ProductTransfer.java:137)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Assembly trace from producer [reactor.core.publisher.MonoFlatMap] :
+	reactor.core.publisher.Mono.flatMap(Mono.java:3179)
+	com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:31)
+Error has been observed at the following site(s):
+	*___Mono.flatMap ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:31)
+	|_ Mono.doOnNext ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:35)
+	|_      Mono.map ⇢ at com.bootcamp.service.product.service.impl.ProductServiceImpl.createProduct(ProductServiceImpl.java:36)
+Original Stack Trace:
+		at com.bootcamp.service.product.transfer.ProductTransfer.getActiveProduct(ProductTransfer.java:137)
+		at com.bootcamp.service.product.transfer.ProductTransfer.getProductOfProductRequest(ProductTransfer.java:24)
+		at com.bootcamp.service.product.service.impl.ProductServiceImpl.lambda$createProduct$0(ProductServiceImpl.java:33)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132)
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onNext(FluxPeekFuseable.java:210)
+		at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79)
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:158)
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299)
+		at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337)
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097)
+		at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145)
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onComplete(FluxMapFuseable.java:152)
+		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onComplete(FluxPeekFuseable.java:277)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144)
+		at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:413)
+		at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:455)
+		at reactor.netty.http.server.HttpServerOperations.handleLastHttpContent(HttpServerOperations.java:889)
+		at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:798)
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:115)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:321)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1357)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:868)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+2025-04-05 16:05:20-011 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 16:05:20-016 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"productType":"CA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"activeProduct":{"hasCreditCard":true,"creditLimit":33000.0,"creditLimitUsed":0.0,"creditCard":{"number":"5317-5330-1743-2314"}}} 
+2025-04-05 16:05:20-240 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product saved {"id":"67f19b1084ac7219985f5450","status":"ENABLED","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CA","hasCreditCard":true,"creditLimit":33000.0,"creditLimitUsed":0.0,"creditCard":{"number":"5317-5330-1743-2314","auditData":{"createdAt":1743887120017,"updatedAt":1743887120017}}}},"auditData":{"createdAt":1743887120017,"updatedAt":1743887120017}} 
+2025-04-05 16:06:20-451 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 16:07:44-834 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 16:07:44-845 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating null 
+2025-04-05 16:07:44-855 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product saved null 
+2025-04-05 16:09:30-308 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Create Product 
+2025-04-05 16:09:30-311 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product creating {"productType":"CA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"activeProduct":{"hasCreditCard":true,"creditLimit":33000.0,"creditLimitUsed":0.0,"creditCard":{"number":"4669-5189-5563-1652"}}} 
+2025-04-05 16:09:30-319 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product saved {"id":"67f19c0a84ac7219985f5452","status":"ENABLED","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CA","hasCreditCard":true,"creditLimit":33000.0,"creditLimitUsed":0.0,"creditCard":{"number":"4669-5189-5563-1652","auditData":{"createdAt":1743887370311,"updatedAt":1743887370311}}}},"auditData":{"createdAt":1743887370311,"updatedAt":1743887370311}} 
+2025-04-05 16:11:11-966 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application SERVICE-PRODUCT with eureka with status DOWN 
+2025-04-05 16:11:11-967 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1743887471967, current=DOWN, previous=UP] 
+2025-04-05 16:11:11-967 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-05 16:11:11-970 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete 
+2025-04-05 16:11:11-973 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete 
+2025-04-05 16:11:11-980 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-05 16:11:20-118 [main] INFO  c.b.s.p.ServiceProductApplication - Starting ServiceProductApplication using Java 17.0.12 with PID 25940 (C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product\target\classes started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product) 
+2025-04-05 16:11:20-121 [main] INFO  c.b.s.p.ServiceProductApplication - The following 1 profile is active: "local" 
+2025-04-05 16:11:20-163 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-05 16:11:20-163 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[default], label=null, version=1323b7e645cfe64ac9c036b69daccbbf1cff53f3, state= 
+2025-04-05 16:11:20-163 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-05 16:11:20-163 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[local], label=null, version=1323b7e645cfe64ac9c036b69daccbbf1cff53f3, state= 
+2025-04-05 16:11:21-171 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-05 16:11:21-325 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 146 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-05 16:11:21-494 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=0a9575a6-ea3d-3d51-9a7d-ee6091558353 
+2025-04-05 16:11:22-239 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@4ef8090b, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@6d31f14], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@404009df, com.mongodb.Jep395RecordCodecProvider@75e4fe3c, com.mongodb.KotlinCodecProvider@7bda01da]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@65ef9a0a], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-05 16:11:22-371 [cluster-ClusterId{value='67f19c7a47a23e5f5f3e3ec7', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=46898500, minRoundTripTimeNanos=0} 
+2025-04-05 16:11:23-468 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-05 16:11:23-891 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-05 16:11:23-938 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-05 16:11:24-042 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-05 16:11:24-075 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-05 16:11:24-083 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-05 16:11:24-101 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-05 16:11:24-101 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-05 16:11:24-102 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-05 16:11:24-102 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-05 16:11:24-102 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-05 16:11:24-102 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-05 16:11:24-102 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-05 16:11:24-416 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-05 16:11:24-418 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-05 16:11:24-421 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-05 16:11:24-424 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1743887484424 with initial instances count: 3 
+2025-04-05 16:11:24-427 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SERVICE-PRODUCT with eureka with status UP 
+2025-04-05 16:11:24-428 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1743887484427, current=UP, previous=STARTING] 
+2025-04-05 16:11:24-429 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-05 16:11:24-491 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-05 16:11:24-507 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8383 (http) 
+2025-04-05 16:11:24-509 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8383 
+2025-04-05 16:11:24-892 [main] INFO  c.b.s.p.ServiceProductApplication - Started ServiceProductApplication in 8.218 seconds (process running for 9.35) 
+2025-04-05 16:11:50-342 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application SERVICE-PRODUCT with eureka with status DOWN 
+2025-04-05 16:11:50-343 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1743887510343, current=DOWN, previous=UP] 
+2025-04-05 16:11:50-343 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-05 16:11:50-346 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete 
+2025-04-05 16:11:50-349 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete 
+2025-04-05 16:11:50-355 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 

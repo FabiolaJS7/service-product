@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -14,6 +15,6 @@ import java.util.Date;
 public class CreditCard {
 
     private String number;
-    private Date expirationDate;
+    private LocalDate expirationDate;
     private AuditData auditData;
 }
