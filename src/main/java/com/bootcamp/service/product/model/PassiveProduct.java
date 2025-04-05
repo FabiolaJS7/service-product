@@ -19,14 +19,6 @@ public class PassiveProduct {
     private Balance balance;
     private double commission;
     private String maxMovementPerMonth;
-    private int transactionDone = 0;
+    private int transactionDone;
     private boolean enabledToMovement = true;
-
-
-
-
-
-    
-
-
 }

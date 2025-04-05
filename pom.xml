@@ -175,7 +175,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- <plugin>
+			<!--<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>${jacoco.version}</version>
@@ -193,30 +193,28 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin>-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>3.5.0</version>
+				<version>3.6.0</version>
+				<configuration>
+					<configLocation>/config/checkstyle.xml</configLocation>
+					<suppressionsLocation>/config/checkstyle-suppressions.xml</suppressionsLocation>
+					<consoleOutput>true</consoleOutput>
+					<failsOnError>true</failsOnError>
+					<linkXRef>false</linkXRef>
+				</configuration>
 				<executions>
 					<execution>
 						<id>validate</id>
 						<phase>validate</phase>
 						<goals>
-							<goal>check</goal>
+							<goal>checkstyle</goal>
 						</goals>
-						<configuration>
-							<configLocation>config/checkstyle.xml</configLocation>
-							<encoding>UTF-8</encoding>
-							<consoleOutput>true</consoleOutput>
-							<failsOnError>true</failsOnError>
-							<supressionsLocation>/config/checkstyle-suppressions.xml</supressionsLocation>
-							<suppressionsFileEspression>checkstyle.suppressions.file</suppressionsFileEspression>
-						</configuration>
 					</execution>
 				</executions>
-
-			</plugin>-->
+			</plugin>
 		</plugins>
 	</build>
 

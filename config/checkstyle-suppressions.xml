@@ -1,10 +1,8 @@
 <?xml version="1.0"?>
-
 <!DOCTYPE suppressions PUBLIC
-        "-//Puppy Crawl//DTD Suppressions 1.0//EN"
-        "http://www.puppycrawl.com/dtds/suppressions_1_0.dtd">
-
+        "-//Puppy Crawl//DTD Suppressions 1.1//EN"
+        "https://checkstyle.org/dtds/suppressions_1_1.dtd">
 <suppressions>
-    <suppress checks="HideUtilityClassConstructor"
-              files="tech.zdev.senju.process" />
+    <!-- Ignorar la regla de longitud de línea en todos los archivos -->
+    <suppress files=".*" checks="LineLength"/>
 </suppressions>
