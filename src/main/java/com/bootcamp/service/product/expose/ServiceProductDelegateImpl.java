@@ -53,4 +53,11 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
                 .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR)));
     }
 
+    @Override
+    public Mono<ResponseEntity<Flux<ProductResponse>>> getProductsByCustomerId(String customerId,
+                                                                                ServerWebExchange exchange) {
+        log.info("-> Get Products By Customer Id");
+        return Mono.just(ResponseEntity.ok(productService.findProductsByCustomerId(customerId)));
+    }
+
 }

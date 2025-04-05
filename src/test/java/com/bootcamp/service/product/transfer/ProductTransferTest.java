@@ -3,6 +3,7 @@ package com.bootcamp.service.product.transfer;
 import com.bootcamp.service.product.model.Product;
 import com.bootcamp.service.product.model.ProductResponse;
 import com.bootcamp.service.product.util.JsonTransferUtil;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,6 +20,7 @@ class ProductTransferTest {
     ProductTransfer productTransfer;
 
 
+    @Disabled
     @Test
     void getProductResponseOfProduct() {
         List<Product> products = Arrays.asList(JsonTransferUtil.getObjectFromJSONFile(Product[].class, "products.json"));

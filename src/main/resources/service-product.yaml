@@ -96,6 +96,27 @@ paths:
           description: Successful deleted
         '404':
           description: Product not found to delete
+
+  /api/products/customer/{customerId}:
+    get:
+      summary: Updated product
+      operationId: getProductsByCustomerId
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success find all products by customerId
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ProductResponse"
+
   /api/products/{productId}/holders:
     get:
       summary: Gettting holders by productId

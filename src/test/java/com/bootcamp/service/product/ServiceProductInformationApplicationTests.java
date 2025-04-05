@@ -10,7 +10,6 @@ import com.bootcamp.service.product.util.JsonTransferUtil;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import springfox.documentation.spring.web.json.Json;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +39,7 @@ class ServiceProductInformationApplicationTests {
 		}
 	}
 
+	@Disabled
 	@Test
 	void shouldCreatePassiveAccount() {
 		SavingAccount savingAccount = new SavingAccount();

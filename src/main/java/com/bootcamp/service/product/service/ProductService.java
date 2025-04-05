@@ -12,6 +12,7 @@ public interface ProductService {
     Flux<ProductResponse> findAllProducts();
     Mono<ProductResponse> updateProduct(String productId, Mono<ProductUpdateRQ> productUpdateRQ);
     Mono<Void> deleteProduct(String productId);
+    Flux<ProductResponse> findProductsByCustomerId(String customerId);
 
 
 }

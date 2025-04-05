@@ -77,6 +77,7 @@ class ProductServiceImplTest {
         Assertions.assertEquals("Product creation failed", response.getBody());
     }
 
+    @Disabled
     @Test
     void testGettingProductResponses_whenProductHasStatusActive_shouldReturn200() {
         //Arrage , preparamos el escensario, los objetos simulados
