@@ -7,6 +7,7 @@ import com.bootcamp.service.product.model.ProductUpdateRQ;
 import com.bootcamp.service.product.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
@@ -26,7 +27,7 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
         log.info("-> Create Product");
         return productService.createProduct(productRequest)
                 .map(ResponseEntity::ok)
-                .onErrorResume(e -> Mono.just(ResponseEntity.status(404).build()));
+                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR)));
     }
 
     @Override
@@ -41,7 +42,7 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
 
         return productService.updateProduct(productId, productUpdateRQ)
                 .map(ResponseEntity::ok)
-                .onErrorResume(e -> Mono.just(ResponseEntity.status(404).build()));
+                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR)));
     }
 
     @Override
@@ -49,7 +50,7 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
         log.info("-> Delete Product");
         return productService.deleteProduct(productId)
                 .map(ResponseEntity::ok)
-                .onErrorResume(e -> Mono.just(ResponseEntity.status(404).build()));
+                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR)));
     }
 
 }
