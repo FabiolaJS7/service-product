@@ -39,8 +39,8 @@ paths:
                 type: string
   /api/products/{productId}:
     get:
-      summary: Updated product
-      operationId: getProduct
+      summary: Getting product by id
+      operationId: getProductById
       parameters:
         - name: productId
           in: path

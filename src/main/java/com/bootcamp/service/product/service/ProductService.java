@@ -13,6 +13,7 @@ public interface ProductService {
     Mono<ProductResponse> updateProduct(String productId, Mono<ProductUpdateRQ> productUpdateRQ);
     Mono<Void> deleteProduct(String productId);
     Flux<ProductResponse> findProductsByCustomerId(String customerId);
+    Mono<ProductResponse> findProductById(String productId);
 
 
 }

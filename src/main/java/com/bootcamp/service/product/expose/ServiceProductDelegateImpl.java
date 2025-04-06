@@ -5,6 +5,7 @@ import com.bootcamp.service.product.model.ProductRequest;
 import com.bootcamp.service.product.model.ProductResponse;
 import com.bootcamp.service.product.model.ProductUpdateRQ;
 import com.bootcamp.service.product.service.ProductService;
+import com.bootcamp.service.product.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,7 +41,9 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
     public Mono<ResponseEntity<ProductResponse>> udpate(String productId, Mono<ProductUpdateRQ> productUpdateRQ,
                                                         ServerWebExchange exchange) {
 
-        return productService.updateProduct(productId, productUpdateRQ)
+        return productUpdateRQ
+                .doOnNext(p -> log.info("-> Update product: {}, {}", productId, JsonTransferUtil.objectToJson(p)))
+                .flatMap(p -> productService.updateProduct(productId, Mono.just(p)))
                 .map(ResponseEntity::ok)
                 .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR)));
     }
@@ -58,6 +61,15 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
                                                                                 ServerWebExchange exchange) {
         log.info("-> Get Products By Customer Id");
         return Mono.just(ResponseEntity.ok(productService.findProductsByCustomerId(customerId)));
+    }
+
+    @Override
+    public Mono<ResponseEntity<ProductResponse>> getProductById(String productId,
+                                                                 ServerWebExchange exchange) {
+        log.info("-> Get Product by id ");
+        return productService.findProductById(productId)
+                .map(ResponseEntity::ok)
+                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
     }
 
 }

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import springfox.documentation.spring.web.json.Json;
 
 import java.util.List;
 
@@ -81,6 +82,16 @@ public class ProductServiceImpl implements ProductService {
 
     }
 
+    @Override
+    public Mono<ProductResponse> findProductById(String productId) {
+        return productRepository.findById(productId)
+                .doOnSubscribe(subscription -> log.info("Getting product by id"))
+                .doOnSuccess(product -> log.info("Success product by id {}", JsonTransferUtil.objectToJson(product)))
+                .map(product -> productTransfer.getProductResponseOfProduct(product))
+                .doOnError(e -> log.error("Error fetching product: {}", e.getMessage(), e))
+                .switchIfEmpty(Mono.just(new ProductResponse()));
+    }
+
     private void buildProductToUpdate(ProductUpdateRQ proToUpdate, Product product) {
         //Actualizará atributos del product dependiendo de lo que indique proToUpdate.getActionToUpdate()
         switch (proToUpdate.getActionToUpdate()){
@@ -106,6 +117,7 @@ public class ProductServiceImpl implements ProductService {
                 passiveProductModel.setEnabledToMovement(infoTransactionBean.getEnabledToMovement());
                 break;
             case CasesUpdateConstants.CHANGE_HOLDERS:
+
                 List<AdditionalPerson> holders = proToUpdate.getHolders()
                         .stream()
                         .map(additionalPersonBean -> {
@@ -121,8 +133,12 @@ public class ProductServiceImpl implements ProductService {
                             return additionalPerson;
                         }).toList();
 
-                product.getHolders().clear();
-                product.setHolders(holders);
+                if (product.getHolders() != null) {
+                    product.getHolders().addAll(holders);
+                } else {
+                    product.setHolders(holders);
+                }
+
                 break;
             case CasesUpdateConstants.CHANGE_SIGNATURES:
                 List<AdditionalPerson> signatures = proToUpdate.getAuthorizedSignatories()
@@ -140,8 +156,11 @@ public class ProductServiceImpl implements ProductService {
                             return additionalPerson;
                         }).toList();
 
-                product.getAuthorizedSignatories().clear();
-                product.setAuthorizedSignatories(signatures);
+                if (product.getAuthorizedSignatories() != null) {
+                    product.getAuthorizedSignatories().addAll(signatures);
+                } else {
+                    product.setAuthorizedSignatories(signatures);
+                }
                 break;
 
         }
