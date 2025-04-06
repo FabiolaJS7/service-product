@@ -21,6 +21,7 @@ public class Product {
     @Id
     private String id;
     private String status = StatusProductConstants.ENABLED;
+    private String productType;
     private Customer customer;
     private DetailsProduct detailsProduct;
     private List<AdditionalPerson> holders = new ArrayList<>();
