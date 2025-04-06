@@ -16,6 +16,7 @@ public class ProductTransfer {
     public Product getProductOfProductRequest(ProductRequest prq) {
         Product product = new Product();
         product.setCustomer(getCustomerOfCustomerBean(prq.getCustomer()));
+        product.setProductType(prq.getProductType());
 
         DetailsProduct detailsProduct = new DetailsProduct();
         if (prq.getActiveProduct() != null) {
@@ -47,6 +48,7 @@ public class ProductTransfer {
         ProductResponse productResponse = new ProductResponse();
         productResponse.setId(product.getId());
         productResponse.setFamily(product.getDetailsProduct().getFamilyProduct());
+        productResponse.setProductType(product.getProductType());
 
         CustomerBean customerBean = new CustomerBean();
         customerBean.setCustomerId(product.getCustomer().getCustomerId());
@@ -129,7 +131,7 @@ public class ProductTransfer {
     private ActiveProduct getActiveProduct(ProductRequest prq) {
         ActiveProduct activeProduct = new ActiveProduct();
         activeProduct.setProductType(prq.getProductType());
-        activeProduct.setHasCreditCard(true);
+        activeProduct.setHasCreditCard(prq.getActiveProduct().getHasCreditCard());
 
         if (activeProduct.isHasCreditCard()) {
             CreditCardBean creditCardBean = prq.getActiveProduct().getCreditCard();
