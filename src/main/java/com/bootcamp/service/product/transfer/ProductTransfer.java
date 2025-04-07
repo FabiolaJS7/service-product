@@ -143,6 +143,8 @@ public class ProductTransfer {
         }
 
         activeProduct.setCreditLimit(prq.getActiveProduct().getCreditLimit());
+        activeProduct.setCreditLimitUsed(prq.getActiveProduct().getCreditLimitUsed());
+        activeProduct.setCreditBalance(prq.getActiveProduct().getCreditBalance());
         return activeProduct;
     }
 

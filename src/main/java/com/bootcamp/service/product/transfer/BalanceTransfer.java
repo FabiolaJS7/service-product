@@ -30,7 +30,7 @@ public class BalanceTransfer {
 
             if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.DEPOSIT)) {
                 balanceFound.setTotalAmount(balanceFound.getTotalAmount() + balanceBeanRequest.getAmount());
-            } else {
+            } else if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.WITHDRAW)) {
                 balanceFound.setTotalAmount(balanceFound.getTotalAmount() - balanceBeanRequest.getAmount());
             }
              product.getDetailsProduct().getPassiveProduct().setBalance(balanceFound);
@@ -40,9 +40,13 @@ public class BalanceTransfer {
 
             if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.DEPOSIT)) {
                 activeProduct.setCreditLimitUsed(activeProduct.getCreditLimitUsed() - balanceBeanRequest.getAmount());
+                activeProduct.setCreditBalance(activeProduct.getCreditBalance() + balanceBeanRequest.getAmount());
             } else {
-                if ()
-                activeProduct.setCreditLimitUsed(activeProduct.getCreditLimitUsed() + balanceBeanRequest.getAmount());
+                if (activeProduct.isHasCreditCard()) {
+                    activeProduct.setCreditLimitUsed(activeProduct.getCreditLimitUsed() + balanceBeanRequest.getAmount());
+                    activeProduct.setCreditBalance(activeProduct.getCreditBalance() - balanceBeanRequest.getAmount());
+                }
+
             }
             return Mono.just(product);
         }

@@ -15,6 +15,7 @@ public class ActiveProduct {
     private boolean hasCreditCard;
     private double creditLimit;
     private double creditLimitUsed;
+    private double creditBalance;
     private CreditCard creditCard;
 
 }
