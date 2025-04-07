@@ -1,9 +1,7 @@
 package com.bootcamp.service.product.expose;
 
 import com.bootcamp.service.product.api.ApiApiDelegate;
-import com.bootcamp.service.product.model.ProductRequest;
-import com.bootcamp.service.product.model.ProductResponse;
-import com.bootcamp.service.product.model.ProductUpdateRQ;
+import com.bootcamp.service.product.model.*;
 import com.bootcamp.service.product.service.ProductService;
 import com.bootcamp.service.product.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -70,6 +68,30 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
         return productService.findProductById(productId)
                 .map(ResponseEntity::ok)
                 .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
+    }
+
+    @Override
+    public Mono<ResponseEntity<BalanceBeanResponse>> getProductBalance(String productId,
+                                                                        ServerWebExchange exchange) {
+
+        log.info("-> Get Product Balance");
+        return productService.findBalanceByProductId(productId)
+                .map(ResponseEntity::ok)
+                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
+
+    }
+
+    @Override
+    public Mono<ResponseEntity<BalanceBeanResponse>> udpateBalance(String productId,
+                                                                    Mono<BalanceBeanRequest> balanceBeanRequest,
+                                                                    ServerWebExchange exchange) {
+        return balanceBeanRequest
+                .doOnNext(b -> log.info("Update balance of product {}", productId))
+                .flatMap(b -> productService.updateBalance(productId, Mono.just(b)))
+                .map(ResponseEntity::ok)
+                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
+
+
     }
 
 }

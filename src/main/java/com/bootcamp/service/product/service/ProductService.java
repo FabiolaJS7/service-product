@@ -1,8 +1,6 @@
 package com.bootcamp.service.product.service;
 
-import com.bootcamp.service.product.model.ProductRequest;
-import com.bootcamp.service.product.model.ProductResponse;
-import com.bootcamp.service.product.model.ProductUpdateRQ;
+import com.bootcamp.service.product.model.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -14,6 +12,8 @@ public interface ProductService {
     Mono<Void> deleteProduct(String productId);
     Flux<ProductResponse> findProductsByCustomerId(String customerId);
     Mono<ProductResponse> findProductById(String productId);
+    Mono<BalanceBeanResponse> findBalanceByProductId(String productId);
+    Mono<BalanceBeanResponse> updateBalance(String productId, Mono<BalanceBeanRequest> balanceBeanRequest);
 
 
 }

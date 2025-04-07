@@ -3,6 +3,7 @@ package com.bootcamp.service.product.service.impl;
 
 import com.bootcamp.service.product.constants.CasesUpdateConstants;
 import com.bootcamp.service.product.model.*;
+import com.bootcamp.service.product.transfer.BalanceTransfer;
 import com.bootcamp.service.product.transfer.ProductTransfer;
 import com.bootcamp.service.product.repository.ProductRepository;
 import com.bootcamp.service.product.service.ProductService;
@@ -13,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import springfox.documentation.spring.web.json.Json;
 
 import java.util.List;
 
@@ -26,6 +26,8 @@ public class ProductServiceImpl implements ProductService {
     ProductRepository productRepository;
     @Autowired
     ProductTransfer productTransfer;
+    @Autowired
+    BalanceTransfer balanceTransfer;
 
     @Override
     public Mono<String> createProduct(Mono<ProductRequest> productRequest) {
@@ -90,6 +92,30 @@ public class ProductServiceImpl implements ProductService {
                 .map(product -> productTransfer.getProductResponseOfProduct(product))
                 .doOnError(e -> log.error("Error fetching product: {}", e.getMessage(), e))
                 .switchIfEmpty(Mono.just(new ProductResponse()));
+    }
+
+    @Override
+    public Mono<BalanceBeanResponse> findBalanceByProductId(String productId) {
+        return productRepository.findById(productId)
+                .flatMap(product -> balanceTransfer.getBalanceOfProduct(product))
+                .doOnSubscribe(subscription -> log.info("Getting balance of product: {}", productId))
+                .doOnSuccess(product -> log.info("Success getting balance of product: {}",
+                        JsonTransferUtil.objectToJson(product)))
+                .doOnError(e -> log.error("Error fetching balance of product: {}", productId, e))
+                .switchIfEmpty(Mono.just(new BalanceBeanResponse()));
+    }
+
+    @Override
+    public Mono<BalanceBeanResponse> updateBalance(String productId, Mono<BalanceBeanRequest> balanceBeanRequest) {
+        return balanceBeanRequest
+                .flatMap(balanceBeanRequest1 -> productRepository.findById(productId)
+                        .flatMap(product -> balanceTransfer.updateBalance(product, balanceBeanRequest1))
+                        .flatMap(product -> productRepository.save(product)))
+                .flatMap(product -> balanceTransfer.getBalanceOfProduct(product))
+                .doOnSubscribe(subscription -> log.info("Updating balance with movement."))
+                .doOnSuccess(product -> log.info("Movement on balance was updated {}", JsonTransferUtil.objectToJson(product)))
+                .doOnError(throwable -> log.error("Error {}", throwable));
+
     }
 
     private void buildProductToUpdate(ProductUpdateRQ proToUpdate, Product product) {

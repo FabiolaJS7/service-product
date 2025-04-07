@@ -210,7 +210,50 @@ paths:
                 type: boolean
         '404':
           description: Product not found to updated
-
+  /api/products/{productId}/balance:
+    get:
+      summary: Getting balance of product with product by id
+      operationId: getProductBalance
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BalanceBeanResponse"
+        '404':
+          description: Product not found
+    put:
+      summary: Updated balance
+      operationId: udpateBalance
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Details to updated product.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BalanceBeanRequest'
+      responses:
+        '200':
+          description: Success updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BalanceBeanResponse'
+        '404':
+          description: Product not found to updated
 components:
   schemas:
     ProductRequest:
@@ -369,3 +412,31 @@ components:
           type: string
           format: date
           description: expiration date of credit card
+    BalanceBeanResponse:
+      type: object
+      properties:
+        balanceAmount:
+          type: number
+          format: double
+          description: amount in account on time of passive product
+        creditLimit:
+          type: number
+          format: double
+          description: credit limit of active product
+        creditLimitUsed:
+          type: number
+          format: double
+          description: credit used
+        result:
+          type: string
+          description: result of movement
+    BalanceBeanRequest:
+      type: object
+      properties:
+        amount:
+          type: number
+          format: double
+          description: amount in account on time of passive product
+        movementType:
+          type: string
+          description: type of movement DEPOSIT , WITHDRAWAL
