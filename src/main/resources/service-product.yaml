@@ -320,7 +320,7 @@ components:
         creditLimit:
           type: number
           format: double
-        creditLimitEnabled:
+        creditBalance:
           type: number
           format: double
         creditLimitUsed:
