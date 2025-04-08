@@ -3,10 +3,12 @@ package com.bootcamp.service.product.transfer;
 import com.bootcamp.service.product.constants.MovementTypeConstants;
 import com.bootcamp.service.product.constants.ProductTypeConstants;
 import com.bootcamp.service.product.model.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
 @Component
+@Slf4j
 public class BalanceTransfer {
     public Mono<BalanceBeanResponse> getBalanceOfProduct(Product product) {
 
@@ -25,14 +27,21 @@ public class BalanceTransfer {
     }
 
     public Mono<Product> updateBalance(Product product, BalanceBeanRequest balanceBeanRequest) {
+        log.info("Update balance of product {}", product.getId());
+
         if (ProductTypeConstants.PASSIVE_PRODUCTS.contains(product.getProductType())) {
             Balance balanceFound = product.getDetailsProduct().getPassiveProduct().getBalance();
+            PassiveProduct passiveProduct = product.getDetailsProduct().getPassiveProduct();
 
-            if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.DEPOSIT)) {
-                balanceFound.setTotalAmount(balanceFound.getTotalAmount() + balanceBeanRequest.getAmount());
-            } else if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.WITHDRAW)) {
-                balanceFound.setTotalAmount(balanceFound.getTotalAmount() - balanceBeanRequest.getAmount());
+            if (passiveProduct.isFreeCommission() || (Boolean.FALSE.equals(passiveProduct.isFreeCommission()) &&
+                    passiveProduct.getTransactionDone() < Integer.parseInt(passiveProduct.getMaxMovementPerMonth()))) {
+                if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.DEPOSIT)) {
+                    balanceFound.setTotalAmount(balanceFound.getTotalAmount() + balanceBeanRequest.getAmount());
+                } else if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.WITHDRAW)) {
+                    balanceFound.setTotalAmount(balanceFound.getTotalAmount() - balanceBeanRequest.getAmount());
+                }
             }
+
              product.getDetailsProduct().getPassiveProduct().setBalance(balanceFound);
             return Mono.just(product);
         } else {

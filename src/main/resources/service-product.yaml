@@ -254,6 +254,26 @@ paths:
                 $ref: '#/components/schemas/BalanceBeanResponse'
         '404':
           description: Product not found to updated
+  /api/products/account/{accountNumber}:
+    get:
+      summary: Getting passive product by accountNumber
+      operationId: getProductByAccountNumber
+      parameters:
+        - name: accountNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProductResponse"
+        '404':
+          description: Product not found
+
 components:
   schemas:
     ProductRequest:

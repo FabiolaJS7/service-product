@@ -90,8 +90,16 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
                 .flatMap(b -> productService.updateBalance(productId, Mono.just(b)))
                 .map(ResponseEntity::ok)
                 .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
-
-
     }
+
+    @Override
+    public Mono<ResponseEntity<ProductResponse>> getProductByAccountNumber(String accountNumber,
+                                                                            ServerWebExchange exchange) {
+        log.info("-> Get Product By Account Number");
+        return productService.findProductPassiveByAccountNumber(accountNumber)
+                .map(ResponseEntity::ok)
+                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
+    }
+
 
 }

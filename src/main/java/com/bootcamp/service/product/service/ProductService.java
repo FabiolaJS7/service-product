@@ -14,6 +14,7 @@ public interface ProductService {
     Mono<ProductResponse> findProductById(String productId);
     Mono<BalanceBeanResponse> findBalanceByProductId(String productId);
     Mono<BalanceBeanResponse> updateBalance(String productId, Mono<BalanceBeanRequest> balanceBeanRequest);
+    Mono<ProductResponse> findProductPassiveByAccountNumber(String accountNumber);
 
 
 }

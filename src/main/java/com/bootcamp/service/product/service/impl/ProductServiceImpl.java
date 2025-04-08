@@ -118,6 +118,17 @@ public class ProductServiceImpl implements ProductService {
 
     }
 
+    @Override
+    public Mono<ProductResponse> findProductPassiveByAccountNumber(String accountNumber) {
+        return productRepository.findProductsByDetailsProduct_PassiveProduct_AccountNumber(accountNumber)
+                .doOnSubscribe(s -> log.info("Getting passive product by accountNumber {}", accountNumber))
+                .doOnSuccess(product -> log.info("Success product by accountNumber {}", JsonTransferUtil.objectToJson(product)))
+                .map(product -> productTransfer.getProductResponseOfProduct(product))
+                .doOnError(e -> log.error("Error fetching passive product by account number: {}", e.getMessage(), e))
+                .switchIfEmpty(Mono.just(new ProductResponse()));
+
+    }
+
     private void buildProductToUpdate(ProductUpdateRQ proToUpdate, Product product) {
         //Actualizará atributos del product dependiendo de lo que indique proToUpdate.getActionToUpdate()
         switch (proToUpdate.getActionToUpdate()){
