@@ -44,7 +44,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Flux<ProductResponse> findAllProducts() {
         return productRepository.findAll()
-                .doOnSubscribe(subscription -> log.info("Products searching {}", JsonTransferUtil.objectToJson(subscription) ))
+                .doOnSubscribe(subscription -> log.info("Products searching {}", JsonTransferUtil.objectToJson(subscription)))
                 .map(product -> productTransfer.getProductResponseOfProduct(product))
                 .doOnComplete(() -> log.info("Products found"))
                 .doOnError(e -> log.error("Error fetching products: {}", e.getMessage(), e));
@@ -131,7 +131,7 @@ public class ProductServiceImpl implements ProductService {
 
     private void buildProductToUpdate(ProductUpdateRQ proToUpdate, Product product) {
         //Actualizará atributos del product dependiendo de lo que indique proToUpdate.getActionToUpdate()
-        switch (proToUpdate.getActionToUpdate()){
+        switch (proToUpdate.getActionToUpdate()) {
             case CasesUpdateConstants.CHANGE_ACTIVE_PRODUCT:
                 ActiveProductBean activeProductBean = proToUpdate.getActiveProduct();
                 ActiveProduct activeProductModel = product.getDetailsProduct().getActiveProduct();
@@ -177,7 +177,8 @@ public class ProductServiceImpl implements ProductService {
                 }
 
                 break;
-            case CasesUpdateConstants.CHANGE_SIGNATURES:
+            //case CasesUpdateConstants.CHANGE_SIGNATURES:
+            default:
                 List<AdditionalPerson> signatures = proToUpdate.getAuthorizedSignatories()
                         .stream()
                         .map(additionalPersonBean -> {

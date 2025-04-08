@@ -33,8 +33,8 @@ public class BalanceTransfer {
             Balance balanceFound = product.getDetailsProduct().getPassiveProduct().getBalance();
             PassiveProduct passiveProduct = product.getDetailsProduct().getPassiveProduct();
 
-            if (passiveProduct.isFreeCommission() || (Boolean.FALSE.equals(passiveProduct.isFreeCommission()) &&
-                    passiveProduct.getTransactionDone() < Integer.parseInt(passiveProduct.getMaxMovementPerMonth()))) {
+            if (passiveProduct.isFreeCommission() || (Boolean.FALSE.equals(passiveProduct.isFreeCommission())
+                    && passiveProduct.getTransactionDone() < Integer.parseInt(passiveProduct.getMaxMovementPerMonth()))) {
                 if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.DEPOSIT)) {
                     balanceFound.setTotalAmount(balanceFound.getTotalAmount() + balanceBeanRequest.getAmount());
                 } else if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.WITHDRAW)) {

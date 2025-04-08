@@ -1,146 +1,658 @@
-2025-04-07 00:00:08-003 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
-2025-04-07 00:00:08-003 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
-2025-04-07 00:00:08-014 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
-2025-04-07 00:00:08-014 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f1e95e99f03227cbd85b5e 
-2025-04-07 00:00:08-022 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":165.0} 
-2025-04-07 00:00:08-023 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f1e95e99f03227cbd85b5e","status":"ENABLED","productType":"SA","customer":{"customerId":"67f00c6fd214c769e74425a7","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"SA","amountOfOpen":50.0,"accountNumber":"SA01-1778432019","balance":{"totalAmount":165.0},"commission":0.0,"maxMovementPerMonth":"15","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1743907166705,"updatedAt":1743907166705}} 
-2025-04-07 00:00:32-405 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f1e95e99f03227cbd85b5e 
-2025-04-07 00:00:32-406 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
-2025-04-07 00:00:32-429 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":140.0} 
-2025-04-07 00:01:25-979 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
-2025-04-07 00:01:25-980 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
-2025-04-07 00:01:25-981 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f1e95e99f03227cbd85b5e 
-2025-04-07 00:01:25-981 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
-2025-04-07 00:01:25-991 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":140.0} 
-2025-04-07 00:01:25-994 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f1e95e99f03227cbd85b5e","status":"ENABLED","productType":"SA","customer":{"customerId":"67f00c6fd214c769e74425a7","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"SA","amountOfOpen":50.0,"accountNumber":"SA01-1778432019","balance":{"totalAmount":140.0},"commission":0.0,"maxMovementPerMonth":"15","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1743907166705,"updatedAt":1743907166705}} 
-2025-04-07 00:01:31-199 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f1e95e99f03227cbd85b5e 
-2025-04-07 00:01:31-200 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
-2025-04-07 00:01:31-219 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":135.0} 
-2025-04-07 00:01:59-930 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
-2025-04-07 00:06:59-935 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
-2025-04-07 00:10:04-417 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application SERVICE-PRODUCT with eureka with status DOWN 
-2025-04-07 00:10:04-419 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1744002604419, current=DOWN, previous=UP] 
-2025-04-07 00:10:04-419 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
-2025-04-07 00:10:04-425 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete 
-2025-04-07 00:10:04-430 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete 
-2025-04-07 00:10:04-434 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
-2025-04-07 00:10:18-776 [main] INFO  c.b.s.p.ServiceProductApplication - Starting ServiceProductApplication using Java 17.0.12 with PID 12440 (C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product\target\classes started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product) 
-2025-04-07 00:10:18-778 [main] INFO  c.b.s.p.ServiceProductApplication - The following 1 profile is active: "local" 
-2025-04-07 00:10:18-837 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
-2025-04-07 00:10:18-837 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[default], label=null, version=d7057677479d0cdb28ef7a758a267f2fdda05a2f, state= 
-2025-04-07 00:10:18-837 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
-2025-04-07 00:10:18-837 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[local], label=null, version=d7057677479d0cdb28ef7a758a267f2fdda05a2f, state= 
-2025-04-07 00:10:20-326 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
-2025-04-07 00:10:20-501 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 166 ms. Found 1 Reactive MongoDB repository interface. 
-2025-04-07 00:10:20-731 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=8ba3d4c5-b57e-3ef6-a9d1-0238764c9154 
-2025-04-07 00:10:22-402 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@186295cc, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@4e85dcb2], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@1b28cff, com.mongodb.Jep395RecordCodecProvider@73dbe25, com.mongodb.KotlinCodecProvider@bfd97fb]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@6bfdaa7a], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
-2025-04-07 00:10:22-711 [cluster-ClusterId{value='67f35e3e86391706414718da', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=129354700, minRoundTripTimeNanos=0} 
-2025-04-07 00:10:25-411 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
-2025-04-07 00:10:26-417 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
-2025-04-07 00:10:26-519 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
-2025-04-07 00:10:26-784 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
-2025-04-07 00:10:26-841 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
-2025-04-07 00:10:26-853 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
-2025-04-07 00:10:26-877 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
-2025-04-07 00:10:26-878 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
-2025-04-07 00:10:26-879 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
-2025-04-07 00:10:26-879 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
-2025-04-07 00:10:26-879 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
-2025-04-07 00:10:26-879 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
-2025-04-07 00:10:26-879 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
-2025-04-07 00:10:27-551 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
-2025-04-07 00:10:27-556 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
-2025-04-07 00:10:27-562 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
-2025-04-07 00:10:27-565 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1744002627564 with initial instances count: 5 
-2025-04-07 00:10:27-572 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SERVICE-PRODUCT with eureka with status UP 
-2025-04-07 00:10:27-573 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1744002627573, current=UP, previous=STARTING] 
-2025-04-07 00:10:27-577 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
-2025-04-07 00:10:27-682 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
-2025-04-07 00:10:27-729 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8383 (http) 
-2025-04-07 00:10:27-732 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8383 
-2025-04-07 00:10:28-456 [main] INFO  c.b.s.p.ServiceProductApplication - Started ServiceProductApplication in 13.657 seconds (process running for 15.615) 
-2025-04-07 00:10:55-507 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
-2025-04-07 00:10:55-507 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
-2025-04-07 00:10:55-549 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f1e94499f03227cbd85b5d 
-2025-04-07 00:10:55-549 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
-2025-04-07 00:10:55-784 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f1e94499f03227cbd85b5d","status":"ENABLED","productType":"CP","customer":{"customerId":"67f00c6fd214c769e74425a7","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CP","hasCreditCard":false,"creditLimit":33000.0,"creditLimitUsed":33000.0}},"holders":[{"fullName":"VERONICA ARANGO","email":"mail@gmail.com","phone":"1098098098","identification":{"typeIdentification":"DNI","numberIdentification":"11111"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}}],"authorizedSignatories":[{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}}],"auditData":{"createdAt":1743907140550,"updatedAt":1743907140550}} 
-2025-04-07 00:10:55-785 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":0.0,"creditLimit":33000.0,"creditLimitUsed":33000.0} 
-2025-04-07 00:11:07-141 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f1e94499f03227cbd85b5d 
-2025-04-07 00:11:07-144 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
-2025-04-07 00:11:07-224 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":-50.0,"creditLimit":33000.0,"creditLimitUsed":33050.0} 
-2025-04-07 00:12:26-176 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
-2025-04-07 00:12:26-176 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
-2025-04-07 00:12:26-178 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f1e94499f03227cbd85b5d 
-2025-04-07 00:12:26-178 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
-2025-04-07 00:12:26-189 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":-50.0,"creditLimit":33000.0,"creditLimitUsed":33050.0} 
-2025-04-07 00:12:26-194 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f1e94499f03227cbd85b5d","status":"ENABLED","productType":"CP","customer":{"customerId":"67f00c6fd214c769e74425a7","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CP","hasCreditCard":false,"creditLimit":33000.0,"creditLimitUsed":33050.0}},"holders":[{"fullName":"VERONICA ARANGO","email":"mail@gmail.com","phone":"1098098098","identification":{"typeIdentification":"DNI","numberIdentification":"11111"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}}],"authorizedSignatories":[{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}}],"auditData":{"createdAt":1743907140550,"updatedAt":1743907140550}} 
-2025-04-07 00:12:31-638 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f1e94499f03227cbd85b5d 
-2025-04-07 00:12:31-641 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
-2025-04-07 00:12:31-668 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":-100.0,"creditLimit":33000.0,"creditLimitUsed":33100.0} 
-2025-04-07 00:12:47-334 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
-2025-04-07 00:12:47-335 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
-2025-04-07 00:12:50-268 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
-2025-04-07 00:12:50-271 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f1e94499f03227cbd85b5d 
-2025-04-07 00:12:50-274 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f1e94499f03227cbd85b5d","status":"ENABLED","productType":"CP","customer":{"customerId":"67f00c6fd214c769e74425a7","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CP","hasCreditCard":false,"creditLimit":33000.0,"creditLimitUsed":33100.0}},"holders":[{"fullName":"VERONICA ARANGO","email":"mail@gmail.com","phone":"1098098098","identification":{"typeIdentification":"DNI","numberIdentification":"11111"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}}],"authorizedSignatories":[{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}}],"auditData":{"createdAt":1743907140550,"updatedAt":1743907140550}} 
-2025-04-07 00:12:50-284 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":-100.0,"creditLimit":33000.0,"creditLimitUsed":33100.0} 
-2025-04-07 00:13:02-409 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f1e94499f03227cbd85b5d 
-2025-04-07 00:13:02-410 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
-2025-04-07 00:13:20-279 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":-150.0,"creditLimit":33000.0,"creditLimitUsed":33150.0} 
-2025-04-07 00:13:32-017 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application SERVICE-PRODUCT with eureka with status DOWN 
-2025-04-07 00:13:32-018 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1744002812018, current=DOWN, previous=UP] 
-2025-04-07 00:13:32-018 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
-2025-04-07 00:13:32-021 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete 
-2025-04-07 00:13:32-025 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete 
-2025-04-07 00:13:32-031 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
-2025-04-07 00:13:45-126 [main] INFO  c.b.s.p.ServiceProductApplication - Starting ServiceProductApplication using Java 17.0.12 with PID 16012 (C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product\target\classes started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product) 
-2025-04-07 00:13:45-130 [main] INFO  c.b.s.p.ServiceProductApplication - The following 1 profile is active: "local" 
-2025-04-07 00:13:45-199 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
-2025-04-07 00:13:45-199 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[default], label=null, version=d7057677479d0cdb28ef7a758a267f2fdda05a2f, state= 
-2025-04-07 00:13:45-200 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
-2025-04-07 00:13:45-200 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[local], label=null, version=d7057677479d0cdb28ef7a758a267f2fdda05a2f, state= 
-2025-04-07 00:13:46-595 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
-2025-04-07 00:13:46-798 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 186 ms. Found 1 Reactive MongoDB repository interface. 
-2025-04-07 00:13:47-022 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=8ba3d4c5-b57e-3ef6-a9d1-0238764c9154 
-2025-04-07 00:13:47-998 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@16029e2f, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@3b2db389], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@45f1413c, com.mongodb.Jep395RecordCodecProvider@1a139347, com.mongodb.KotlinCodecProvider@186295cc]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@4e85dcb2], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
-2025-04-07 00:13:48-156 [cluster-ClusterId{value='67f35f0b24fbfe44c64c4c4c', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=62940400, minRoundTripTimeNanos=0} 
-2025-04-07 00:13:49-689 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
-2025-04-07 00:13:50-327 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
-2025-04-07 00:13:50-388 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
-2025-04-07 00:13:50-479 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
-2025-04-07 00:13:50-514 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
-2025-04-07 00:13:50-521 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
-2025-04-07 00:13:50-538 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
-2025-04-07 00:13:50-539 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
-2025-04-07 00:13:50-539 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
-2025-04-07 00:13:50-539 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
-2025-04-07 00:13:50-539 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
-2025-04-07 00:13:50-539 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
-2025-04-07 00:13:50-540 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
-2025-04-07 00:13:50-971 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
-2025-04-07 00:13:50-974 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
-2025-04-07 00:13:50-979 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
-2025-04-07 00:13:50-981 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1744002830980 with initial instances count: 5 
-2025-04-07 00:13:50-984 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SERVICE-PRODUCT with eureka with status UP 
-2025-04-07 00:13:50-984 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1744002830984, current=UP, previous=STARTING] 
-2025-04-07 00:13:50-987 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
-2025-04-07 00:13:51-040 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
-2025-04-07 00:13:51-058 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8383 (http) 
-2025-04-07 00:13:51-060 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8383 
-2025-04-07 00:13:51-422 [main] INFO  c.b.s.p.ServiceProductApplication - Started ServiceProductApplication in 10.205 seconds (process running for 12.001) 
-2025-04-07 00:14:06-511 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
-2025-04-07 00:14:09-283 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
-2025-04-07 00:14:09-336 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f1e94499f03227cbd85b5d 
-2025-04-07 00:14:09-337 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
-2025-04-07 00:14:09-556 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":0.0,"creditLimit":33000.0,"creditLimitUsed":33000.0} 
-2025-04-07 00:14:09-559 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f1e94499f03227cbd85b5d","status":"ENABLED","productType":"CP","customer":{"customerId":"67f00c6fd214c769e74425a7","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CP","hasCreditCard":false,"creditLimit":33000.0,"creditLimitUsed":33000.0}},"holders":[{"fullName":"VERONICA ARANGO","email":"mail@gmail.com","phone":"1098098098","identification":{"typeIdentification":"DNI","numberIdentification":"11111"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}},{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}}],"authorizedSignatories":[{"fullName":"VERONICA ARANGO YAMASHIRO","email":"mail@gmail.commmm","phone":"2222222","identification":{"typeIdentification":"DNI","numberIdentification":"22222"}}],"auditData":{"createdAt":1743907140550,"updatedAt":1743907140550}} 
-2025-04-07 00:14:17-892 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f1e94499f03227cbd85b5d 
-2025-04-07 00:14:17-899 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
-2025-04-07 00:14:19-164 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":50.0,"creditLimit":33000.0,"creditLimitUsed":32950.0} 
-2025-04-07 00:18:50-550 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
-2025-04-07 00:23:50-553 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
-2025-04-07 00:28:50-562 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
-2025-04-07 00:33:50-577 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
-2025-04-07 00:53:07-213 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application SERVICE-PRODUCT with eureka with status DOWN 
-2025-04-07 00:53:07-214 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1744005187214, current=DOWN, previous=UP] 
-2025-04-07 00:53:07-223 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete 
-2025-04-07 00:53:07-240 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete 
+2025-04-08 00:00:28-814 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 00:03:37-589 [reactor-http-nio-7] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 00:03:37-590 [reactor-http-nio-6] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 00:03:37-638 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 00:03:37-638 [reactor-http-nio-6] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f4411f4b914424665e6627 
+2025-04-08 00:03:37-710 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":171.0} 
+2025-04-08 00:03:37-716 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f4411f4b914424665e6627","status":"ENABLED","productType":"CA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"CA","amountOfOpen":100.0,"accountNumber":"CA01-8651597276","balance":{"totalAmount":171.0},"commission":10.0,"maxMovementPerMonth":"FREE","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1744060703354,"updatedAt":1744060703354}} 
+2025-04-08 00:04:03-598 [reactor-http-nio-6] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f4411f4b914424665e6627 
+2025-04-08 00:04:03-614 [reactor-http-nio-6] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
+2025-04-08 00:04:03-626 [nioEventLoopGroup-3-4] INFO  c.b.s.p.transfer.BalanceTransfer - Update balance of product 67f4411f4b914424665e6627 
+2025-04-08 00:04:04-019 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":242.0} 
+2025-04-08 00:05:28-985 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 00:10:28-992 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 00:33:10-993 [reactor-http-nio-6] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 00:33:10-993 [reactor-http-nio-7] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 00:33:10-996 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f4411f4b914424665e6627 
+2025-04-08 00:33:10-998 [reactor-http-nio-6] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 00:33:11-014 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f4411f4b914424665e6627","status":"ENABLED","productType":"CA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"CA","amountOfOpen":100.0,"accountNumber":"CA01-8651597276","balance":{"totalAmount":242.0},"commission":10.0,"maxMovementPerMonth":"FREE","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1744060703354,"updatedAt":1744060703354}} 
+2025-04-08 00:33:11-015 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":242.0} 
+2025-04-08 00:34:05-894 [reactor-http-nio-1] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 00:34:05-897 [reactor-http-nio-1] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f4411f4b914424665e6627 
+2025-04-08 00:34:05-897 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 00:34:05-903 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 00:34:05-909 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":242.0} 
+2025-04-08 00:34:05-915 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f4411f4b914424665e6627","status":"ENABLED","productType":"CA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"CA","amountOfOpen":100.0,"accountNumber":"CA01-8651597276","balance":{"totalAmount":242.0},"commission":10.0,"maxMovementPerMonth":"FREE","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1744060703354,"updatedAt":1744060703354}} 
+2025-04-08 00:35:20-174 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product By Account Number 
+2025-04-08 00:35:20-401 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting passive product by accountNumber SA01-3457634657 
+2025-04-08 00:35:20-538 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by accountNumber {"id":"67f440fe4b914424665e6626","status":"ENABLED","productType":"SA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"SA","amountOfOpen":100.0,"accountNumber":"SA01-3457634657","balance":{"totalAmount":100.0},"commission":0.0,"maxMovementPerMonth":"15","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1744060670526,"updatedAt":1744060670526}} 
+2025-04-08 00:36:07-745 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 00:37:22-231 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 00:37:22-233 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f4411f4b914424665e6627 
+2025-04-08 00:37:22-292 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":242.0} 
+2025-04-08 00:37:32-242 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 00:37:32-249 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 00:37:32-265 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f4411f4b914424665e6627","status":"ENABLED","productType":"CA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"CA","amountOfOpen":100.0,"accountNumber":"CA01-8651597276","balance":{"totalAmount":242.0},"commission":10.0,"maxMovementPerMonth":"FREE","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1744060703354,"updatedAt":1744060703354}} 
+2025-04-08 00:38:29-378 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 00:38:29-378 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 00:38:29-381 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f4411f4b914424665e6627 
+2025-04-08 00:38:29-381 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 00:38:29-401 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f4411f4b914424665e6627","status":"ENABLED","productType":"CA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"CA","amountOfOpen":100.0,"accountNumber":"CA01-8651597276","balance":{"totalAmount":242.0},"commission":10.0,"maxMovementPerMonth":"FREE","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1744060703354,"updatedAt":1744060703354}} 
+2025-04-08 00:38:29-402 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":242.0} 
+2025-04-08 00:41:07-763 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 00:44:00-622 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product By Account Number 
+2025-04-08 00:44:00-627 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting passive product by accountNumber SA01-3457634657 
+2025-04-08 00:44:00-647 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by accountNumber {"id":"67f440fe4b914424665e6626","status":"ENABLED","productType":"SA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"SA","amountOfOpen":100.0,"accountNumber":"SA01-3457634657","balance":{"totalAmount":100.0},"commission":0.0,"maxMovementPerMonth":"15","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1744060670526,"updatedAt":1744060670526}} 
+2025-04-08 00:44:21-886 [reactor-http-nio-6] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 00:44:21-886 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product By Account Number 
+2025-04-08 00:44:21-888 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting passive product by accountNumber SA01-3457634657 
+2025-04-08 00:44:21-890 [reactor-http-nio-6] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 00:44:21-904 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by accountNumber {"id":"67f440fe4b914424665e6626","status":"ENABLED","productType":"SA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"SA","amountOfOpen":100.0,"accountNumber":"SA01-3457634657","balance":{"totalAmount":100.0},"commission":0.0,"maxMovementPerMonth":"15","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1744060670526,"updatedAt":1744060670526}} 
+2025-04-08 00:44:21-905 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f4411f4b914424665e6627","status":"ENABLED","productType":"CA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"CA","amountOfOpen":100.0,"accountNumber":"CA01-8651597276","balance":{"totalAmount":242.0},"commission":10.0,"maxMovementPerMonth":"FREE","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1744060703354,"updatedAt":1744060703354}} 
+2025-04-08 00:44:21-907 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 00:44:21-920 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f4411f4b914424665e6627 
+2025-04-08 00:44:21-931 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":242.0} 
+2025-04-08 00:44:31-502 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f4411f4b914424665e6627 
+2025-04-08 00:44:31-512 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
+2025-04-08 00:44:31-518 [nioEventLoopGroup-3-4] INFO  c.b.s.p.transfer.BalanceTransfer - Update balance of product 67f4411f4b914424665e6627 
+2025-04-08 00:44:31-526 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":233.0} 
+2025-04-08 00:44:31-543 [reactor-http-nio-6] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f440fe4b914424665e6626 
+2025-04-08 00:44:31-544 [reactor-http-nio-6] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
+2025-04-08 00:44:31-547 [nioEventLoopGroup-3-4] INFO  c.b.s.p.transfer.BalanceTransfer - Update balance of product 67f440fe4b914424665e6626 
+2025-04-08 00:44:31-553 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":109.0} 
+2025-04-08 00:46:07-777 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 00:47:15-135 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 00:47:15-135 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 00:47:15-138 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 00:47:15-138 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f43db94b914424665e6625 
+2025-04-08 00:47:15-193 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":2800.0,"creditLimit":3000.0,"creditLimitUsed":200.0} 
+2025-04-08 00:47:15-206 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f43db94b914424665e6625","status":"ENABLED","productType":"CC","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CC","hasCreditCard":true,"creditLimit":3000.0,"creditLimitUsed":200.0,"creditBalance":2800.0,"creditCard":{"number":"1394-7191-9133-6892","auditData":{"createdAt":1744059832646,"updatedAt":1744059832646}}}},"auditData":{"createdAt":1744059833327,"updatedAt":1744059833327}} 
+2025-04-08 00:47:56-566 [reactor-http-nio-6] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 00:47:56-566 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 00:47:56-567 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 00:47:56-568 [reactor-http-nio-6] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f43db94b914424665e6625 
+2025-04-08 00:47:56-578 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":2800.0,"creditLimit":3000.0,"creditLimitUsed":200.0} 
+2025-04-08 00:47:56-582 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f43db94b914424665e6625","status":"ENABLED","productType":"CC","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CC","hasCreditCard":true,"creditLimit":3000.0,"creditLimitUsed":200.0,"creditBalance":2800.0,"creditCard":{"number":"1394-7191-9133-6892","auditData":{"createdAt":1744059832646,"updatedAt":1744059832646}}}},"auditData":{"createdAt":1744059833327,"updatedAt":1744059833327}} 
+2025-04-08 00:51:07-814 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 00:51:21-080 [reactor-http-nio-7] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 00:51:21-084 [reactor-http-nio-8] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 00:51:21-086 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 00:51:21-086 [reactor-http-nio-8] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f43db94b914424665e6625 
+2025-04-08 00:51:21-094 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":2800.0,"creditLimit":3000.0,"creditLimitUsed":200.0} 
+2025-04-08 00:51:21-098 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f43db94b914424665e6625","status":"ENABLED","productType":"CC","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CC","hasCreditCard":true,"creditLimit":3000.0,"creditLimitUsed":200.0,"creditBalance":2800.0,"creditCard":{"number":"1394-7191-9133-6892","auditData":{"createdAt":1744059832646,"updatedAt":1744059832646}}}},"auditData":{"createdAt":1744059833327,"updatedAt":1744059833327}} 
+2025-04-08 00:51:34-295 [reactor-http-nio-7] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f43db94b914424665e6625 
+2025-04-08 00:51:34-296 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
+2025-04-08 00:51:34-303 [nioEventLoopGroup-3-3] INFO  c.b.s.p.transfer.BalanceTransfer - Update balance of product 67f43db94b914424665e6625 
+2025-04-08 00:51:34-316 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":2791.0,"creditLimit":3000.0,"creditLimitUsed":209.0} 
+2025-04-08 00:52:12-129 [reactor-http-nio-7] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 00:52:12-129 [reactor-http-nio-8] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 00:52:12-132 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 00:52:12-136 [reactor-http-nio-8] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f43db94b914424665e6625 
+2025-04-08 00:52:12-150 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f43db94b914424665e6625","status":"ENABLED","productType":"CC","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CC","hasCreditCard":true,"creditLimit":3000.0,"creditLimitUsed":209.0,"creditBalance":2791.0,"creditCard":{"number":"1394-7191-9133-6892","auditData":{"createdAt":1744059832646,"updatedAt":1744059832646}}}},"auditData":{"createdAt":1744059833327,"updatedAt":1744059833327}} 
+2025-04-08 00:52:12-159 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":2791.0,"creditLimit":3000.0,"creditLimitUsed":209.0} 
+2025-04-08 00:52:16-050 [reactor-http-nio-7] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f43db94b914424665e6625 
+2025-04-08 00:52:16-052 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
+2025-04-08 00:52:16-058 [nioEventLoopGroup-3-3] INFO  c.b.s.p.transfer.BalanceTransfer - Update balance of product 67f43db94b914424665e6625 
+2025-04-08 00:52:16-071 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":2790.0,"creditLimit":3000.0,"creditLimitUsed":210.0} 
+2025-04-08 00:56:07-825 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 01:01:07-847 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 01:06:07-849 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 01:11:07-853 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 01:16:07-861 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 01:20:38-519 [main] INFO  c.b.s.p.ServiceProductApplication - Starting ServiceProductApplication using Java 17.0.12 with PID 27828 (C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product\target\classes started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product) 
+2025-04-08 01:20:38-524 [main] INFO  c.b.s.p.ServiceProductApplication - The following 1 profile is active: "local" 
+2025-04-08 01:20:38-580 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-08 01:20:38-581 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[default], label=null, version=d7057677479d0cdb28ef7a758a267f2fdda05a2f, state= 
+2025-04-08 01:20:38-581 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-08 01:20:38-581 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[local], label=null, version=d7057677479d0cdb28ef7a758a267f2fdda05a2f, state= 
+2025-04-08 01:20:40-473 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-08 01:20:40-824 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 337 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-08 01:20:41-189 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=8ba3d4c5-b57e-3ef6-a9d1-0238764c9154 
+2025-04-08 01:20:42-595 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@510e4d79, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@2f0cab82], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@7fcc3745, com.mongodb.Jep395RecordCodecProvider@6d35ff7b, com.mongodb.KotlinCodecProvider@4ef31221]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@4e9e0c6], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-08 01:20:42-859 [cluster-ClusterId{value='67f4c03ae0a0cf73f2266193', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=119612400, minRoundTripTimeNanos=0} 
+2025-04-08 01:20:45-326 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-08 01:20:45-783 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-08 01:20:45-853 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-08 01:20:45-964 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-08 01:20:46-007 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-08 01:20:46-019 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 01:20:46-040 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-08 01:20:46-040 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-08 01:20:46-040 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-08 01:20:46-040 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-08 01:20:46-041 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-08 01:20:46-041 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-08 01:20:46-041 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-08 01:20:46-610 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-08 01:20:46-614 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-08 01:20:46-617 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-08 01:20:46-619 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1744093246619 with initial instances count: 4 
+2025-04-08 01:20:46-624 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SERVICE-PRODUCT with eureka with status UP 
+2025-04-08 01:20:46-625 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1744093246625, current=UP, previous=STARTING] 
+2025-04-08 01:20:46-628 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-08 01:20:46-687 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-08 01:20:46-696 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8383 (http) 
+2025-04-08 01:20:46-698 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8383 
+2025-04-08 01:20:46-989 [main] INFO  c.b.s.p.ServiceProductApplication - Started ServiceProductApplication in 12.159 seconds (process running for 15.608) 
+2025-04-08 01:25:46-057 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 01:30:46-067 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 01:35:46-075 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 01:40:46-083 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 01:45:46-100 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 01:49:00-701 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 01:49:00-702 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 01:49:00-922 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f43db94b914424665e6625 
+2025-04-08 01:49:00-924 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 01:49:01-347 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":2790.0,"creditLimit":3000.0,"creditLimitUsed":210.0} 
+2025-04-08 01:49:01-368 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f43db94b914424665e6625","status":"ENABLED","productType":"CC","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CC","hasCreditCard":true,"creditLimit":3000.0,"creditLimitUsed":210.0,"creditBalance":2790.0,"creditCard":{"number":"1394-7191-9133-6892","auditData":{"createdAt":1744059832646,"updatedAt":1744059832646}}}},"auditData":{"createdAt":1744059833327,"updatedAt":1744059833327}} 
+2025-04-08 01:49:06-937 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f43db94b914424665e6625 
+2025-04-08 01:49:06-943 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
+2025-04-08 01:49:06-958 [nioEventLoopGroup-3-4] INFO  c.b.s.p.transfer.BalanceTransfer - Update balance of product 67f43db94b914424665e6625 
+2025-04-08 01:49:07-076 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":2789.0,"creditLimit":3000.0,"creditLimitUsed":211.0} 
+2025-04-08 01:50:01-685 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 01:50:01-687 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 01:50:01-688 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f43db94b914424665e6625 
+2025-04-08 01:50:01-689 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 01:50:01-705 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":2789.0,"creditLimit":3000.0,"creditLimitUsed":211.0} 
+2025-04-08 01:50:01-712 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f43db94b914424665e6625","status":"ENABLED","productType":"CC","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CC","hasCreditCard":true,"creditLimit":3000.0,"creditLimitUsed":211.0,"creditBalance":2789.0,"creditCard":{"number":"1394-7191-9133-6892","auditData":{"createdAt":1744059832646,"updatedAt":1744059832646}}}},"auditData":{"createdAt":1744059833327,"updatedAt":1744059833327}} 
+2025-04-08 01:50:01-729 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f43db94b914424665e6625 
+2025-04-08 01:50:01-731 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
+2025-04-08 01:50:01-737 [nioEventLoopGroup-3-4] INFO  c.b.s.p.transfer.BalanceTransfer - Update balance of product 67f43db94b914424665e6625 
+2025-04-08 01:50:01-753 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":2790.0,"creditLimit":3000.0,"creditLimitUsed":210.0} 
+2025-04-08 01:50:20-284 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 01:50:20-284 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 01:50:20-286 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f43db94b914424665e6625 
+2025-04-08 01:50:20-286 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 01:50:20-298 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":2790.0,"creditLimit":3000.0,"creditLimitUsed":210.0} 
+2025-04-08 01:50:20-303 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f43db94b914424665e6625","status":"ENABLED","productType":"CC","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CC","hasCreditCard":true,"creditLimit":3000.0,"creditLimitUsed":210.0,"creditBalance":2790.0,"creditCard":{"number":"1394-7191-9133-6892","auditData":{"createdAt":1744059832646,"updatedAt":1744059832646}}}},"auditData":{"createdAt":1744059833327,"updatedAt":1744059833327}} 
+2025-04-08 01:50:20-326 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f43db94b914424665e6625 
+2025-04-08 01:50:20-328 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
+2025-04-08 01:50:20-337 [nioEventLoopGroup-3-3] INFO  c.b.s.p.transfer.BalanceTransfer - Update balance of product 67f43db94b914424665e6625 
+2025-04-08 01:50:20-350 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":3490.0,"creditLimit":3000.0,"creditLimitUsed":-490.0} 
+2025-04-08 01:50:46-114 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 08:08:49-769 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 08:13:49-793 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 08:18:49-801 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 08:23:49-819 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 08:28:49-831 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 08:33:49-840 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 08:38:49-870 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 08:43:49-877 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 08:44:49-182 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 08:44:49-182 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 08:44:49-212 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 08:44:49-212 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f43db94b914424665e6625 
+2025-04-08 08:44:49-291 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":3490.0,"creditLimit":3000.0,"creditLimitUsed":-490.0} 
+2025-04-08 08:44:49-297 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f43db94b914424665e6625","status":"ENABLED","productType":"CC","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CC","hasCreditCard":true,"creditLimit":3000.0,"creditLimitUsed":-490.0,"creditBalance":3490.0,"creditCard":{"number":"1394-7191-9133-6892","auditData":{"createdAt":1744059832646,"updatedAt":1744059832646}}}},"auditData":{"createdAt":1744059833327,"updatedAt":1744059833327}} 
+2025-04-08 08:45:07-174 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f43db94b914424665e6625 
+2025-04-08 08:45:07-177 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
+2025-04-08 08:45:07-184 [nioEventLoopGroup-3-3] INFO  c.b.s.p.transfer.BalanceTransfer - Update balance of product 67f43db94b914424665e6625 
+2025-04-08 08:45:07-200 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":4190.0,"creditLimit":3000.0,"creditLimitUsed":-1190.0} 
+2025-04-08 08:46:11-249 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 08:46:11-249 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 08:46:11-250 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 08:46:11-250 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f440fe4b914424665e6626 
+2025-04-08 08:46:11-334 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":109.0} 
+2025-04-08 08:46:11-337 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f440fe4b914424665e6626","status":"ENABLED","productType":"SA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"SA","amountOfOpen":100.0,"accountNumber":"SA01-3457634657","balance":{"totalAmount":109.0},"commission":0.0,"maxMovementPerMonth":"15","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1744060670526,"updatedAt":1744060670526}} 
+2025-04-08 08:47:23-946 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f440fe4b914424665e6626 
+2025-04-08 08:47:23-947 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
+2025-04-08 08:47:23-951 [nioEventLoopGroup-3-4] INFO  c.b.s.p.transfer.BalanceTransfer - Update balance of product 67f440fe4b914424665e6626 
+2025-04-08 08:47:23-961 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":809.0} 
+2025-04-08 08:48:26-552 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 08:48:26-552 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 08:48:26-555 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f440fe4b914424665e6626 
+2025-04-08 08:48:26-560 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 08:48:26-562 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":809.0} 
+2025-04-08 08:48:26-570 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f440fe4b914424665e6626","status":"ENABLED","productType":"SA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"SA","amountOfOpen":100.0,"accountNumber":"SA01-3457634657","balance":{"totalAmount":809.0},"commission":0.0,"maxMovementPerMonth":"3","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1744060670526,"updatedAt":1744060670526}} 
+2025-04-08 08:48:49-890 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 08:52:43-219 [reactor-http-nio-6] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 08:52:43-221 [reactor-http-nio-6] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f440fe4b914424665e6626 
+2025-04-08 08:52:43-236 [reactor-http-nio-7] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 08:52:43-236 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":809.0} 
+2025-04-08 08:52:43-240 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 08:52:43-256 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f440fe4b914424665e6626","status":"ENABLED","productType":"SA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"SA","amountOfOpen":100.0,"accountNumber":"SA01-3457634657","balance":{"totalAmount":809.0},"commission":0.0,"maxMovementPerMonth":"3","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1744060670526,"updatedAt":1744060670526}} 
+2025-04-08 08:53:24-800 [reactor-http-nio-6] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f440fe4b914424665e6626 
+2025-04-08 08:53:24-802 [reactor-http-nio-6] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
+2025-04-08 08:53:24-809 [nioEventLoopGroup-3-4] INFO  c.b.s.p.transfer.BalanceTransfer - Update balance of product 67f440fe4b914424665e6626 
+2025-04-08 08:53:24-819 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":1009.0} 
+2025-04-08 08:53:49-904 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 08:58:49-918 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 09:03:49-942 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 09:08:46-064 [reactor-http-nio-1] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 09:08:46-065 [reactor-http-nio-8] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 09:08:46-103 [reactor-http-nio-8] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 09:08:46-103 [reactor-http-nio-1] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f440fe4b914424665e6626 
+2025-04-08 09:08:46-210 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":1009.0} 
+2025-04-08 09:08:46-216 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f440fe4b914424665e6626","status":"ENABLED","productType":"SA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"SA","amountOfOpen":100.0,"accountNumber":"SA01-3457634657","balance":{"totalAmount":1009.0},"commission":10.0,"maxMovementPerMonth":"3","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1744060670526,"updatedAt":1744060670526}} 
+2025-04-08 09:08:50-009 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 09:09:20-170 [reactor-http-nio-1] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f440fe4b914424665e6626 
+2025-04-08 09:09:20-174 [reactor-http-nio-1] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
+2025-04-08 09:09:20-183 [nioEventLoopGroup-3-3] INFO  c.b.s.p.transfer.BalanceTransfer - Update balance of product 67f440fe4b914424665e6626 
+2025-04-08 09:09:20-238 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":3009.0} 
+2025-04-08 09:09:53-007 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 09:09:53-016 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 09:09:53-043 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f440fe4b914424665e6626","status":"ENABLED","productType":"SA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"SA","amountOfOpen":100.0,"accountNumber":"SA01-3457634657","balance":{"totalAmount":3009.0},"commission":10.0,"maxMovementPerMonth":"3","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1744060670526,"updatedAt":1744060670526}} 
+2025-04-08 09:09:53-102 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 09:09:53-110 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f440fe4b914424665e6626 
+2025-04-08 09:09:53-174 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":3009.0} 
+2025-04-08 09:10:08-216 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f440fe4b914424665e6626 
+2025-04-08 09:10:08-218 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
+2025-04-08 09:10:08-223 [nioEventLoopGroup-3-3] INFO  c.b.s.p.transfer.BalanceTransfer - Update balance of product 67f440fe4b914424665e6626 
+2025-04-08 09:10:08-228 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":5009.0} 
+2025-04-08 09:13:50-017 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 09:18:50-032 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 09:23:50-051 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 09:28:50-060 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 09:33:50-071 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 09:38:50-091 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 09:43:50-099 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 09:48:50-103 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 09:52:02-099 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 09:52:02-099 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 09:52:02-160 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 09:52:02-160 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f440fe4b914424665e6626 
+2025-04-08 09:52:02-284 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":5009.0} 
+2025-04-08 09:52:02-292 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f440fe4b914424665e6626","status":"ENABLED","productType":"SA","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"PASSIVE","passiveProduct":{"productType":"SA","amountOfOpen":100.0,"accountNumber":"SA01-3457634657","balance":{"totalAmount":5009.0},"commission":10.0,"maxMovementPerMonth":"3","transactionDone":0,"enabledToMovement":true,"freeCommission":true}},"auditData":{"createdAt":1744060670526,"updatedAt":1744060670526}} 
+2025-04-08 09:52:06-171 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f440fe4b914424665e6626 
+2025-04-08 09:52:06-172 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
+2025-04-08 09:52:06-176 [nioEventLoopGroup-3-4] INFO  c.b.s.p.transfer.BalanceTransfer - Update balance of product 67f440fe4b914424665e6626 
+2025-04-08 09:52:06-200 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":7009.0} 
+2025-04-08 09:53:30-198 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product by id  
+2025-04-08 09:53:30-198 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 09:53:30-200 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f43db94b914424665e6625 
+2025-04-08 09:53:30-200 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting product by id 
+2025-04-08 09:53:30-212 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":3000.0,"creditLimit":3000.0,"creditLimitUsed":-0.0} 
+2025-04-08 09:53:30-312 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success product by id {"id":"67f43db94b914424665e6625","status":"ENABLED","productType":"CC","customer":{"customerId":"67ec1a41fabf6d0f4ada9865","customerType":"P"},"detailsProduct":{"familyProduct":"ACTIVE","activeProduct":{"productType":"CC","hasCreditCard":true,"creditLimit":3000.0,"creditLimitUsed":-0.0,"creditBalance":3000.0,"creditCard":{"number":"1394-7191-9133-6892","auditData":{"createdAt":1744059832646,"updatedAt":1744059832646}}}},"auditData":{"createdAt":1744059833327,"updatedAt":1744059833327}} 
+2025-04-08 09:53:32-043 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - Update balance of product 67f43db94b914424665e6625 
+2025-04-08 09:53:32-043 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Updating balance with movement. 
+2025-04-08 09:53:32-051 [nioEventLoopGroup-3-3] INFO  c.b.s.p.transfer.BalanceTransfer - Update balance of product 67f43db94b914424665e6625 
+2025-04-08 09:53:32-067 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Movement on balance was updated {"balanceAmount":2500.0,"creditLimit":3000.0,"creditLimitUsed":500.0} 
+2025-04-08 09:53:50-108 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 09:55:00-165 [reactor-http-nio-7] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 09:55:00-167 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f43db94b914424665e6625 
+2025-04-08 09:55:00-179 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":2500.0,"creditLimit":3000.0,"creditLimitUsed":500.0} 
+2025-04-08 09:58:50-114 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 10:03:50-132 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 10:08:50-150 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 10:13:50-170 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 10:18:50-185 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 10:23:50-198 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 10:28:50-212 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 10:33:50-214 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 10:38:50-226 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 10:43:50-241 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 10:48:50-262 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 10:53:50-281 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 10:58:50-295 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 11:03:50-307 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 11:08:50-314 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 11:13:50-320 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 11:18:50-332 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 11:23:50-345 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 11:28:50-359 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 11:33:50-363 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 11:38:50-375 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 11:43:50-383 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 11:48:50-395 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 11:53:50-422 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 11:58:50-429 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 12:59:25-459 [main] INFO  c.b.s.p.ServiceProductApplication - Starting ServiceProductApplication using Java 17.0.12 with PID 32604 (C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product\target\classes started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product) 
+2025-04-08 12:59:25-461 [main] INFO  c.b.s.p.ServiceProductApplication - The following 1 profile is active: "local" 
+2025-04-08 12:59:25-492 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-08 12:59:25-493 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[default], label=null, version=d7057677479d0cdb28ef7a758a267f2fdda05a2f, state= 
+2025-04-08 12:59:25-493 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-08 12:59:25-493 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[local], label=null, version=d7057677479d0cdb28ef7a758a267f2fdda05a2f, state= 
+2025-04-08 12:59:26-352 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-08 12:59:26-479 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 121 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-08 12:59:26-623 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=8ba3d4c5-b57e-3ef6-a9d1-0238764c9154 
+2025-04-08 12:59:27-193 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@380fdcf2, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@114b203], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@8d810f2, com.mongodb.Jep395RecordCodecProvider@537b3be1, com.mongodb.KotlinCodecProvider@15d58530]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@31f5b923], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-08 12:59:27-300 [cluster-ClusterId{value='67f563ffd21582564cb64040', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=42132300, minRoundTripTimeNanos=0} 
+2025-04-08 12:59:28-329 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-08 12:59:28-807 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-08 12:59:28-853 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-08 12:59:28-922 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-08 12:59:28-948 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-08 12:59:28-952 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 12:59:28-962 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-08 12:59:28-962 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-08 12:59:28-962 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-08 12:59:28-962 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-08 12:59:28-962 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-08 12:59:28-962 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-08 12:59:28-962 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-08 12:59:29-243 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-08 12:59:29-245 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-08 12:59:29-247 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-08 12:59:29-250 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1744135169249 with initial instances count: 4 
+2025-04-08 12:59:29-253 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SERVICE-PRODUCT with eureka with status UP 
+2025-04-08 12:59:29-255 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1744135169254, current=UP, previous=STARTING] 
+2025-04-08 12:59:29-257 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-08 12:59:29-301 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-08 12:59:29-316 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8383 (http) 
+2025-04-08 12:59:29-318 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8383 
+2025-04-08 12:59:29-601 [main] INFO  c.b.s.p.ServiceProductApplication - Started ServiceProductApplication in 7.856 seconds (process running for 9.307) 
+2025-04-08 13:00:46-480 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 13:00:46-590 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:00:46-731 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:00:46-764 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:00:46-768 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:03:06-131 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application SERVICE-PRODUCT with eureka with status DOWN 
+2025-04-08 13:03:06-133 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1744135386133, current=DOWN, previous=UP] 
+2025-04-08 13:03:06-133 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-08 13:03:06-136 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete 
+2025-04-08 13:03:06-141 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete 
+2025-04-08 13:03:06-144 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-08 13:03:17-847 [main] INFO  c.b.s.p.ServiceProductApplication - Starting ServiceProductApplication using Java 17.0.12 with PID 10088 (C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product\target\classes started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product) 
+2025-04-08 13:03:17-849 [main] INFO  c.b.s.p.ServiceProductApplication - The following 1 profile is active: "local" 
+2025-04-08 13:03:17-884 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-08 13:03:17-884 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[default], label=null, version=d7057677479d0cdb28ef7a758a267f2fdda05a2f, state= 
+2025-04-08 13:03:17-884 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-08 13:03:17-884 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[local], label=null, version=d7057677479d0cdb28ef7a758a267f2fdda05a2f, state= 
+2025-04-08 13:03:18-691 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-08 13:03:18-806 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 110 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-08 13:03:18-948 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=8ba3d4c5-b57e-3ef6-a9d1-0238764c9154 
+2025-04-08 13:03:19-738 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@45f1413c, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@1a139347], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@186295cc, com.mongodb.Jep395RecordCodecProvider@4e85dcb2, com.mongodb.KotlinCodecProvider@1b28cff]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@73dbe25], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-08 13:03:19-874 [cluster-ClusterId{value='67f564e75c7b5e3b65439944', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=45538100, minRoundTripTimeNanos=0} 
+2025-04-08 13:03:20-882 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-08 13:03:21-208 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-08 13:03:21-245 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-08 13:03:21-303 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-08 13:03:21-324 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-08 13:03:21-329 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 13:03:21-337 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-08 13:03:21-338 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-08 13:03:21-338 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-08 13:03:21-338 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-08 13:03:21-338 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-08 13:03:21-338 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-08 13:03:21-338 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-08 13:03:21-584 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-08 13:03:21-587 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-08 13:03:21-588 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-08 13:03:21-589 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1744135401589 with initial instances count: 5 
+2025-04-08 13:03:21-592 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SERVICE-PRODUCT with eureka with status UP 
+2025-04-08 13:03:21-592 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1744135401592, current=UP, previous=STARTING] 
+2025-04-08 13:03:21-593 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-08 13:03:21-639 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-08 13:03:21-657 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8383 (http) 
+2025-04-08 13:03:21-658 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8383 
+2025-04-08 13:03:21-920 [main] INFO  c.b.s.p.ServiceProductApplication - Started ServiceProductApplication in 7.736 seconds (process running for 9.23) 
+2025-04-08 13:03:58-288 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 13:03:58-332 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:03:58-448 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:03:58-468 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:03:58-472 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:05:11-169 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application SERVICE-PRODUCT with eureka with status DOWN 
+2025-04-08 13:05:11-169 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1744135511169, current=DOWN, previous=UP] 
+2025-04-08 13:05:11-170 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-08 13:05:11-175 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete 
+2025-04-08 13:05:11-182 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-08 13:05:11-182 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete 
+2025-04-08 13:05:42-953 [main] INFO  c.b.s.p.ServiceProductApplication - Starting ServiceProductApplication using Java 17.0.12 with PID 12188 (C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product\target\classes started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product) 
+2025-04-08 13:05:42-955 [main] INFO  c.b.s.p.ServiceProductApplication - The following 1 profile is active: "local" 
+2025-04-08 13:05:43-006 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-08 13:05:43-007 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[default], label=null, version=d7057677479d0cdb28ef7a758a267f2fdda05a2f, state= 
+2025-04-08 13:05:43-007 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-08 13:05:43-007 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=service-product, profiles=[local], label=null, version=d7057677479d0cdb28ef7a758a267f2fdda05a2f, state= 
+2025-04-08 13:05:45-805 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-08 13:05:45-928 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 115 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-08 13:05:46-074 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=8ba3d4c5-b57e-3ef6-a9d1-0238764c9154 
+2025-04-08 13:05:46-587 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@1a139347, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@186295cc], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@4e85dcb2, com.mongodb.Jep395RecordCodecProvider@1b28cff, com.mongodb.KotlinCodecProvider@73dbe25]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@bfd97fb], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-08 13:05:46-691 [cluster-ClusterId{value='67f5657a58e05e61a2b3aec6', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=40172300, minRoundTripTimeNanos=0} 
+2025-04-08 13:05:47-586 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-08 13:05:47-891 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-08 13:05:47-926 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-08 13:05:47-984 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-08 13:05:48-007 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-08 13:05:48-013 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 13:05:48-022 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-08 13:05:48-022 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-08 13:05:48-022 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-08 13:05:48-022 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-08 13:05:48-022 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-08 13:05:48-022 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-08 13:05:48-022 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-08 13:05:48-309 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-08 13:05:48-311 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-08 13:05:48-313 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-08 13:05:48-314 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1744135548314 with initial instances count: 5 
+2025-04-08 13:05:48-317 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SERVICE-PRODUCT with eureka with status UP 
+2025-04-08 13:05:48-317 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1744135548317, current=UP, previous=STARTING] 
+2025-04-08 13:05:48-319 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-08 13:05:48-359 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-08 13:05:48-373 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8383 (http) 
+2025-04-08 13:05:48-374 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8383 
+2025-04-08 13:05:48-638 [main] INFO  c.b.s.p.ServiceProductApplication - Started ServiceProductApplication in 9.434 seconds (process running for 11.094) 
+2025-04-08 13:08:17-685 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 13:08:17-735 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:08:18-915 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:08:19-883 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:08:21-534 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:08:30-962 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 13:08:30-964 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:08:31-781 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 13:08:31-784 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:08:31-791 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:08:31-793 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:08:31-795 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:08:31-797 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:08:31-799 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:08:31-800 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:08:41-777 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 13:08:41-780 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:08:41-786 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:08:41-788 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:08:41-789 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:10:48-037 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 13:15:48-045 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 13:20:48-062 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 13:25:48-068 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 13:30:48-075 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 13:34:56-569 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 13:34:56-666 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:34:56-745 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:34:56-757 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:34:56-757 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:35:48-096 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 13:40:48-114 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 13:45:48-116 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 13:50:48-150 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 13:55:48-239 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 13:57:06-270 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 13:57:06-300 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:57:06-364 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:57:06-416 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:57:06-421 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:57:06-533 [reactor-http-nio-7] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 13:57:06-542 [reactor-http-nio-6] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 13:57:06-549 [reactor-http-nio-8] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 13:57:06-757 [reactor-http-nio-6] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f43db94b914424665e6625 
+2025-04-08 13:57:06-758 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f440fe4b914424665e6626 
+2025-04-08 13:57:06-758 [reactor-http-nio-8] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f4411f4b914424665e6627 
+2025-04-08 13:57:06-793 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":2500.0,"creditLimit":3000.0,"creditLimitUsed":500.0} 
+2025-04-08 13:57:06-793 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":7009.0} 
+2025-04-08 13:57:06-968 [nioEventLoopGroup-3-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":233.0} 
+2025-04-08 13:58:19-713 [reactor-http-nio-1] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 13:58:19-718 [reactor-http-nio-1] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:58:19-726 [nioEventLoopGroup-3-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:58:19-727 [reactor-http-nio-1] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:58:19-728 [nioEventLoopGroup-3-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 13:58:19-792 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 13:58:19-793 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 13:58:19-794 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f4411f4b914424665e6627 
+2025-04-08 13:58:19-794 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f440fe4b914424665e6626 
+2025-04-08 13:58:19-800 [nioEventLoopGroup-3-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":7009.0} 
+2025-04-08 13:58:19-801 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":233.0} 
+2025-04-08 14:00:48-268 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 14:05:48-271 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 14:10:48-281 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 14:15:48-294 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 14:20:48-310 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 14:25:48-315 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 14:30:48-328 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 14:35:48-345 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 14:40:48-350 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 14:47:28-413 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 14:52:28-432 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 14:57:28-449 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 15:02:28-460 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 15:03:30-544 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 15:03:30-609 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:03:30-693 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:03:30-710 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:03:30-711 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:03:30-818 [reactor-http-nio-6] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:03:30-818 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:03:30-827 [reactor-http-nio-6] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f4411f4b914424665e6627 
+2025-04-08 15:03:30-827 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f440fe4b914424665e6626 
+2025-04-08 15:03:30-846 [nioEventLoopGroup-3-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":233.0} 
+2025-04-08 15:03:30-846 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":7009.0} 
+2025-04-08 15:04:44-384 [reactor-http-nio-7] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 15:04:44-389 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:04:44-397 [nioEventLoopGroup-3-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:04:44-401 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:04:44-405 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:04:44-590 [reactor-http-nio-1] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:04:44-594 [reactor-http-nio-1] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f4411f4b914424665e6627 
+2025-04-08 15:04:44-595 [reactor-http-nio-8] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:04:44-597 [reactor-http-nio-8] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f440fe4b914424665e6626 
+2025-04-08 15:04:44-617 [nioEventLoopGroup-3-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":233.0} 
+2025-04-08 15:04:44-619 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":7009.0} 
+2025-04-08 15:06:06-974 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 15:06:06-978 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:06:06-985 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:06:06-988 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:06:06-989 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:06:07-069 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:06:07-069 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:06:07-071 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f440fe4b914424665e6626 
+2025-04-08 15:06:07-071 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f4411f4b914424665e6627 
+2025-04-08 15:06:07-080 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":7009.0} 
+2025-04-08 15:06:07-080 [nioEventLoopGroup-3-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":233.0} 
+2025-04-08 15:07:28-479 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 15:09:14-287 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 15:09:14-290 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:09:14-299 [nioEventLoopGroup-3-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:09:14-303 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:09:14-304 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:09:14-394 [reactor-http-nio-6] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:09:14-394 [reactor-http-nio-7] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:09:14-395 [reactor-http-nio-8] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:09:14-396 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f440fe4b914424665e6626 
+2025-04-08 15:09:14-396 [reactor-http-nio-6] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f43db94b914424665e6625 
+2025-04-08 15:09:14-397 [reactor-http-nio-8] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f4411f4b914424665e6627 
+2025-04-08 15:09:14-409 [nioEventLoopGroup-3-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":7009.0} 
+2025-04-08 15:09:14-409 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":2500.0,"creditLimit":3000.0,"creditLimitUsed":500.0} 
+2025-04-08 15:09:14-411 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":233.0} 
+2025-04-08 15:11:13-832 [reactor-http-nio-1] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 15:11:13-839 [reactor-http-nio-1] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:11:13-849 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:11:13-852 [reactor-http-nio-1] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:11:13-853 [reactor-http-nio-1] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:11:13-940 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:11:13-940 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:11:13-940 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:11:13-943 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f43db94b914424665e6625 
+2025-04-08 15:11:13-948 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f440fe4b914424665e6626 
+2025-04-08 15:11:13-951 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":2500.0,"creditLimit":3000.0,"creditLimitUsed":500.0} 
+2025-04-08 15:11:13-953 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f4411f4b914424665e6627 
+2025-04-08 15:11:13-958 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":7009.0} 
+2025-04-08 15:11:13-962 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":233.0} 
+2025-04-08 15:12:18-414 [reactor-http-nio-5] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 15:12:18-418 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:12:18-428 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:12:18-430 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:12:18-432 [reactor-http-nio-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:12:18-508 [reactor-http-nio-6] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:12:18-510 [reactor-http-nio-6] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f43db94b914424665e6625 
+2025-04-08 15:12:18-510 [reactor-http-nio-7] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:12:18-512 [reactor-http-nio-7] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f440fe4b914424665e6626 
+2025-04-08 15:12:18-517 [reactor-http-nio-8] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:12:18-517 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":2500.0,"creditLimit":3000.0,"creditLimitUsed":500.0} 
+2025-04-08 15:12:18-518 [reactor-http-nio-8] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f4411f4b914424665e6627 
+2025-04-08 15:12:18-526 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":7009.0} 
+2025-04-08 15:12:18-526 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":233.0} 
+2025-04-08 15:12:28-490 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 15:17:28-496 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 15:22:28-522 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 15:27:28-548 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 15:32:28-579 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 15:37:28-590 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 15:39:11-680 [reactor-http-nio-1] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Products By Customer Id 
+2025-04-08 15:39:11-726 [reactor-http-nio-1] INFO  c.b.s.p.s.impl.ProductServiceImpl - Searching products of customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:39:11-807 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:39:11-823 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:39:11-826 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Product found to search for customer: 67ec1a41fabf6d0f4ada9865 
+2025-04-08 15:39:11-910 [reactor-http-nio-2] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:39:11-911 [reactor-http-nio-3] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:39:11-912 [reactor-http-nio-4] INFO  c.b.s.p.e.ServiceProductDelegateImpl - -> Get Product Balance 
+2025-04-08 15:39:11-918 [reactor-http-nio-2] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f43db94b914424665e6625 
+2025-04-08 15:39:11-918 [reactor-http-nio-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f440fe4b914424665e6626 
+2025-04-08 15:39:11-918 [reactor-http-nio-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Getting balance of product: 67f4411f4b914424665e6627 
+2025-04-08 15:39:11-955 [nioEventLoopGroup-3-5] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":233.0} 
+2025-04-08 15:39:11-955 [nioEventLoopGroup-3-3] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":7009.0} 
+2025-04-08 15:39:11-955 [nioEventLoopGroup-3-4] INFO  c.b.s.p.s.impl.ProductServiceImpl - Success getting balance of product: {"balanceAmount":2500.0,"creditLimit":3000.0,"creditLimitUsed":500.0} 
+2025-04-08 15:42:28-600 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 15:47:28-614 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 15:52:28-627 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 15:57:28-648 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 16:02:28-663 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 16:07:28-683 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 16:12:28-695 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 16:17:28-710 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 16:22:28-724 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 16:27:28-725 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 16:32:28-741 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 16:37:28-756 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 16:52:22-003 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.bootcamp.service.product.service.ProductServiceTest]: ProductServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2025-04-08 16:52:22-402 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.bootcamp.service.product.ServiceProductApplication for test class com.bootcamp.service.product.service.ProductServiceTest 
+2025-04-08 16:52:28-399 [main] INFO  c.b.s.p.service.ProductServiceTest - Starting ProductServiceTest using Java 17.0.12 with PID 32620 (started by mgarcsar in C:\Users\mgarcsar\Documents\Bootcamp\etregables\service-product) 
+2025-04-08 16:52:28-402 [main] INFO  c.b.s.p.service.ProductServiceTest - The following 1 profile is active: "local" 
+2025-04-08 16:52:28-522 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-08 16:52:28-525 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/service-product/default": Connection refused: no further information. Will be trying the next url if available 
+2025-04-08 16:52:28-526 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@18b8518b uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/service-product/default": Connection refused: no further information 
+2025-04-08 16:52:28-526 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-08 16:52:28-527 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/service-product/local": Connection refused: no further information. Will be trying the next url if available 
+2025-04-08 16:52:28-527 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@24e0bdb uris = array<String>['http://localhost:8888'], optional = true, profiles = 'local']): I/O error on GET request for "http://localhost:8888/service-product/local": Connection refused: no further information 
+2025-04-08 16:52:28-527 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888 
+2025-04-08 16:52:28-528 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/service-product/default": Connection refused: no further information. Will be trying the next url if available 
+2025-04-08 16:52:28-528 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@1495f70 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/service-product/default": Connection refused: no further information 
+2025-04-08 16:52:31-368 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode. 
+2025-04-08 16:52:31-825 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 433 ms. Found 1 Reactive MongoDB repository interface. 
+2025-04-08 16:52:32-222 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=6229c9f8-2630-3499-8afc-cc3317d93af3 
+2025-04-08 16:52:33-623 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|reactive-streams|spring-boot", "version": "5.2.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=NettyTransportSettings{eventLoopGroup=io.netty.channel.nio.NioEventLoopGroup@6be2c838, socketChannelClass=null, allocator=null, sslContext=null}, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@4061263d], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@71567e73, com.mongodb.Jep395RecordCodecProvider@7a456a79, com.mongodb.KotlinCodecProvider@79bde01]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@4e025001], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null} 
+2025-04-08 16:52:34-001 [cluster-ClusterId{value='67f59aa13fd8037d3ee2f214', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=153386000, minRoundTripTimeNanos=0} 
+2025-04-08 16:52:36-530 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator' 
+2025-04-08 16:52:37-482 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate. 
+2025-04-08 16:52:37-610 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath. 
+2025-04-08 16:52:37-739 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING 
+2025-04-08 16:52:37-808 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+2025-04-08 16:52:37-830 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+2025-04-08 16:52:37-864 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+2025-04-08 16:52:37-864 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+2025-04-08 16:52:37-864 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+2025-04-08 16:52:37-864 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+2025-04-08 16:52:37-865 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+2025-04-08 16:52:37-865 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+2025-04-08 16:52:37-865 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+2025-04-08 16:52:38-548 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+2025-04-08 16:52:38-551 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+2025-04-08 16:52:38-557 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+2025-04-08 16:52:38-559 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1744149158559 with initial instances count: 3 
+2025-04-08 16:52:38-564 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application SERVICE-PRODUCT with eureka with status UP 
+2025-04-08 16:52:38-565 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1744149158565, current=UP, previous=STARTING] 
+2025-04-08 16:52:38-569 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-08 16:52:38-594 [main] INFO  c.b.s.p.service.ProductServiceTest - Started ProductServiceTest in 14.803 seconds (process running for 21.979) 
+2025-04-08 16:52:38-627 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.bootcamp.service.product.ServiceProductInformationApplicationTests]: ServiceProductInformationApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2025-04-08 16:52:38-649 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.bootcamp.service.product.ServiceProductApplication for test class com.bootcamp.service.product.ServiceProductInformationApplicationTests 
+2025-04-08 16:52:38-665 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.bootcamp.service.product.transfer.ProductTransferTest]: ProductTransferTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2025-04-08 16:52:38-689 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.bootcamp.service.product.ServiceProductApplication for test class com.bootcamp.service.product.transfer.ProductTransferTest 
+2025-04-08 16:52:38-726 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-08 16:52:38-731 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application SERVICE-PRODUCT with eureka with status DOWN 
+2025-04-08 16:52:38-731 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1744149158731, current=DOWN, previous=UP] 
+2025-04-08 16:52:38-732 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383: registering service... 
+2025-04-08 16:52:38-740 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - registration status: 204 
+2025-04-08 16:52:41-288 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ... 
+2025-04-08 16:52:44-291 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Unregistering ... 
+2025-04-08 16:52:44-333 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SERVICE-PRODUCT/service-product:8383 - deregister  status: 200 
+2025-04-08 16:52:44-334 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient 

@@ -5,7 +5,6 @@ import com.bootcamp.service.product.util.AuditDataUtil;
 import org.springframework.stereotype.Component;
 
 import javax.validation.Valid;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
