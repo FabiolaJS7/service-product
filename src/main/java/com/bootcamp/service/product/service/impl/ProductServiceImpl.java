@@ -59,7 +59,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Flux<ProductResponse> findAllProducts() {
         return productRepository.findAll()
-                .doOnSubscribe(subscription -> log.info("Products searching {}", JsonTransferUtil.objectToJson(subscription)))
+                .doOnSubscribe(subscription -> log.info("Products searching."))
                 .map(product -> productTransfer.getProductResponseOfProduct(product))
                 .doOnComplete(() -> log.info("Products found"))
                 .doOnError(e -> log.error("Error fetching products: {}", e.getMessage(), e));

@@ -20,7 +20,7 @@ public class ProductTransfer {
         Product product = new Product();
         product.setCustomer(getCustomerOfCustomerBean(prq.getCustomer()));
         product.setProductType(prq.getProductType());
-        product.setAmountOfOpen(prq.getAmountOfOpen());
+        product.setAmountOfOpen(ProductTypeConstants.PASSIVE_PRODUCTS.contains(prq.getProductType()) ? prq.getAmountOfOpen() : ZERO);
         product.setHasPlasticCard(ProductTypeConstants.SAVING_ACCOUNT.equals(prq.getProductType())
                 || ProductTypeConstants.CREDIT_CARD.equals(prq.getProductType()));
         product.setAccountNumber(NumberRandomUtil.generateAccountNumber(prq.getProductType()));
@@ -35,10 +35,10 @@ public class ProductTransfer {
         if (product.getProductType().equalsIgnoreCase(ProductTypeConstants.CREDIT_CARD)) {
             balance.setCreditLimit(DEFAULT_LINE); // se estable 3000 de linea de credito para nueva credit card (CC)
             balance.setCreditLimitUsed(ZERO);
-            balance.setCreditEnabledToUse(ZERO);
+            balance.setCreditEnabledToUse(balance.getCreditLimit());
         } else if (ProductTypeConstants.CREDIT_ACCOUNT.contains(product.getProductType())) {
             balance.setCreditLimit(DEFAULT_LINE); //cuenta de credito se estable 3000 de credito ya usados
-            balance.setCreditLimitUsed(DEFAULT_LINE);
+            balance.setCreditLimitUsed(balance.getCreditLimitUsed());
             balance.setCreditEnabledToUse(ZERO);
         } else {
             balance.setCreditLimit(ZERO);

@@ -1,9 +1,7 @@
 package com.bootcamp.service.product.service.impl;
 
 import com.bootcamp.service.product.mapper.ProductTypeMapper;
-import com.bootcamp.service.product.model.CreateProductTypeRequest;
-import com.bootcamp.service.product.model.CreateProductTypeResponse;
-import com.bootcamp.service.product.model.ProductType;
+import com.bootcamp.service.product.model.*;
 import com.bootcamp.service.product.repository.DaoProductTypeFactory;
 import com.bootcamp.service.product.service.ProductTypeService;
 import com.bootcamp.service.product.util.JsonTransferUtil;
@@ -21,26 +19,28 @@ public class ProductTypeServiceImpl implements ProductTypeService {
 
 
     @Override
-    public Mono<CreateProductTypeResponse> createProductType(Mono<CreateProductTypeRequest> createProductTypeRequest) {
+    public Mono<ProductTypeResponse> createProductType(Mono<ProductTypeRequest> createProductTypeRequest) {
         return createProductTypeRequest
                 .doOnSubscribe(subscription -> log.info("Creating product type"))
                 .map(ProductTypeMapper.INSTANCE::getProductTypeOfCreateProductTypeRequest)
                 .flatMap(p -> daoProductTypeFactory.getProductTypeDAO().save(p))
                 .doOnNext(productType1 -> log.info("Getting product type id and creating product type rs"))
-                .flatMap(p -> {
-                    CreateProductTypeResponse createProductTypeResponse = new CreateProductTypeResponse();
-                    createProductTypeResponse.setCode(p.getCode());
-                    return Mono.just(createProductTypeResponse);
-                })
+                .map(ProductTypeMapper.INSTANCE::getCreateProductTypeResponseOfProductType)
                 .doOnSuccess(createProductTypeResponse -> log.info("Created product type rs: {}",
                         JsonTransferUtil.objectToJson(createProductTypeResponse)))
-                .switchIfEmpty(Mono.just(new CreateProductTypeResponse()))
+                .switchIfEmpty(Mono.just(new ProductTypeResponse()))
                 .doOnError(throwable -> log.error("Error while creating product type", throwable));
 
     }
 
     @Override
-    public Mono<ProductType> findProductTypeByCode(String productTypeCode) {
-        return daoProductTypeFactory.getProductTypeDAO().findProductTypeByCode(productTypeCode);
+    public Mono<ProductTypeResponse> findProductTypeByCode(String productTypeCode) {
+        return daoProductTypeFactory.getProductTypeDAO().findProductTypeByCode(productTypeCode)
+                .doOnSubscribe(subscription -> log.info("Searching product type by code {}", productTypeCode))
+                .map(ProductTypeMapper.INSTANCE::getCreateProductTypeResponseOfProductType)
+                .doOnNext(productTypeResponse -> log.info("Product type found and creating product type rs."))
+                .doOnSuccess(productTypeResponse -> log.info("Product type found: {}", productTypeResponse))
+                .switchIfEmpty(Mono.just(new ProductTypeResponse()))
+                .doOnError(throwable -> log.error("Error while searching product type", throwable));
     }
 }

@@ -7,6 +7,7 @@ import com.bootcamp.service.product.service.ProductTypeService;
 import com.bootcamp.service.product.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -110,13 +111,23 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
     }
 
     @Override
-    public Mono<ResponseEntity<CreateProductTypeResponse>> createProductType(Mono<CreateProductTypeRequest> create,
+    public Mono<ResponseEntity<ProductTypeResponse>> createProductType(Mono<ProductTypeRequest> create,
                                                                              ServerWebExchange exchange) {
         log.info("-> Init create product type.");
         return productTypeService.createProductType(create)
                 .map(ResponseEntity::ok)
-                .doOnSubscribe(s -> log.info("End create product type: {}", s))
+                .doOnSuccess(s -> log.info("End create product type: {}", s))
                 .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.BAD_REQUEST)));
+    }
+
+    @Override
+    public Mono<ResponseEntity<ProductTypeResponse>> getProducTypeByCode(String codeType,
+                                                                          ServerWebExchange exchange) {
+        log.info("-> Init get product type by code");
+        return productTypeService.findProductTypeByCode(codeType)
+                .map(ResponseEntity::ok)
+                .doOnSuccess(s -> log.info("End get product type by code."))
+                .onErrorResume(throwable -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
     }
 
 

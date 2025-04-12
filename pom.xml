@@ -117,6 +117,12 @@
 			<artifactId>mapstruct</artifactId>
 			<version>${org.mapstruct.version}</version>
 		</dependency>
+		<!-- para hacer la conversión de fecha de un objeto a json -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>2.15.2</version> <!-- Usa la versión compatible con tu proyecto -->
+		</dependency>
 
 	</dependencies>
 

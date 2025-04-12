@@ -29,11 +29,10 @@ public class BalanceTransfer {
                     ? (balanceAntFound.getTotalAmountInAccount() + balanceBeanRequest.getAmount())
                     : (balanceAntFound.getTotalAmountInAccount() - balanceBeanRequest.getAmount()));
         } else {
-
-            if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.DEPOSIT)) {
+            if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.PAYMENT)) {
                 balanceAntFound.setCreditLimitUsed(balanceAntFound.getCreditLimitUsed() - balanceBeanRequest.getAmount());
                 balanceAntFound.setCreditEnabledToUse(balanceAntFound.getCreditEnabledToUse() + balanceBeanRequest.getAmount());
-            } else {
+            } else if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.CONSUME)) {
                 if (product.getProductType().equalsIgnoreCase(ProductTypeConstants.CREDIT_CARD)) {
                     balanceAntFound.setCreditLimitUsed(balanceAntFound.getCreditLimitUsed() + balanceBeanRequest.getAmount());
                     balanceAntFound.setCreditEnabledToUse(balanceAntFound.getCreditEnabledToUse() - balanceBeanRequest.getAmount());
