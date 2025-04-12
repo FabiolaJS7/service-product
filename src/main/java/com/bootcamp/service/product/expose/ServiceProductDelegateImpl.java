@@ -26,16 +26,18 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
     @Override
     public Mono<ResponseEntity<String>> createProduct(Mono<ProductRequest> productRequest,
                                                       ServerWebExchange exchange) {
-        log.info("-> Create Product");
+        log.info("-> Init create Product");
         return productService.createProduct(productRequest)
                 .map(ResponseEntity::ok)
-                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR)));
+                .doOnNext(product -> log.info("end create product"))
+                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.BAD_REQUEST)));
     }
 
     @Override
     public Mono<ResponseEntity<Flux<ProductResponse>>> findAll(ServerWebExchange exchange) {
         log.info("-> Find All Products");
-        return Mono.just(ResponseEntity.ok(productService.findAllProducts()));
+        return Mono.just(ResponseEntity.ok(productService.findAllProducts()))
+                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
     }
 
     @Override
@@ -46,7 +48,7 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
                 .doOnNext(p -> log.info("-> Update product: {}, {}", productId, JsonTransferUtil.objectToJson(p)))
                 .flatMap(p -> productService.updateProduct(productId, Mono.just(p)))
                 .map(ResponseEntity::ok)
-                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR)));
+                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
     }
 
     @Override
@@ -54,14 +56,15 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
         log.info("-> Delete Product");
         return productService.deleteProduct(productId)
                 .map(ResponseEntity::ok)
-                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR)));
+                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
     }
 
     @Override
     public Mono<ResponseEntity<Flux<ProductResponse>>> getProductsByCustomerId(String customerId,
                                                                                 ServerWebExchange exchange) {
-        log.info("-> Get Products By Customer Id");
-        return Mono.just(ResponseEntity.ok(productService.findProductsByCustomerId(customerId)));
+        log.info("-> Init get products by customer Id");
+        return Mono.just(ResponseEntity.ok(productService.findProductsByCustomerId(customerId)))
+                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
     }
 
     @Override

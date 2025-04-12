@@ -1,7 +1,9 @@
 package com.bootcamp.service.product.transfer;
 
+import com.bootcamp.service.product.constants.ProductTypeConstants;
 import com.bootcamp.service.product.model.*;
 import com.bootcamp.service.product.util.AuditDataUtil;
+import com.bootcamp.service.product.util.NumberRandomUtil;
 import org.springframework.stereotype.Component;
 
 import javax.validation.Valid;
@@ -11,33 +13,43 @@ import java.util.stream.Collectors;
 @Component
 public class ProductTransfer {
 
+    private static final Double DEFAULT_LINE = 3000.00;
+    private static final Double ZERO = 0.00;
 
     public Product getProductOfProductRequest(ProductRequest prq) {
         Product product = new Product();
         product.setCustomer(getCustomerOfCustomerBean(prq.getCustomer()));
         product.setProductType(prq.getProductType());
-
-        DetailsProduct detailsProduct = new DetailsProduct();
-        if (prq.getActiveProduct() != null) {
-            detailsProduct.setFamilyProduct("ACTIVE");
-
-            ActiveProduct activeProduct = getActiveProduct(prq);
-            detailsProduct.setActiveProduct(activeProduct);
-            product.setDetailsProduct(detailsProduct);
-        }
-
-        if (prq.getPassiveProduct() != null) {
-            detailsProduct.setFamilyProduct("PASSIVE");
-
-            PassiveProduct passiveProduct = getPassiveProduct(prq);
-            detailsProduct.setPassiveProduct(passiveProduct);
-            product.setDetailsProduct(detailsProduct);
-        }
-
-        product.setHolders(getAdditionalPerson(prq.getHolders()));
-        product.setAuthorizedSignatories(getAdditionalPerson(prq.getHolders()));
+        product.setAmountOfOpen(prq.getAmountOfOpen());
+        product.setHasPlasticCard(ProductTypeConstants.SAVING_ACCOUNT.equals(prq.getProductType())
+                || ProductTypeConstants.CREDIT_CARD.equals(prq.getProductType()));
+        product.setAccountNumber(NumberRandomUtil.generateAccountNumber(prq.getProductType()));
+        product.setBalance(buildBalance(product));
         product.setAuditData(AuditDataUtil.create(prq.getUserBank()));
         return product;
+    }
+
+    private Balance buildBalance(Product product) {
+        Balance balance = new Balance();
+
+        if (product.getProductType().equalsIgnoreCase(ProductTypeConstants.CREDIT_CARD)) {
+            balance.setCreditLimit(DEFAULT_LINE); // se estable 3000 de linea de credito para nueva credit card (CC)
+            balance.setCreditLimitUsed(ZERO);
+            balance.setCreditEnabledToUse(ZERO);
+        } else if (ProductTypeConstants.CREDIT_ACCOUNT.contains(product.getProductType())) {
+            balance.setCreditLimit(DEFAULT_LINE); //cuenta de credito se estable 3000 de credito ya usados
+            balance.setCreditLimitUsed(DEFAULT_LINE);
+            balance.setCreditEnabledToUse(ZERO);
+        } else {
+            balance.setCreditLimit(ZERO);
+            balance.setCreditLimitUsed(ZERO);
+            balance.setCreditEnabledToUse(ZERO);
+        }
+
+        if (ProductTypeConstants.PASSIVE_PRODUCTS.contains(product.getProductType())) {
+            balance.setTotalAmountInAccount(product.getAmountOfOpen());
+        }
+        return balance;
     }
 
     public ProductResponse getProductResponseOfProduct(Product product) {
@@ -46,41 +58,14 @@ public class ProductTransfer {
         }
         ProductResponse productResponse = new ProductResponse();
         productResponse.setId(product.getId());
-        productResponse.setFamily(product.getDetailsProduct().getFamilyProduct());
         productResponse.setProductType(product.getProductType());
+        productResponse.setAmountOfOpen(product.getAmountOfOpen());
+        productResponse.setAccountNumber(product.getAccountNumber());
+        productResponse.setHasPlasticCard(product.getHasPlasticCard());
 
         CustomerBean customerBean = new CustomerBean();
         customerBean.setCustomerId(product.getCustomer().getCustomerId());
-        customerBean.setCustomerType(product.getCustomer().getCustomerType());
         productResponse.setCustomer(customerBean);
-
-        DetailsProduct detailsProduct = product.getDetailsProduct();
-
-        if (productResponse.getFamily().equals("ACTIVE")) {
-            ActiveProduct activeProduct = detailsProduct.getActiveProduct();
-
-            ActiveProductBean activeProductBean = new ActiveProductBean();
-            activeProductBean.setHasCreditCard(activeProduct.isHasCreditCard());
-            activeProductBean.setCreditLimit(activeProduct.getCreditLimit());
-            activeProductBean.setCreditLimitUsed(activeProduct.getCreditLimitUsed());
-            productResponse.setActiveProduct(activeProductBean);
-        } else {
-            PassiveProduct passiveProduct = detailsProduct.getPassiveProduct();
-
-            PassiveProductBean passiveProductBean = new PassiveProductBean();
-            passiveProductBean.isFreeCommission(passiveProduct.isFreeCommission());
-            passiveProductBean.setAmountOfOpen(passiveProduct.getAmountOfOpen());
-            passiveProductBean.setAccountNumber(passiveProduct.getAccountNumber());
-
-            InfoTransactionBean infoTransactionBean = new InfoTransactionBean();
-            infoTransactionBean.setCommission(passiveProduct.getCommission());
-            infoTransactionBean.setMaxPerMonth(passiveProduct.getMaxMovementPerMonth());
-            infoTransactionBean.setTransactionDone(String.valueOf(passiveProduct.getTransactionDone()));
-            infoTransactionBean.setEnabledToMovement(passiveProduct.isEnabledToMovement());
-            passiveProductBean.setInforToTransaction(infoTransactionBean);
-
-            productResponse.setPassiveProduct(passiveProductBean);
-        }
 
         productResponse.setHolders(product.getHolders().stream().map(additionalPerson -> {
             AdditionalPersonBean additionalPersonBean = new AdditionalPersonBean();
@@ -106,6 +91,7 @@ public class ProductTransfer {
             return additionalPersonBean;
         }).toList());
 
+        productResponse.setCreatedDate(product.getAuditData().getCreatedAt());
         return productResponse;
     }
 
@@ -125,42 +111,6 @@ public class ProductTransfer {
                     return person;
 
                 }).collect(Collectors.toList());
-    }
-
-    private ActiveProduct getActiveProduct(ProductRequest prq) {
-        ActiveProduct activeProduct = new ActiveProduct();
-        activeProduct.setProductType(prq.getProductType());
-        activeProduct.setHasCreditCard(prq.getActiveProduct().getHasCreditCard());
-
-        if (activeProduct.isHasCreditCard()) {
-            CreditCardBean creditCardBean = prq.getActiveProduct().getCreditCard();
-            CreditCard creditCard = new CreditCard();
-            creditCard.setNumber(creditCardBean.getNumber());
-            creditCard.setExpirationDate(creditCardBean.getExpirationDate());
-            creditCard.setAuditData(AuditDataUtil.create(null));
-            activeProduct.setCreditCard(creditCard);
-        }
-
-        activeProduct.setCreditLimit(prq.getActiveProduct().getCreditLimit());
-        activeProduct.setCreditLimitUsed(prq.getActiveProduct().getCreditLimitUsed());
-        activeProduct.setCreditBalance(prq.getActiveProduct().getCreditBalance());
-        return activeProduct;
-    }
-
-    private static PassiveProduct getPassiveProduct(ProductRequest prq) {
-        PassiveProduct passiveProduct = new PassiveProduct();
-        passiveProduct.setProductType(prq.getProductType());
-        passiveProduct.setFreeCommission(prq.getPassiveProduct().getIsFreeCommission());
-        passiveProduct.setAmountOfOpen(prq.getPassiveProduct().getAmountOfOpen());
-        passiveProduct.setAccountNumber(prq.getPassiveProduct().getAccountNumber());
-
-        Balance balance = new Balance();
-        balance.setTotalAmount(prq.getPassiveProduct().getAmountOfOpen());
-        passiveProduct.setBalance(balance);
-
-        passiveProduct.setCommission(prq.getPassiveProduct().getInforToTransaction().getCommission());
-        passiveProduct.setMaxMovementPerMonth(prq.getPassiveProduct().getInforToTransaction().getMaxPerMonth());
-        return passiveProduct;
     }
 
     private Customer getCustomerOfCustomerBean(@Valid CustomerBean customerBean) {

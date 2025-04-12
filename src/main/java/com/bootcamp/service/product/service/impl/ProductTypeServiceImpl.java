@@ -31,7 +31,7 @@ public class ProductTypeServiceImpl implements ProductTypeService {
                     createProductTypeResponse.setCode(p.getCode());
                     return Mono.just(createProductTypeResponse);
                 })
-                .doOnSuccess(createProductTypeResponse -> log.debug("Created product type rs: {}",
+                .doOnSuccess(createProductTypeResponse -> log.info("Created product type rs: {}",
                         JsonTransferUtil.objectToJson(createProductTypeResponse)))
                 .switchIfEmpty(Mono.just(new CreateProductTypeResponse()))
                 .doOnError(throwable -> log.error("Error while creating product type", throwable));

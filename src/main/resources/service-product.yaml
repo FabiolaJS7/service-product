@@ -299,16 +299,13 @@ components:
       properties:
         productType:
           type: string
-        familyProduct:
-          type: string
         userBank:
           type: string
+        amountOfOpen:
+          type: number
+          format: double
         customer:
           $ref: "#/components/schemas/CustomerBean"
-        activeProduct:
-          $ref: "#/components/schemas/ActiveProductBean"
-        passiveProduct:
-          $ref: "#/components/schemas/PassiveProductBean"
         holders:
           type: array
           description: List of holders associated with this product
@@ -327,19 +324,18 @@ components:
           description: unique ID
         productType:
           type: string
-        status:
+        amountOfOpen:
+          type: number
+          format: double
+        accountNumber:
           type: string
-        family:
-          type: string
+        hasPlasticCard:
+          type: boolean
         createdDate:
           type: string
-          format: date-time
+          format: date
         customer:
           $ref: "#/components/schemas/CustomerBean"
-        activeProduct:
-          $ref: "#/components/schemas/ActiveProductBean"
-        passiveProduct:
-          $ref: "#/components/schemas/PassiveProductBean"
         holders:
           type: array
           description: List of holders associated with this product
@@ -370,15 +366,11 @@ components:
     PassiveProductBean:
       type: object
       properties:
-        isFreeCommission:
-          type: boolean
         amountOfOpen:
           type: number
           format: double
         accountNumber:
           type: string
-        inforToTransaction:
-          $ref: "#/components/schemas/InfoTransactionBean"
 
     AdditionalPersonBean:
       type: object

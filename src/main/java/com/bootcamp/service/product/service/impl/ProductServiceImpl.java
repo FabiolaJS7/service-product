@@ -3,6 +3,7 @@ package com.bootcamp.service.product.service.impl;
 
 import com.bootcamp.service.product.constants.CasesUpdateConstants;
 import com.bootcamp.service.product.model.*;
+import com.bootcamp.service.product.service.PlasticCardService;
 import com.bootcamp.service.product.transfer.BalanceTransfer;
 import com.bootcamp.service.product.transfer.ProductTransfer;
 import com.bootcamp.service.product.repository.ProductRepository;
@@ -28,12 +29,22 @@ public class ProductServiceImpl implements ProductService {
     ProductTransfer productTransfer;
     @Autowired
     BalanceTransfer balanceTransfer;
+    @Autowired
+    PlasticCardService plasticCardService;
 
     @Override
     public Mono<String> createProduct(Mono<ProductRequest> productRequest) {
-        return productRequest.flatMap(prq -> {
-                    log.info("Product creating {}", JsonTransferUtil.objectToJson(prq));
+        return productRequest
+                .flatMap(prq -> {
+                    log.info("Creating product {}", JsonTransferUtil.objectToJson(prq));
                     return productRepository.save(productTransfer.getProductOfProductRequest(prq));
+                })
+                .flatMap(product -> {
+                    if (Boolean.TRUE.equals(product.getHasPlasticCard())) {
+                        return plasticCardService.createPlasticCard(product).thenReturn(product);
+                    } else {
+                        return Mono.just(product);
+                    }
                 })
                 .doOnNext(product -> log.info("Product saved {}", JsonTransferUtil.objectToJson(product)))
                 .map(Product::getId)
@@ -79,7 +90,7 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findProductsByCustomer_CustomerId(customerId)
                 .doOnSubscribe(subscription -> log.info("Searching products of customer: {}", customerId))
                 .map(product -> productTransfer.getProductResponseOfProduct(product))
-                .doOnNext(product -> log.info("Product found to search for customer: {}", customerId))
+                .doOnNext(product -> log.info("Products found for customer: {}", customerId))
                 .doOnError(e -> log.error("Error fetching products: {}", e.getMessage(), e));
 
     }
@@ -120,7 +131,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Mono<ProductResponse> findProductPassiveByAccountNumber(String accountNumber) {
-        return productRepository.findProductsByDetailsProduct_PassiveProduct_AccountNumber(accountNumber)
+        return productRepository.findProductsByAccountNumber(accountNumber)
                 .doOnSubscribe(s -> log.info("Getting passive product by accountNumber {}", accountNumber))
                 .doOnSuccess(product -> log.info("Success product by accountNumber {}", JsonTransferUtil.objectToJson(product)))
                 .map(product -> productTransfer.getProductResponseOfProduct(product))
@@ -134,24 +145,18 @@ public class ProductServiceImpl implements ProductService {
         switch (proToUpdate.getActionToUpdate()) {
             case CasesUpdateConstants.CHANGE_ACTIVE_PRODUCT:
                 ActiveProductBean activeProductBean = proToUpdate.getActiveProduct();
-                ActiveProduct activeProductModel = product.getDetailsProduct().getActiveProduct();
 
-                activeProductModel.setHasCreditCard(activeProductBean.getHasCreditCard());
-                activeProductModel.setCreditLimit(activeProductBean.getCreditLimit());
-                activeProductModel.setCreditLimitUsed(activeProductBean.getCreditLimitUsed());
                 break;
             case CasesUpdateConstants.CHANGE_PASSIVE_PRODUCT:
                 PassiveProductBean passiveProductBean = proToUpdate.getPassiveProduct();
-                PassiveProduct passiveProductModel = product.getDetailsProduct().getPassiveProduct();
 
-                passiveProductModel.setFreeCommission(passiveProductBean.getIsFreeCommission());
-                passiveProductModel.setAmountOfOpen(passiveProductBean.getAmountOfOpen());
+                //passiveProductModel.setFreeCommission(passiveProductBean.getIsFreeCommission());
 
-                InfoTransactionBean infoTransactionBean = passiveProductBean.getInforToTransaction();
-                passiveProductModel.setCommission(infoTransactionBean.getCommission());
-                passiveProductModel.setMaxMovementPerMonth(infoTransactionBean.getMaxPerMonth());
-                passiveProductModel.setTransactionDone(Integer.valueOf(infoTransactionBean.getTransactionDone()));
-                passiveProductModel.setEnabledToMovement(infoTransactionBean.getEnabledToMovement());
+                //InfoTransactionBean infoTransactionBean = passiveProductBean.getInforToTransaction();
+                //passiveProductModel.setCommission(infoTransactionBean.getCommission());
+                //passiveProductModel.setMaxMovementPerMonth(infoTransactionBean.getMaxPerMonth());
+                //passiveProductModel.setTransactionDone(Integer.valueOf(infoTransactionBean.getTransactionDone()));
+                //passiveProductModel.setEnabledToMovement(infoTransactionBean.getEnabledToMovement());
                 break;
             case CasesUpdateConstants.CHANGE_HOLDERS:
 

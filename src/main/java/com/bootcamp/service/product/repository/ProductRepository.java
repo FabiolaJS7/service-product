@@ -10,6 +10,6 @@ import reactor.core.publisher.Mono;
 public interface ProductRepository extends ReactiveMongoRepository<Product, String> {
 
     Flux<Product> findProductsByCustomer_CustomerId(String customerCustomerId);
-    Mono<Product> findProductsByDetailsProduct_PassiveProduct_AccountNumber(String accountNumber);
+    Mono<Product> findProductsByAccountNumber(String accountNumber);
 
 }

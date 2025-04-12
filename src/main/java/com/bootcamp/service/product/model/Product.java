@@ -22,8 +22,12 @@ public class Product {
     private String id;
     private String status = StatusProductConstants.ENABLED;
     private String productType;
+    private Double amountOfOpen;
+    private String accountNumber;
+    private String numberPlasticCard;
+    private Boolean hasPlasticCard;
+    private Balance balance;
     private Customer customer;
-    private DetailsProduct detailsProduct;
     private List<AdditionalPerson> holders = new ArrayList<>();
     private List<AdditionalPerson> authorizedSignatories = new ArrayList<>();
     private AuditData auditData;

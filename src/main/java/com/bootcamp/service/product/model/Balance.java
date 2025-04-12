@@ -10,5 +10,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Balance {
-    private double totalAmount;
+
+    private Double creditLimit;
+    private Double creditLimitUsed;
+    private Double creditEnabledToUse;
+    private Double totalAmountInAccount;
+
 }

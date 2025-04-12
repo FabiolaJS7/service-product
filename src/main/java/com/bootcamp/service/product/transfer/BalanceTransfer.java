@@ -12,28 +12,17 @@ import reactor.core.publisher.Mono;
 public class BalanceTransfer {
     public Mono<BalanceBeanResponse> getBalanceOfProduct(Product product) {
 
-        BalanceBeanResponse balanceBeanResponse = new BalanceBeanResponse();
-        if (ProductTypeConstants.PASSIVE_PRODUCTS.contains(product.getProductType())) {
-            Balance balanceFound = product.getDetailsProduct().getPassiveProduct().getBalance();
-            balanceBeanResponse.setBalanceAmount(balanceFound.getTotalAmount());
-            return Mono.just(balanceBeanResponse);
-        } else {
-            ActiveProduct activeProduct = product.getDetailsProduct().getActiveProduct();
-            balanceBeanResponse.setCreditLimit(activeProduct.getCreditLimit());
-            balanceBeanResponse.setCreditLimitUsed(activeProduct.getCreditLimitUsed());
-            balanceBeanResponse.setBalanceAmount(activeProduct.getCreditLimit() - activeProduct.getCreditLimitUsed());
-            return Mono.just(balanceBeanResponse);
-        }
+        return Mono.just(new BalanceBeanResponse());
     }
 
     public Mono<Product> updateBalance(Product product, BalanceBeanRequest balanceBeanRequest) {
         log.info("Update balance of product {}", product.getId());
 
-        if (ProductTypeConstants.PASSIVE_PRODUCTS.contains(product.getProductType())) {
-            Balance balanceFound = product.getDetailsProduct().getPassiveProduct().getBalance();
-            PassiveProduct passiveProduct = product.getDetailsProduct().getPassiveProduct();
+        /***   if (ProductTypeConstants.PASSIVE_PRODUCTS.contains(product.getProductType())) {
+            BalanceAnt balanceAntFound = product.getDetailsProduct().getPassiveProduct().getBalanceAnt();
+            //PassiveProduct passiveProduct = product.getDetailsProduct().getPassiveProduct();
 
-            if (passiveProduct.isFreeCommission() || (Boolean.FALSE.equals(passiveProduct.isFreeCommission())
+          if (passiveProduct.isFreeCommission() || (Boolean.FALSE.equals(passiveProduct.isFreeCommission())
                     && passiveProduct.getTransactionDone() < Integer.parseInt(passiveProduct.getMaxMovementPerMonth()))) {
                 if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.DEPOSIT)) {
                     balanceFound.setTotalAmount(balanceFound.getTotalAmount() + balanceBeanRequest.getAmount());
@@ -42,7 +31,7 @@ public class BalanceTransfer {
                 }
             }
 
-             product.getDetailsProduct().getPassiveProduct().setBalance(balanceFound);
+             product.getDetailsProduct().getPassiveProduct().setBalanceAnt(balanceAntFound);
             return Mono.just(product);
         } else {
             ActiveProduct activeProduct = product.getDetailsProduct().getActiveProduct();
@@ -57,8 +46,9 @@ public class BalanceTransfer {
                 }
 
             }
+            return Mono.just(product); ***/
             return Mono.just(product);
-        }
+
     }
 
 }

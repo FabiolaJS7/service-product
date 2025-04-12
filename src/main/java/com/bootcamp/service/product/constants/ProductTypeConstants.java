@@ -30,6 +30,13 @@ public class ProductTypeConstants {
         ACTIVE_PRODUCTS.add(CREDIT_CARD);
     }
 
+    public static final ArrayList<String> CREDIT_ACCOUNT = new ArrayList<String>();
+
+    static {
+        CREDIT_ACCOUNT.add(CREDIT_PERSONAL);
+        CREDIT_ACCOUNT.add(CREDIT_BUSINESS);
+    }
+
 
 
 }

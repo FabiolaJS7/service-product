@@ -114,9 +114,9 @@
         <!-- <module name="AvoidStarImport"/> -->
         <module name="IllegalImport"/> <!-- defaults to sun.* packages -->
         <module name="RedundantImport"/>
-        <module name="UnusedImports">
+      <!--  <module name="UnusedImports">  OJO
             <property name="processJavadoc" value="false"/>
-        </module>
+        </module> -->
 
         <!-- Checks for Size Violations.                    -->
         <!-- See https://checkstyle.org/checks/sizes/index.html -->
