@@ -1,6 +1,6 @@
 openapi: "3.0.1"
 info:
-  title: Customer service API
+  title: Product service API
   description: API to managment products of bank
   version: 1.0.0
 servers:
@@ -273,6 +273,24 @@ paths:
                 $ref: "#/components/schemas/ProductResponse"
         '404':
           description: Product not found
+  /api/products/types:
+    post:
+      summary: Create new type of product
+      operationId: createProductType
+      requestBody:
+        description: Create a new product type
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateProductTypeRequest"
+      responses:
+        '200':
+          description: Success create
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreateProductTypeResponse"
 
 components:
   schemas:
@@ -459,4 +477,48 @@ components:
           description: amount in account on time of passive product
         movementType:
           type: string
-          description: type of movement DEPOSIT , WITHDRAWAL
+          description: type of movement DEPOSIT , WITHDRAW
+    CreateProductTypeRequest:
+      type: object
+      properties:
+        code:
+          type: string
+          description: code to new product
+        description:
+          type: string
+          description: description of this product
+        familyType:
+          type: string
+          description: family type ACTIVE or PASSIVE
+        isFreeMaintenanceCommission:
+          type: boolean
+          description: true if is free to apply commission per maintenance
+        isFreeNumberMovement:
+          type: boolean
+          description: true if free number of movement per months
+        isFreeCommissionPerMovement:
+          type: boolean
+          description: true if free of commission movement
+        maxMovementPerMonth:
+          type: number
+          format: int64
+          description: indicate maxime movement per month
+        dateToUniqueMovement:
+          type: string
+          description: indicate date when permit only one movement per month
+        maintenanceCommission:
+          type: number
+          format: double
+          description: indicate commission amount of maintenance
+        movementCommission:
+          type: number
+          format: double
+          description: indicate commision amount for movement
+    CreateProductTypeResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          description: status of creation
+
+

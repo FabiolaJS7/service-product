@@ -3,6 +3,7 @@ package com.bootcamp.service.product.expose;
 import com.bootcamp.service.product.api.ApiApiDelegate;
 import com.bootcamp.service.product.model.*;
 import com.bootcamp.service.product.service.ProductService;
+import com.bootcamp.service.product.service.ProductTypeService;
 import com.bootcamp.service.product.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
 
     @Autowired
     ProductService productService;
+    @Autowired
+    ProductTypeService productTypeService;
 
     @Override
     public Mono<ResponseEntity<String>> createProduct(Mono<ProductRequest> productRequest,
@@ -99,6 +102,16 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
         return productService.findProductPassiveByAccountNumber(accountNumber)
                 .map(ResponseEntity::ok)
                 .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
+    }
+
+    @Override
+    public Mono<ResponseEntity<CreateProductTypeResponse>> createProductType(Mono<CreateProductTypeRequest> create,
+                                                                             ServerWebExchange exchange) {
+        log.info("-> Init create product type.");
+        return productTypeService.createProductType(create)
+                .map(ResponseEntity::ok)
+                .doOnSubscribe(s -> log.info("End create product type: {}", s))
+                .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.BAD_REQUEST)));
     }
 
 
