@@ -3,7 +3,9 @@ package com.bootcamp.service.product.service.impl;
 
 import com.bootcamp.service.product.constants.CasesUpdateConstants;
 import com.bootcamp.service.product.model.*;
+import com.bootcamp.service.product.repository.ProductTypeRepository;
 import com.bootcamp.service.product.service.PlasticCardService;
+import com.bootcamp.service.product.service.ProductTypeService;
 import com.bootcamp.service.product.transfer.BalanceTransfer;
 import com.bootcamp.service.product.transfer.ProductTransfer;
 import com.bootcamp.service.product.repository.ProductRepository;
@@ -31,6 +33,8 @@ public class ProductServiceImpl implements ProductService {
     BalanceTransfer balanceTransfer;
     @Autowired
     PlasticCardService plasticCardService;
+    @Autowired
+    private ProductTypeService productTypeService;
 
     @Override
     public Mono<String> createProduct(Mono<ProductRequest> productRequest) {
@@ -108,6 +112,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Mono<BalanceBeanResponse> findBalanceByProductId(String productId) {
         return productRepository.findById(productId)
+                .doOnSubscribe(subscription -> log.info("Searching product balance of customer: {}", productId))
                 .flatMap(product -> balanceTransfer.getBalanceOfProduct(product))
                 .doOnSubscribe(subscription -> log.info("Getting balance of product: {}", productId))
                 .doOnSuccess(product -> log.info("Success getting balance of product: {}",
@@ -119,8 +124,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Mono<BalanceBeanResponse> updateBalance(String productId, Mono<BalanceBeanRequest> balanceBeanRequest) {
         return balanceBeanRequest
-                .flatMap(balanceBeanRequest1 -> productRepository.findById(productId)
-                        .flatMap(product -> balanceTransfer.updateBalance(product, balanceBeanRequest1))
+                .doOnSubscribe(subscription -> log.info("Updating balance of product {}", productId))
+                .flatMap(balanceRequest -> productRepository.findById(productId)
+                        .flatMap(product -> balanceTransfer.updateBalance(product, balanceRequest))
                         .flatMap(product -> productRepository.save(product)))
                 .flatMap(product -> balanceTransfer.getBalanceOfProduct(product))
                 .doOnSubscribe(subscription -> log.info("Updating balance with movement."))

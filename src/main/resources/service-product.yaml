@@ -445,10 +445,6 @@ components:
     BalanceBeanResponse:
       type: object
       properties:
-        balanceAmount:
-          type: number
-          format: double
-          description: amount in account on time of passive product
         creditLimit:
           type: number
           format: double
@@ -456,10 +452,15 @@ components:
         creditLimitUsed:
           type: number
           format: double
-          description: credit used
-        result:
-          type: string
-          description: result of movement
+          description: credit used of credit card
+        creditEnabledToUse:
+          type: number
+          format: double
+          description: amount enabled of credit card
+        totalAmountInAccount:
+          type: number
+          format: double
+          description: total amount of passive product, accounts
     BalanceBeanRequest:
       type: object
       properties:

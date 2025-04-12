@@ -3,6 +3,7 @@ package com.bootcamp.service.product.transfer;
 import com.bootcamp.service.product.constants.MovementTypeConstants;
 import com.bootcamp.service.product.constants.ProductTypeConstants;
 import com.bootcamp.service.product.model.*;
+import com.bootcamp.service.product.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
@@ -11,44 +12,36 @@ import reactor.core.publisher.Mono;
 @Slf4j
 public class BalanceTransfer {
     public Mono<BalanceBeanResponse> getBalanceOfProduct(Product product) {
-
-        return Mono.just(new BalanceBeanResponse());
+        BalanceBeanResponse balanceBeanResponse = new BalanceBeanResponse();
+        balanceBeanResponse.setCreditLimit(product.getBalance().getCreditLimit());
+        balanceBeanResponse.setCreditLimitUsed(product.getBalance().getCreditLimitUsed());
+        balanceBeanResponse.setCreditEnabledToUse(product.getBalance().getCreditEnabledToUse());
+        balanceBeanResponse.setTotalAmountInAccount(product.getBalance().getTotalAmountInAccount());
+        return Mono.just(balanceBeanResponse);
     }
 
     public Mono<Product> updateBalance(Product product, BalanceBeanRequest balanceBeanRequest) {
-        log.info("Update balance of product {}", product.getId());
+        Balance balanceAntFound = product.getBalance();
 
-        /***   if (ProductTypeConstants.PASSIVE_PRODUCTS.contains(product.getProductType())) {
-            BalanceAnt balanceAntFound = product.getDetailsProduct().getPassiveProduct().getBalanceAnt();
-            //PassiveProduct passiveProduct = product.getDetailsProduct().getPassiveProduct();
-
-          if (passiveProduct.isFreeCommission() || (Boolean.FALSE.equals(passiveProduct.isFreeCommission())
-                    && passiveProduct.getTransactionDone() < Integer.parseInt(passiveProduct.getMaxMovementPerMonth()))) {
-                if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.DEPOSIT)) {
-                    balanceFound.setTotalAmount(balanceFound.getTotalAmount() + balanceBeanRequest.getAmount());
-                } else if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.WITHDRAW)) {
-                    balanceFound.setTotalAmount(balanceFound.getTotalAmount() - balanceBeanRequest.getAmount());
-                }
-            }
-
-             product.getDetailsProduct().getPassiveProduct().setBalanceAnt(balanceAntFound);
-            return Mono.just(product);
+        if (ProductTypeConstants.PASSIVE_PRODUCTS.contains(product.getProductType())) {
+            balanceAntFound.setTotalAmountInAccount(balanceBeanRequest.getMovementType()
+                    .equalsIgnoreCase(MovementTypeConstants.DEPOSIT)
+                    ? (balanceAntFound.getTotalAmountInAccount() + balanceBeanRequest.getAmount())
+                    : (balanceAntFound.getTotalAmountInAccount() - balanceBeanRequest.getAmount()));
         } else {
-            ActiveProduct activeProduct = product.getDetailsProduct().getActiveProduct();
 
             if (balanceBeanRequest.getMovementType().equals(MovementTypeConstants.DEPOSIT)) {
-                activeProduct.setCreditLimitUsed(activeProduct.getCreditLimitUsed() - balanceBeanRequest.getAmount());
-                activeProduct.setCreditBalance(activeProduct.getCreditBalance() + balanceBeanRequest.getAmount());
+                balanceAntFound.setCreditLimitUsed(balanceAntFound.getCreditLimitUsed() - balanceBeanRequest.getAmount());
+                balanceAntFound.setCreditEnabledToUse(balanceAntFound.getCreditEnabledToUse() + balanceBeanRequest.getAmount());
             } else {
-                if (activeProduct.isHasCreditCard()) {
-                    activeProduct.setCreditLimitUsed(activeProduct.getCreditLimitUsed() + balanceBeanRequest.getAmount());
-                    activeProduct.setCreditBalance(activeProduct.getCreditBalance() - balanceBeanRequest.getAmount());
+                if (product.getProductType().equalsIgnoreCase(ProductTypeConstants.CREDIT_CARD)) {
+                    balanceAntFound.setCreditLimitUsed(balanceAntFound.getCreditLimitUsed() + balanceBeanRequest.getAmount());
+                    balanceAntFound.setCreditEnabledToUse(balanceAntFound.getCreditEnabledToUse() - balanceBeanRequest.getAmount());
                 }
-
             }
-            return Mono.just(product); ***/
-            return Mono.just(product);
+        }
+        log.info("Balance updated for to save in product {}", JsonTransferUtil.objectToJson(balanceAntFound));
+        return Mono.just(product);
 
     }
-
 }

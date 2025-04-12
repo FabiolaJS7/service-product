@@ -48,6 +48,8 @@ public class ProductTransfer {
 
         if (ProductTypeConstants.PASSIVE_PRODUCTS.contains(product.getProductType())) {
             balance.setTotalAmountInAccount(product.getAmountOfOpen());
+        } else {
+            balance.setTotalAmountInAccount(ZERO);
         }
         return balance;
     }

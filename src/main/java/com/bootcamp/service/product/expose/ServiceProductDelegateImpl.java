@@ -80,7 +80,7 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
     public Mono<ResponseEntity<BalanceBeanResponse>> getProductBalance(String productId,
                                                                         ServerWebExchange exchange) {
 
-        log.info("-> Get Product Balance");
+        log.info("-> Init get product Balance");
         return productService.findBalanceByProductId(productId)
                 .map(ResponseEntity::ok)
                 .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
@@ -91,10 +91,12 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
     public Mono<ResponseEntity<BalanceBeanResponse>> udpateBalance(String productId,
                                                                     Mono<BalanceBeanRequest> balanceBeanRequest,
                                                                     ServerWebExchange exchange) {
+        log.info("-> Init udpate product balance");
         return balanceBeanRequest
                 .doOnNext(b -> log.info("Update balance of product {}", productId))
                 .flatMap(b -> productService.updateBalance(productId, Mono.just(b)))
                 .map(ResponseEntity::ok)
+                .doOnSuccess(product -> log.info("end udpate product balance"))
                 .onErrorResume(e -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
     }
 

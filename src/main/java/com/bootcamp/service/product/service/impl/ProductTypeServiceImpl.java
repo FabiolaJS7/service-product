@@ -3,6 +3,7 @@ package com.bootcamp.service.product.service.impl;
 import com.bootcamp.service.product.mapper.ProductTypeMapper;
 import com.bootcamp.service.product.model.CreateProductTypeRequest;
 import com.bootcamp.service.product.model.CreateProductTypeResponse;
+import com.bootcamp.service.product.model.ProductType;
 import com.bootcamp.service.product.repository.DaoProductTypeFactory;
 import com.bootcamp.service.product.service.ProductTypeService;
 import com.bootcamp.service.product.util.JsonTransferUtil;
@@ -36,5 +37,10 @@ public class ProductTypeServiceImpl implements ProductTypeService {
                 .switchIfEmpty(Mono.just(new CreateProductTypeResponse()))
                 .doOnError(throwable -> log.error("Error while creating product type", throwable));
 
+    }
+
+    @Override
+    public Mono<ProductType> findProductTypeByCode(String productTypeCode) {
+        return daoProductTypeFactory.getProductTypeDAO().findProductTypeByCode(productTypeCode);
     }
 }
