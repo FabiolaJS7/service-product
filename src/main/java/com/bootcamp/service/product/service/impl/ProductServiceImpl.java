@@ -1,9 +1,8 @@
 package com.bootcamp.service.product.service.impl;
 
 
-import com.bootcamp.service.product.constants.CasesUpdateConstants;
+import com.bootcamp.service.product.constants.ActionUpdateConstants;
 import com.bootcamp.service.product.model.*;
-import com.bootcamp.service.product.repository.ProductTypeRepository;
 import com.bootcamp.service.product.service.PlasticCardService;
 import com.bootcamp.service.product.service.ProductTypeService;
 import com.bootcamp.service.product.transfer.BalanceTransfer;
@@ -17,8 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import java.util.List;
 
 
 @Service
@@ -71,8 +68,16 @@ public class ProductServiceImpl implements ProductService {
                 .doOnNext(product -> log.info("Product found to update {}", JsonTransferUtil.objectToJson(product)))
                 .flatMap(product ->
                         productUpdateRQ.flatMap(proToUpdate -> {
-                           this.buildProductToUpdate(proToUpdate, product);
-                            return productRepository.save(product);
+
+                            if (proToUpdate.getActionToUpdate().equalsIgnoreCase(ActionUpdateConstants.PLASTIC_CARD)) {
+                                return plasticCardService.createPlasticCard(product)
+                                        .flatMap(s -> {
+                                            product.setPlasticCardId(s);
+                                            product.setHasPlasticCard(true);
+                                            return productRepository.save(product);
+                                        });
+                            }
+                            return Mono.just(product);
                         })
                         ).map(product -> productTransfer.getProductResponseOfProduct(product))
                 .doOnNext(product -> log.info("Product updated {}", JsonTransferUtil.objectToJson(product)))
@@ -145,75 +150,4 @@ public class ProductServiceImpl implements ProductService {
                 .switchIfEmpty(Mono.just(new ProductResponse()));
 
     }
-
-    private void buildProductToUpdate(ProductUpdateRQ proToUpdate, Product product) {
-        //Actualizará atributos del product dependiendo de lo que indique proToUpdate.getActionToUpdate()
-        switch (proToUpdate.getActionToUpdate()) {
-            case CasesUpdateConstants.CHANGE_ACTIVE_PRODUCT:
-                ActiveProductBean activeProductBean = proToUpdate.getActiveProduct();
-
-                break;
-            case CasesUpdateConstants.CHANGE_PASSIVE_PRODUCT:
-                PassiveProductBean passiveProductBean = proToUpdate.getPassiveProduct();
-
-                //passiveProductModel.setFreeCommission(passiveProductBean.getIsFreeCommission());
-
-                //InfoTransactionBean infoTransactionBean = passiveProductBean.getInforToTransaction();
-                //passiveProductModel.setCommission(infoTransactionBean.getCommission());
-                //passiveProductModel.setMaxMovementPerMonth(infoTransactionBean.getMaxPerMonth());
-                //passiveProductModel.setTransactionDone(Integer.valueOf(infoTransactionBean.getTransactionDone()));
-                //passiveProductModel.setEnabledToMovement(infoTransactionBean.getEnabledToMovement());
-                break;
-            case CasesUpdateConstants.CHANGE_HOLDERS:
-
-                List<AdditionalPerson> holders = proToUpdate.getHolders()
-                        .stream()
-                        .map(additionalPersonBean -> {
-                            AdditionalPerson additionalPerson = new AdditionalPerson();
-                            additionalPerson.setFullName(additionalPersonBean.getFullName());
-                            additionalPerson.setEmail(additionalPersonBean.getEmail());
-                            additionalPerson.setPhone(additionalPersonBean.getPhone());
-
-                            Identification identification = new Identification();
-                            identification.setNumberIdentification(additionalPersonBean.getIdentification().getNumberIdentification());
-                            identification.setTypeIdentification(additionalPersonBean.getIdentification().getTypeIdentification());
-                            additionalPerson.setIdentification(identification);
-                            return additionalPerson;
-                        }).toList();
-
-                if (product.getHolders() != null) {
-                    product.getHolders().addAll(holders);
-                } else {
-                    product.setHolders(holders);
-                }
-
-                break;
-            //case CasesUpdateConstants.CHANGE_SIGNATURES:
-            default:
-                List<AdditionalPerson> signatures = proToUpdate.getAuthorizedSignatories()
-                        .stream()
-                        .map(additionalPersonBean -> {
-                            AdditionalPerson additionalPerson = new AdditionalPerson();
-                            additionalPerson.setFullName(additionalPersonBean.getFullName());
-                            additionalPerson.setEmail(additionalPersonBean.getEmail());
-                            additionalPerson.setPhone(additionalPersonBean.getPhone());
-
-                            Identification identification = new Identification();
-                            identification.setNumberIdentification(additionalPersonBean.getIdentification().getNumberIdentification());
-                            identification.setTypeIdentification(additionalPersonBean.getIdentification().getTypeIdentification());
-                            additionalPerson.setIdentification(identification);
-                            return additionalPerson;
-                        }).toList();
-
-                if (product.getAuthorizedSignatories() != null) {
-                    product.getAuthorizedSignatories().addAll(signatures);
-                } else {
-                    product.setAuthorizedSignatories(signatures);
-                }
-                break;
-
-        }
-    }
-
-
 }

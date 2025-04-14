@@ -310,6 +310,25 @@ paths:
                 $ref: "#/components/schemas/ProductTypeResponse"
         '404':
           description: Product type not found
+
+  /api/products/cards/{cardId}:
+    get:
+      summary: Getting card number by numbercard
+      operationId: getCardById
+      parameters:
+        - name: cardId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: plastic card
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlasticCardBean'
+
 components:
   schemas:
     ProductRequest:
@@ -349,6 +368,8 @@ components:
           type: string
         hasPlasticCard:
           type: boolean
+        cardNumber:
+          type: string
         createdDate:
           type: string
           format: date
@@ -378,8 +399,7 @@ components:
         creditLimitUsed:
           type: number
           format: double
-        creditCard:
-          $ref: '#/components/schemas/CreditCardBean'
+
 
     PassiveProductBean:
       type: object
@@ -434,32 +454,11 @@ components:
       properties:
         actionToUpdate:
           type: string
-        status:
+        statusProduct:
           type: string
-        activeProduct:
-          $ref: "#/components/schemas/ActiveProductBean"
-        passiveProduct:
-          $ref: "#/components/schemas/PassiveProductBean"
-        holders:
-          type: array
-          description: List of holders associated with this product
-          items:
-            $ref: '#/components/schemas/AdditionalPersonBean'
-        authorizedSignatories:
-          type: array
-          description: List of signatories authorized associated with this product
-          items:
-            $ref: '#/components/schemas/AdditionalPersonBean'
-    CreditCardBean:
-      type: object
-      properties:
-        number:
-          type: string
-          description: number of credit card
-        expirationDate:
-          type: string
-          format: date
-          description: expiration date of credit card
+        hasPlasticCard:
+          type: boolean
+
     BalanceBeanResponse:
       type: object
       properties:
@@ -561,5 +560,20 @@ components:
           type: number
           format: double
           description: indicate commision amount for movement
+    PlasticCardBean:
+      type: object
+      properties:
+        id:
+          type: string
+          description: plastic card id
+        productIdAssociated:
+          type: string
+        cardType:
+          type: string
+          description: DEBIT or CREDIT
+        expirationDate:
+          type: string
+        cardNumber:
+          type: string
 
 

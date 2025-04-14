@@ -2,12 +2,12 @@ package com.bootcamp.service.product.expose;
 
 import com.bootcamp.service.product.api.ApiApiDelegate;
 import com.bootcamp.service.product.model.*;
+import com.bootcamp.service.product.service.PlasticCardService;
 import com.bootcamp.service.product.service.ProductService;
 import com.bootcamp.service.product.service.ProductTypeService;
 import com.bootcamp.service.product.util.JsonTransferUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -23,6 +23,8 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
     ProductService productService;
     @Autowired
     ProductTypeService productTypeService;
+    @Autowired
+    PlasticCardService plasticCardService;
 
     @Override
     public Mono<ResponseEntity<String>> createProduct(Mono<ProductRequest> productRequest,
@@ -127,6 +129,15 @@ public class ServiceProductDelegateImpl implements ApiApiDelegate {
         return productTypeService.findProductTypeByCode(codeType)
                 .map(ResponseEntity::ok)
                 .doOnSuccess(s -> log.info("End get product type by code."))
+                .onErrorResume(throwable -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
+    }
+
+    @Override
+    public Mono<ResponseEntity<PlasticCardBean>> getCardById(String cardId, ServerWebExchange exchange) {
+        log.info("-> Init get card  by card number");
+        return plasticCardService.getPlasticCardById(cardId)
+                .map(ResponseEntity::ok)
+                .doOnSuccess(s -> log.info("End get plastic card by card number."))
                 .onErrorResume(throwable -> Mono.just(new ResponseEntity<>(HttpStatus.NOT_FOUND)));
     }
 

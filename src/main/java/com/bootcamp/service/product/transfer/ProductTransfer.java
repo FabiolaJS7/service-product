@@ -64,6 +64,7 @@ public class ProductTransfer {
         productResponse.setAmountOfOpen(product.getAmountOfOpen());
         productResponse.setAccountNumber(product.getAccountNumber());
         productResponse.setHasPlasticCard(product.getHasPlasticCard());
+        productResponse.setCardNumber(product.getPlasticCardId());
 
         CustomerBean customerBean = new CustomerBean();
         customerBean.setCustomerId(product.getCustomer().getCustomerId());

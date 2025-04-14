@@ -24,7 +24,7 @@ public class Product {
     private String productType;
     private Double amountOfOpen;
     private String accountNumber;
-    private String numberPlasticCard;
+    private String plasticCardId;
     private Boolean hasPlasticCard;
     private Balance balance;
     private Customer customer;
