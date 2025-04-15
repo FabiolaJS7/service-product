@@ -1,0 +1,320 @@
+[{
+  "_id": {
+    "$oid": "67f9d553e72fdd7a1f700be9"
+  },
+  "productId": "67f9d553e72fdd7a1f700be8",
+  "number": "3649-3829-2594-2043",
+  "type": "'CREDIT'",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67f9daf8781532199bf1ee0e"
+  },
+  "productId": "67f9daf8781532199bf1ee0d",
+  "number": "7284-5130-1845-7062",
+  "type": "'CREDIT'",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67f9db60781532199bf1ee10"
+  },
+  "productId": "67f9db60781532199bf1ee0f",
+  "number": "8235-8468-8850-1371",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fabece38b7e23ed0ab1cf2"
+  },
+  "productId": "67fabece38b7e23ed0ab1cf1",
+  "number": "2297-8531-1864-5671",
+  "type": "'CREDIT'",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fabf94ec8287214a828c9d"
+  },
+  "productId": "67fabf94ec8287214a828c9c",
+  "number": "1868-8333-1430-7477",
+  "type": "'CREDIT'",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fabfa3ec8287214a828c9f"
+  },
+  "productId": "67fabfa3ec8287214a828c9e",
+  "number": "2267-9581-5233-4966",
+  "type": "'CREDIT'",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fac6ee3d4d5b2abeb89be9"
+  },
+  "productId": "67fac6ee3d4d5b2abeb89be8",
+  "number": "3147-8690-7120-5192",
+  "type": "'CREDIT'",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fac6f73d4d5b2abeb89beb"
+  },
+  "productId": "67fac6f73d4d5b2abeb89bea",
+  "number": "5770-3993-4615-8215",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fb3aaa3d4d5b2abeb89bed"
+  },
+  "productId": "67fb3aaa3d4d5b2abeb89bec",
+  "number": "8799-6512-5156-1586",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd4607b2157c05a7310d40"
+  },
+  "productId": "67f9cc806e374c0902dcdb73",
+  "number": "8622-4280-2229-3926",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd4641b2157c05a7310d41"
+  },
+  "productId": "67f9cc806e374c0902dcdb73",
+  "number": "4865-7026-9392-9392",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd467ff712fb7c00a929c5"
+  },
+  "productId": "67f9cc806e374c0902dcdb73",
+  "number": "9632-1809-5317-1303",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd46b3f712fb7c00a929c6"
+  },
+  "productId": "67f9cc806e374c0902dcdb73",
+  "number": "4575-4930-3648-3280",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd46fbb2baf509948e8a36"
+  },
+  "productId": "67f9cc806e374c0902dcdb73",
+  "number": "2686-8270-9715-4266",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd75d9c1328463019a2441"
+  },
+  "productId": "67f9cc806e374c0902dcdb73",
+  "number": "5152-3402-5813-8922",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd764bc1328463019a2442"
+  },
+  "productId": "67f9cc806e374c0902dcdb73",
+  "number": "4925-3084-3584-5170",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd76adc1328463019a2443"
+  },
+  "productId": "67f9cc806e374c0902dcdb73",
+  "number": "6232-3187-8632-6762",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd76fac1328463019a2444"
+  },
+  "productId": "67f9cc806e374c0902dcdb73",
+  "number": "3763-1811-4630-9205",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd785fc1328463019a2445"
+  },
+  "productId": "67f9cc806e374c0902dcdb73",
+  "number": "6631-3287-2193-7869",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd7918c1328463019a2446"
+  },
+  "productId": "67f9cc806e374c0902dcdb73",
+  "number": "3793-3218-1006-2690",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd799dc1328463019a2447"
+  },
+  "productId": "67f9cc806e374c0902dcdb73",
+  "number": "7647-6590-8417-3639",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd7ceec1328463019a2448"
+  },
+  "productId": "67f9cc806e374c0902dcdb73",
+  "number": "7893-2477-8322-8244",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd7d32c1328463019a2449"
+  },
+  "productId": "67f9cc806e374c0902dcdb73",
+  "number": "8084-7082-1184-3658",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd7f29c1328463019a244a"
+  },
+  "productId": "67f9cc806e374c0902dcdb73",
+  "number": "5996-5481-1443-2768",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd80a3c1328463019a244b"
+  },
+  "productId": "67fabf94ec8287214a828c9c",
+  "number": "6979-5465-9474-7661",
+  "type": "CREDIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fd811bc1328463019a244c"
+  },
+  "productId": "67fabf94ec8287214a828c9c",
+  "number": "6386-6871-4555-6606",
+  "type": "CREDIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fe92e0f83aa2186dd5e69d"
+  },
+  "productId": "67fe92e0f83aa2186dd5e69c",
+  "number": "2073-9278-4274-8033",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fe9360f83aa2186dd5e69f"
+  },
+  "productId": "67fe9360f83aa2186dd5e69e",
+  "number": "6586-1646-2173-8185",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fe9db2f83aa2186dd5e6a1"
+  },
+  "productId": "67fe9db2f83aa2186dd5e6a0",
+  "number": "2842-7990-9513-3448",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fec6cc5c652468edc457cb"
+  },
+  "productId": "67fec6cb5c652468edc457ca",
+  "number": "2212-3522-2102-1747",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fec7885c652468edc457cd"
+  },
+  "productId": "67fec7885c652468edc457cc",
+  "number": "9884-2834-5398-6655",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+},
+{
+  "_id": {
+    "$oid": "67fec7f65c652468edc457cf"
+  },
+  "productId": "67fec7f65c652468edc457ce",
+  "number": "5903-6818-2690-8352",
+  "type": "DEBIT",
+  "expirationDate": "05/2029",
+  "_class": "com.bootcamp.service.product.model.PlasticCard"
+}]
