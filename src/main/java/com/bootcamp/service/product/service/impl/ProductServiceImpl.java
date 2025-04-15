@@ -1,7 +1,7 @@
 package com.bootcamp.service.product.service.impl;
 
 
-import com.bootcamp.service.product.constants.ActionUpdateConstants;
+import com.bootcamp.service.product.constants.CasesUpdateConstants;
 import com.bootcamp.service.product.model.*;
 import com.bootcamp.service.product.service.PlasticCardService;
 import com.bootcamp.service.product.service.ProductTypeService;
@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.List;
 
 
 @Service
@@ -69,20 +71,79 @@ public class ProductServiceImpl implements ProductService {
                 .flatMap(product ->
                         productUpdateRQ.flatMap(proToUpdate -> {
 
-                            if (proToUpdate.getActionToUpdate().equalsIgnoreCase(ActionUpdateConstants.PLASTIC_CARD)) {
+                            if (proToUpdate.getActionToUpdate().equalsIgnoreCase(CasesUpdateConstants.CREATE_DEBIT_CARD)) {
+                                log.info("Updating product creating debit card.");
                                 return plasticCardService.createPlasticCard(product)
                                         .flatMap(s -> {
                                             product.setPlasticCardId(s);
                                             product.setHasPlasticCard(true);
                                             return productRepository.save(product);
                                         });
+                            } else if (proToUpdate.getActionToUpdate().equalsIgnoreCase(CasesUpdateConstants.CHANGE_HOLDERS)
+                                    || proToUpdate.getActionToUpdate().equalsIgnoreCase(CasesUpdateConstants.CHANGE_SIGNATURES)) {
+                                log.info("Updating product changing holders or signatures.");
+                                buildProductToUpdate(proToUpdate, product);
+                                return productRepository.save(product);
+                            } else if (proToUpdate.getActionToUpdate().equalsIgnoreCase(CasesUpdateConstants.CARD_TO_ALL_ACCOUNTS)) {
+                                log.info("Updating product associating plastic card all accounts. {}", JsonTransferUtil.objectToJson(product));
+                                product.setHasPlasticCard(proToUpdate.getHasPlasticCard());
+                                product.setPlasticCardId(proToUpdate.getPlasticCardId());
+                                return productRepository.save(product);
                             }
                             return Mono.just(product);
                         })
-                        ).map(product -> productTransfer.getProductResponseOfProduct(product))
+                ).map(product -> productTransfer.getProductResponseOfProduct(product))
                 .doOnNext(product -> log.info("Product updated {}", JsonTransferUtil.objectToJson(product)))
                 .switchIfEmpty(Mono.just(new ProductResponse()))
                 .doOnError(e -> log.error("Error updating product: {}", e.getMessage(), e));
+    }
+
+    private void buildProductToUpdate(ProductUpdateRQ proToUpdate, Product product) {
+
+        if (proToUpdate.getActionToUpdate().equalsIgnoreCase(CasesUpdateConstants.CHANGE_HOLDERS)) {
+            List<AdditionalPerson> holders = proToUpdate.getHolders()
+                    .stream()
+                    .map(additionalPersonBean -> {
+                        AdditionalPerson additionalPerson = new AdditionalPerson();
+                        additionalPerson.setFullName(additionalPersonBean.getFullName());
+                        additionalPerson.setEmail(additionalPersonBean.getEmail());
+                        additionalPerson.setPhone(additionalPersonBean.getPhone());
+
+                        Identification identification = new Identification();
+                        identification.setNumberIdentification(additionalPersonBean.getIdentification().getNumberIdentification());
+                        identification.setTypeIdentification(additionalPersonBean.getIdentification().getTypeIdentification());
+                        additionalPerson.setIdentification(identification);
+                        return additionalPerson;
+                    }).toList();
+
+            if (product.getHolders() != null) {
+                product.getHolders().addAll(holders);
+            } else {
+                product.setHolders(holders);
+            }
+        } else {
+            List<AdditionalPerson> signatures = proToUpdate.getAuthorizedSignatories()
+                    .stream()
+                    .map(additionalPersonBean -> {
+                        AdditionalPerson additionalPerson = new AdditionalPerson();
+                        additionalPerson.setFullName(additionalPersonBean.getFullName());
+                        additionalPerson.setEmail(additionalPersonBean.getEmail());
+                        additionalPerson.setPhone(additionalPersonBean.getPhone());
+
+                        Identification identification = new Identification();
+                        identification.setNumberIdentification(additionalPersonBean.getIdentification().getNumberIdentification());
+                        identification.setTypeIdentification(additionalPersonBean.getIdentification().getTypeIdentification());
+                        additionalPerson.setIdentification(identification);
+                        return additionalPerson;
+                    }).toList();
+
+            if (product.getAuthorizedSignatories() != null) {
+                product.getAuthorizedSignatories().addAll(signatures);
+            } else {
+                product.setAuthorizedSignatories(signatures);
+            }
+        }
+
     }
 
     @Override

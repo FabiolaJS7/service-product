@@ -458,6 +458,18 @@ components:
           type: string
         hasPlasticCard:
           type: boolean
+        plasticCardId:
+          type: string
+        holders:
+          type: array
+          description: List of holders associated with this product
+          items:
+            $ref: '#/components/schemas/AdditionalPersonBean'
+        authorizedSignatories:
+          type: array
+          description: List of signatories authorized associated with this product
+          items:
+            $ref: '#/components/schemas/AdditionalPersonBean'
 
     BalanceBeanResponse:
       type: object
