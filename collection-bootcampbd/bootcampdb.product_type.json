@@ -1,0 +1,111 @@
+[{
+  "_id": {
+    "$oid": "67f9add67a512a4ccf6ee6d0"
+  },
+  "code": "SA",
+  "description": "Saving account",
+  "familyType": "PASSIVE",
+  "isFreeMaintenanceCommission": true,
+  "isFreeNumberMovement": false,
+  "isFreeCommissionPerMovement": false,
+  "maxMovementPerMonth": 5,
+  "dateToUniqueMovement": "",
+  "maintenanceCommission": 0,
+  "movementCommission": 10,
+  "_class": "com.bootcamp.service.product.model.ProductType"
+},
+{
+  "_id": {
+    "$oid": "67f9ae097a512a4ccf6ee6d1"
+  },
+  "code": "CA",
+  "description": "Current account",
+  "familyType": "PASSIVE",
+  "isFreeMaintenanceCommission": false,
+  "isFreeNumberMovement": false,
+  "isFreeCommissionPerMovement": false,
+  "maxMovementPerMonth": 5,
+  "dateToUniqueMovement": "",
+  "maintenanceCommission": 10,
+  "movementCommission": 10,
+  "_class": "com.bootcamp.service.product.model.ProductType"
+},
+{
+  "_id": {
+    "$oid": "67f9ae567a512a4ccf6ee6d2"
+  },
+  "code": "FA",
+  "description": "Fixed account",
+  "familyType": "PASSIVE",
+  "isFreeMaintenanceCommission": true,
+  "isFreeNumberMovement": false,
+  "isFreeCommissionPerMovement": true,
+  "maxMovementPerMonth": 5,
+  "dateToUniqueMovement": "07",
+  "maintenanceCommission": 0,
+  "movementCommission": 10,
+  "_class": "com.bootcamp.service.product.model.ProductType"
+},
+{
+  "_id": {
+    "$oid": "67f9ae9f7a512a4ccf6ee6d3"
+  },
+  "code": "CP",
+  "description": "Personal credit",
+  "familyType": "ACTIVE",
+  "isFreeMaintenanceCommission": true,
+  "isFreeNumberMovement": false,
+  "isFreeCommissionPerMovement": true,
+  "maxMovementPerMonth": 3,
+  "dateToUniqueMovement": "",
+  "maintenanceCommission": 0,
+  "movementCommission": 10,
+  "_class": "com.bootcamp.service.product.model.ProductType"
+},
+{
+  "_id": {
+    "$oid": "67f9aeb27a512a4ccf6ee6d4"
+  },
+  "code": "CB",
+  "description": "Business credit",
+  "familyType": "ACTIVE",
+  "isFreeMaintenanceCommission": true,
+  "isFreeNumberMovement": true,
+  "isFreeCommissionPerMovement": true,
+  "maxMovementPerMonth": 0,
+  "dateToUniqueMovement": "",
+  "maintenanceCommission": 0,
+  "movementCommission": 0,
+  "_class": "com.bootcamp.service.product.model.ProductType"
+},
+{
+  "_id": {
+    "$oid": "67f9aebe7a512a4ccf6ee6d5"
+  },
+  "code": "CC",
+  "description": "Credit Card",
+  "familyType": "ACTIVE",
+  "isFreeMaintenanceCommission": true,
+  "isFreeNumberMovement": true,
+  "isFreeCommissionPerMovement": true,
+  "maxMovementPerMonth": 0,
+  "dateToUniqueMovement": "",
+  "maintenanceCommission": 10,
+  "movementCommission": 0,
+  "_class": "com.bootcamp.service.product.model.ProductType"
+},
+{
+  "_id": {
+    "$oid": "67fecd3cea3281613dbc4822"
+  },
+  "code": "CAM",
+  "description": "Current account PYME",
+  "familyType": "PASSIVE",
+  "isFreeMaintenanceCommission": true,
+  "isFreeNumberMovement": false,
+  "isFreeCommissionPerMovement": false,
+  "maxMovementPerMonth": 5,
+  "dateToUniqueMovement": "",
+  "maintenanceCommission": 10,
+  "movementCommission": 10
+}]

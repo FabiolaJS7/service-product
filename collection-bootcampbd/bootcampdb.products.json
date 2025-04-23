@@ -1,0 +1,408 @@
+[{
+  "_id": {
+    "$oid": "67f9cc806e374c0902dcdb73"
+  },
+  "status": "ENABLED",
+  "productType": "SA",
+  "amountOfOpen": 10,
+  "accountNumber": "SA01-7689199523",
+  "plasticCardId": "67fd7f29c1328463019a244a",
+  "hasPlasticCard": true,
+  "balance": {
+    "creditLimit": 0,
+    "creditLimitUsed": 0,
+    "creditEnabledToUse": 0,
+    "totalAmountInAccount": 505
+  },
+  "customer": {
+    "customerId": "67ec1a41fabf6d0f4ada9865",
+    "customerType": "P"
+  },
+  "holders": [
+    {
+      "fullName": "ANA  BERMEJO",
+      "email": "mail@gmail.commmm",
+      "phone": "11111",
+      "identification": {
+        "typeIdentification": "DNI",
+        "numberIdentification": "444"
+      }
+    }
+  ],
+  "authorizedSignatories": [],
+  "auditData": {
+    "createdAt": {
+      "$date": "2025-04-12T05:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-12T05:00:00.000Z"
+    },
+    "createdBy": "admin"
+  },
+  "_class": "com.bootcamp.service.product.model.Product"
+},
+{
+  "_id": {
+    "$oid": "67f9cd80200fc270ce30e284"
+  },
+  "status": "ENABLED",
+  "productType": "CA",
+  "amountOfOpen": 10,
+  "accountNumber": "CA01-8730016551",
+  "plasticCardId": "67fd7f29c1328463019a244a",
+  "hasPlasticCard": true,
+  "balance": {
+    "creditLimit": 0,
+    "creditLimitUsed": 0,
+    "creditEnabledToUse": 0,
+    "totalAmountInAccount": 3720
+  },
+  "customer": {
+    "customerId": "67ec1a41fabf6d0f4ada9865",
+    "customerType": "P"
+  },
+  "holders": [],
+  "authorizedSignatories": [],
+  "auditData": {
+    "createdAt": {
+      "$date": "2025-04-11T05:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-11T05:00:00.000Z"
+    },
+    "createdBy": "admin"
+  },
+  "_class": "com.bootcamp.service.product.model.Product"
+},
+{
+  "_id": {
+    "$oid": "67f9e1c9fe034d395c6d23b3"
+  },
+  "status": "ENABLED",
+  "productType": "FA",
+  "amountOfOpen": 100,
+  "accountNumber": "FA01-9408688263",
+  "plasticCardId": "67fd7f29c1328463019a244a",
+  "hasPlasticCard": true,
+  "balance": {
+    "creditLimit": 0,
+    "creditLimitUsed": 0,
+    "creditEnabledToUse": 0,
+    "totalAmountInAccount": 100
+  },
+  "customer": {
+    "customerId": "67ec1a41fabf6d0f4ada9865",
+    "customerType": "P"
+  },
+  "holders": [],
+  "authorizedSignatories": [],
+  "auditData": {
+    "createdAt": {
+      "$date": "2025-04-11T05:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-11T05:00:00.000Z"
+    }
+  },
+  "_class": "com.bootcamp.service.product.model.Product"
+},
+{
+  "_id": {
+    "$oid": "67fabf94ec8287214a828c9c"
+  },
+  "status": "ENABLED",
+  "productType": "CC",
+  "amountOfOpen": 100,
+  "accountNumber": "CC01-4406914878",
+  "plasticCardId": "67fd811bc1328463019a244c",
+  "hasPlasticCard": true,
+  "balance": {
+    "creditLimit": 3000,
+    "creditLimitUsed": 80,
+    "creditEnabledToUse": 2920,
+    "totalAmountInAccount": 0
+  },
+  "customer": {
+    "customerId": "67ec1a41fabf6d0f4ada9865",
+    "customerType": "P"
+  },
+  "holders": [],
+  "authorizedSignatories": [],
+  "auditData": {
+    "createdAt": {
+      "$date": "2025-04-12T05:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-12T05:00:00.000Z"
+    }
+  },
+  "_class": "com.bootcamp.service.product.model.Product"
+},
+{
+  "_id": {
+    "$oid": "67fac6ee3d4d5b2abeb89be8"
+  },
+  "status": "ENABLED",
+  "productType": "CC",
+  "amountOfOpen": 0,
+  "accountNumber": "CC01-1698441355",
+  "hasPlasticCard": true,
+  "balance": {
+    "creditLimit": 3000,
+    "creditLimitUsed": 500,
+    "creditEnabledToUse": 2500,
+    "totalAmountInAccount": 0
+  },
+  "customer": {
+    "customerId": "67ec1aa7fabf6d0f4ada9868",
+    "customerType": "V"
+  },
+  "holders": [],
+  "authorizedSignatories": [],
+  "auditData": {
+    "createdAt": {
+      "$date": "2025-04-12T05:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-12T05:00:00.000Z"
+    }
+  },
+  "_class": "com.bootcamp.service.product.model.Product"
+},
+{
+  "_id": {
+    "$oid": "67fac6f73d4d5b2abeb89bea"
+  },
+  "status": "ENABLED",
+  "productType": "SA",
+  "amountOfOpen": 0,
+  "accountNumber": "SA01-3755826271",
+  "hasPlasticCard": true,
+  "balance": {
+    "creditLimit": 0,
+    "creditLimitUsed": 0,
+    "creditEnabledToUse": 0,
+    "totalAmountInAccount": 1280
+  },
+  "customer": {
+    "customerId": "67ec1aa7fabf6d0f4ada9868",
+    "customerType": "V"
+  },
+  "holders": [],
+  "authorizedSignatories": [],
+  "auditData": {
+    "createdAt": {
+      "$date": "2025-04-12T05:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-12T05:00:00.000Z"
+    }
+  },
+  "_class": "com.bootcamp.service.product.model.Product"
+},
+{
+  "_id": {
+    "$oid": "67fb3aaa3d4d5b2abeb89bec"
+  },
+  "status": "ENABLED",
+  "productType": "SA",
+  "amountOfOpen": 1000,
+  "accountNumber": "SA01-4830318062",
+  "hasPlasticCard": true,
+  "balance": {
+    "creditLimit": 0,
+    "creditLimitUsed": 0,
+    "creditEnabledToUse": 0,
+    "totalAmountInAccount": 1210
+  },
+  "customer": {
+    "customerId": "67ec1aa7fabf6d0f4ada9868",
+    "customerType": "V"
+  },
+  "holders": [],
+  "authorizedSignatories": [],
+  "auditData": {
+    "createdAt": {
+      "$date": "2025-04-12T05:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-12T05:00:00.000Z"
+    }
+  },
+  "_class": "com.bootcamp.service.product.model.Product"
+},
+{
+  "_id": {
+    "$oid": "67fe92e0f83aa2186dd5e69c"
+  },
+  "status": "ENABLED",
+  "productType": "SA",
+  "amountOfOpen": 1000,
+  "accountNumber": "SA01-3509644191",
+  "hasPlasticCard": true,
+  "balance": {
+    "creditLimit": 0,
+    "creditLimitUsed": 0,
+    "creditEnabledToUse": 0,
+    "totalAmountInAccount": 1000
+  },
+  "customer": {
+    "customerId": "67ec1aa7fabf6d0f4ada9868",
+    "customerType": "V"
+  },
+  "holders": [],
+  "authorizedSignatories": [],
+  "auditData": {
+    "createdAt": {
+      "$date": "2025-04-15T05:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-15T05:00:00.000Z"
+    }
+  },
+  "_class": "com.bootcamp.service.product.model.Product"
+},
+{
+  "_id": {
+    "$oid": "67fe9360f83aa2186dd5e69e"
+  },
+  "status": "ENABLED",
+  "productType": "SA",
+  "amountOfOpen": 1000,
+  "accountNumber": "SA01-9811236276",
+  "hasPlasticCard": true,
+  "balance": {
+    "creditLimit": 0,
+    "creditLimitUsed": 0,
+    "creditEnabledToUse": 0,
+    "totalAmountInAccount": 1000
+  },
+  "customer": {
+    "customerId": "67ec1aa7fabf6d0f4ada9868",
+    "customerType": "V"
+  },
+  "holders": [],
+  "authorizedSignatories": [],
+  "auditData": {
+    "createdAt": {
+      "$date": "2025-04-15T05:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-15T05:00:00.000Z"
+    }
+  },
+  "_class": "com.bootcamp.service.product.model.Product"
+},
+{
+  "_id": {
+    "$oid": "67fe9db2f83aa2186dd5e6a0"
+  },
+  "status": "ENABLED",
+  "productType": "SA",
+  "amountOfOpen": 1000,
+  "accountNumber": "SA01-2207291036",
+  "hasPlasticCard": true,
+  "balance": {
+    "creditLimit": 0,
+    "creditLimitUsed": 0,
+    "creditEnabledToUse": 0,
+    "totalAmountInAccount": 1000
+  },
+  "customer": {
+    "customerId": "67ec1aa7fabf6d0f4ada9868",
+    "customerType": "V"
+  },
+  "holders": [],
+  "authorizedSignatories": [],
+  "auditData": {
+    "createdAt": {
+      "$date": "2025-04-15T05:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-15T05:00:00.000Z"
+    }
+  },
+  "_class": "com.bootcamp.service.product.model.Product"
+},
+{
+  "_id": {
+    "$oid": "67fec9835c652468edc457d0"
+  },
+  "status": "ENABLED",
+  "productType": "CA",
+  "amountOfOpen": 1000,
+  "accountNumber": "CA01-3433862793",
+  "hasPlasticCard": false,
+  "balance": {
+    "creditLimit": 0,
+    "creditLimitUsed": 0,
+    "creditEnabledToUse": 0,
+    "totalAmountInAccount": 980
+  },
+  "customer": {
+    "customerId": "67ec1a63fabf6d0f4ada9866",
+    "customerType": "B"
+  },
+  "holders": [
+    {
+      "fullName": "ABRAHAM  BERMEJO",
+      "email": "mail@gmail.commmm",
+      "phone": "11111",
+      "identification": {
+        "typeIdentification": "DNI",
+        "numberIdentification": "444"
+      }
+    }
+  ],
+  "authorizedSignatories": [
+    {
+      "fullName": "VERONICA ARANGO YAMASHIRO",
+      "email": "mail@gmail.commmm",
+      "phone": "2222222",
+      "identification": {
+        "typeIdentification": "DNI",
+        "numberIdentification": "22222"
+      }
+    }
+  ],
+  "auditData": {
+    "createdAt": {
+      "$date": "2025-04-15T05:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-15T05:00:00.000Z"
+    }
+  },
+  "_class": "com.bootcamp.service.product.model.Product"
+},
+{
+  "_id": {
+    "$oid": "6807cdac0427cd684ba26827"
+  },
+  "status": "ENABLED",
+  "productType": "CC",
+  "amountOfOpen": 0,
+  "accountNumber": "CC01-4681102598",
+  "hasPlasticCard": true,
+  "balance": {
+    "creditLimit": 3000,
+    "creditLimitUsed": 0,
+    "creditEnabledToUse": 3000,
+    "totalAmountInAccount": 0
+  },
+  "customer": {
+    "customerId": "67ec1a63fabf6d0f4ada9866",
+    "customerType": "B"
+  },
+  "holders": [],
+  "authorizedSignatories": [],
+  "auditData": {
+    "createdAt": {
+      "$date": "2025-04-22T00:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-22T00:00:00.000Z"
+    }
+  },
+  "_class": "com.bootcamp.service.product.model.Product"
+}]
