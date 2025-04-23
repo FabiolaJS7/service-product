@@ -3,6 +3,7 @@ package com.bootcamp.service.product.service.impl;
 
 import com.bootcamp.service.product.constants.CasesUpdateConstants;
 import com.bootcamp.service.product.model.*;
+import com.bootcamp.service.product.service.CacheService;
 import com.bootcamp.service.product.service.PlasticCardService;
 import com.bootcamp.service.product.service.ProductTypeService;
 import com.bootcamp.service.product.transfer.BalanceTransfer;
@@ -33,7 +34,7 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     PlasticCardService plasticCardService;
     @Autowired
-    private ProductTypeService productTypeService;
+    CacheService cacheService;
 
     @Override
     public Mono<String> createProduct(Mono<ProductRequest> productRequest) {
@@ -57,9 +58,25 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Flux<ProductResponse> findAllProducts() {
-        return productRepository.findAll()
-                .doOnSubscribe(subscription -> log.info("Products searching."))
-                .map(product -> productTransfer.getProductResponseOfProduct(product))
+        String cacheKey = "allProducts";
+
+        // Intentar obtener los productos de redis
+        return cacheService.get(cacheKey)
+                .flatMapMany(cachedTransactions -> {
+                    // Si los productos están en el caché, devolverlas
+                    log.info("Transactions retrieved from cache {}", JsonTransferUtil.objectToJson(cachedTransactions));
+                    return Flux.fromIterable((List<ProductResponse>) cachedTransactions);
+                })
+                .switchIfEmpty(
+                        productRepository.findAll()
+                                .doOnSubscribe(subscription -> log.info("Start getting products from database."))
+                                .map(product -> productTransfer.getProductResponseOfProduct(product))
+                                .collectList()
+                                .flatMapMany(products -> {
+                                    return cacheService.save(cacheKey, products)
+                                            .thenMany(Flux.fromIterable(products));
+                                })
+                )
                 .doOnComplete(() -> log.info("Products found"))
                 .doOnError(e -> log.error("Error fetching products: {}", e.getMessage(), e));
     }
